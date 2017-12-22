@@ -18,6 +18,10 @@ public class ProductDAOImpl implements ProductDAO {
     private final String INSERT_INTO_QUERY = "INSERT INTO products(title, description, price, userId) VALUES(?, ?, ?, ?)";
     private final String UPDATE_PRODUCT = "UPDATE products SET title = ?, description = ?, price = ?, userId =? WHERE id = ?";
 
+    public ProductDAOImpl(Connection connection) {
+        this.connection = connection;
+    }
+
     public Product getByID(long id) {
 
         Product product = null;
@@ -112,7 +116,7 @@ public class ProductDAOImpl implements ProductDAO {
 
     }
 
-    public void deleteByID(long id) throws SQLException{
+    public void deleteByID(long id) throws SQLException {
 
         PreparedStatement statement = null;
         int affectedRows = 0;
@@ -126,14 +130,13 @@ public class ProductDAOImpl implements ProductDAO {
             e.printStackTrace();
         }
 
-        if(affectedRows == 0)
-        {
+        if (affectedRows == 0) {
             throw new SQLException("Не удалось удалить товар по id: " + id);
         }
 
     }
 
-    public void deleteAll() throws SQLException{
+    public void deleteAll() throws SQLException {
 
         Statement statement = null;
         int affectedRows = 0;
@@ -145,8 +148,7 @@ public class ProductDAOImpl implements ProductDAO {
             e.printStackTrace();
         }
 
-        if(affectedRows ==0 )
-        {
+        if (affectedRows == 0) {
             throw new SQLException("Не удалось удалить объекты");
         }
 
