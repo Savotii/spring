@@ -1,0 +1,154 @@
+package com.andersen.spring.impl;
+
+import com.andersen.spring.dao.ProductDAO;
+import com.andersen.spring.entity.Product;
+
+import java.sql.*;
+import java.util.LinkedList;
+import java.util.List;
+
+public class ProductDAOImpl implements ProductDAO {
+
+    private Connection connection;
+
+    private final String GET_BY_ID_QUERY = "SELECT * FROM products WHERE id = ?";
+    private final String GET_ALL = "SELECT * FROM products";
+    private final String DELETE_ALL = "DELETE * FROM products";
+    private final String DELETE_BY_ID_QUERY = "DELETE * FROM products WHERE id = ?";
+    private final String INSERT_INTO_QUERY = "INSERT INTO products(title, description, price, userId) VALUES(?, ?, ?, ?)";
+    private final String UPDATE_PRODUCT = "UPDATE products SET title = ?, description = ?, price = ?, userId =? WHERE id = ?";
+
+    public Product getByID(long id) {
+
+        Product product = null;
+
+        try {
+            PreparedStatement statement = connection.prepareStatement(GET_BY_ID_QUERY);
+            statement.setLong(1, id);
+            ResultSet resultSet = statement.executeQuery();
+
+            product = new Product(resultSet.getString("title"), resultSet.getString("description"),
+                    resultSet.getDouble("price"), resultSet.getLong("userId"));
+            product.setId(id);
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return product;
+    }
+
+    public void insert(Product product) throws SQLException {
+
+        PreparedStatement statement = null;
+        try {
+            statement = connection.prepareStatement(INSERT_INTO_QUERY);
+            statement.setString(1, product.getTitle());
+            statement.setString(2, product.getDescription());
+            statement.setDouble(3, product.getPrice());
+            statement.setLong(4, product.getUserId());
+            int affectedRows = statement.executeUpdate();
+
+            if (affectedRows == 0) {
+                throw new SQLException("Добавление товара неудачно.");
+            }
+
+            ResultSet generatedKeys = statement.getGeneratedKeys();
+
+            if (generatedKeys.next()) {
+                product.setId(generatedKeys.getLong(1));
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    public List<Product> getAll() {
+
+        List<Product> products = new LinkedList<Product>();
+
+        try {
+            Statement statement = connection.createStatement();
+
+            ResultSet resultSet = statement.executeQuery(GET_ALL);
+            while (resultSet.next()) {
+                Product product = new Product(resultSet.getString("title"),
+                        resultSet.getString("description"),
+                        resultSet.getDouble("price"),
+                        resultSet.getLong("userId"));
+                product.setId(resultSet.getLong("id"));
+                products.add(product);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return products;
+    }
+
+    public void update(Product product) {
+
+        try {
+            PreparedStatement statement = connection.prepareStatement(UPDATE_PRODUCT);
+
+            statement.setString(1, product.getTitle());
+            statement.setString(2, product.getDescription());
+            statement.setDouble(3, product.getPrice());
+            statement.setLong(4, product.getUserId());
+            statement.setLong(5, product.getId());
+
+            int affectedRows = statement.executeUpdate();
+            if (affectedRows == 0) {
+                throw new SQLException("Процедура обновления товара, провалилась.");
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+
+    }
+
+    public void deleteByID(long id) throws SQLException{
+
+        PreparedStatement statement = null;
+        int affectedRows = 0;
+
+        try {
+            statement = connection.prepareStatement(DELETE_BY_ID_QUERY);
+            statement.setLong(1, id);
+            affectedRows = statement.executeUpdate();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        if(affectedRows == 0)
+        {
+            throw new SQLException("Не удалось удалить товар по id: " + id);
+        }
+
+    }
+
+    public void deleteAll() throws SQLException{
+
+        Statement statement = null;
+        int affectedRows = 0;
+
+        try {
+            statement = connection.createStatement();
+            affectedRows = statement.executeUpdate(DELETE_ALL);
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        if(affectedRows ==0 )
+        {
+            throw new SQLException("Не удалось удалить объекты");
+        }
+
+    }
+}
