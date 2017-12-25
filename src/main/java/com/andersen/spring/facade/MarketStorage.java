@@ -1,7 +1,7 @@
 package com.andersen.spring.facade;
 
-import com.andersen.spring.Controllers.ProductService;
-import com.andersen.spring.Controllers.UserService;
+import com.andersen.spring.controllers.ProductService;
+import com.andersen.spring.controllers.UserService;
 import com.andersen.spring.entity.Product;
 import com.andersen.spring.entity.User;
 

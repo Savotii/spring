@@ -5,11 +5,34 @@
 	   					   http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 
+    <bean id="App" class="App"/>
+
+    <!-- MySqlHelper beans -->
+    <bean id="MySqlConnection" class="com.andersen.spring.jdbc.MySqlHelper" factory-method="createConnection"/>
+
     <!-- DAO beans (just an example)-->
-    <bean id="userDAO" class="com.andersen.spring.dao.UserDAO"/>
+    <bean id="userDAOImpl" class="com.andersen.spring.impl.UserDAOImpl">
+        <constructor-arg ref="MySqlConnection"/>
+    </bean>
+
+    <bean id = "productDAOImpl" class="com.andersen.spring.impl.ProductDAOImpl">
+        <constructor-arg ref="MySqlConnection"/>
+    </bean>
 
     <!-- Service beans -->
+    <bean id="ProductService" class="com.andersen.spring.controllers.ProductService">
+        <constructor-arg ref="MySqlConnection"/>
+    </bean>
+
+    <bean id="UserService" class="com.andersen.spring.controllers.UserService">
+        <constructor-arg ref="MySqlConnection"/>
+    </bean>
+
 
     <!-- Storage bean -->
+    <bean id="MarketStorage" class="com.andersen.spring.facade.MarketStorage">
+        <constructor-arg ref="MySqlConnection"/>
+    </bean>
+
 
 </beans>

@@ -1,8 +1,5 @@
-package com.andersen.spring.Controllers;
+package com.andersen.spring.controllers;
 
-import com.andersen.spring.dao.ProductDAO;
-import com.andersen.spring.dao.UserDAO;
-import com.andersen.spring.entity.Product;
 import com.andersen.spring.entity.User;
 import com.andersen.spring.impl.UserDAOImpl;
 

@@ -1,11 +1,10 @@
-package com.andersen.spring.Controllers;
+package com.andersen.spring.controllers;
 
 import com.andersen.spring.entity.Product;
 import com.andersen.spring.impl.ProductDAOImpl;
 
 import java.sql.Connection;
 import java.sql.SQLException;
-import java.util.LinkedList;
 import java.util.List;
 
 public class ProductService {
