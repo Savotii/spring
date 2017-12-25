@@ -130,7 +130,7 @@ public class ProductDAOImpl implements ProductDAO {
 
     public List<Product> getProductsByTitle(String title) {
 
-        List<Product> products = new LinkedList<>();
+        List<Product> products = new LinkedList<Product>();
 
         try {
             PreparedStatement statement = connection.prepareStatement(GET_BY_TITLE_QUERY);
@@ -155,7 +155,7 @@ public class ProductDAOImpl implements ProductDAO {
 
     public List<Product> getProductsByUserId(long userId) {
 
-        List<Product> products = new LinkedList<>();
+        List<Product> products = new LinkedList<Product>();
 
         try {
             PreparedStatement statement = connection.prepareStatement(GET_BY_USERID_QUERY);
