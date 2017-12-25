@@ -1,57 +1,19 @@
 package com.andersen.spring.controllers;
 
 import com.andersen.spring.entity.Product;
-import com.andersen.spring.impl.ProductDAOImpl;
 
-import java.sql.Connection;
-import java.sql.SQLException;
 import java.util.List;
 
-public class ProductService {
+public interface ProductService {
 
-    private ProductDAOImpl productDAO;
-    private Connection connection;
+    Product update(Product product);
 
-    public ProductService(Connection connection)
-    {
-        this.connection = connection;
-        this.productDAO = new ProductDAOImpl(connection);
-    }
+    Product create(Product product);
 
-    public Product createProduct(Product product)
-    {
-        Product pr = null;
-        try {
-            pr = productDAO.createProduct(product);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+    Product getById(long id);
 
-        return pr;
-    }
+    boolean delete(long id);
 
-    public Product updateProduct(Product product)
-    {
-       return productDAO.update(product);
-    }
+    List<Product> getAll();
 
-    public Product getProductById(long id)
-    {
-        return productDAO.getProductByID(id);
-    }
-
-    public List<Product> getProductsByTitle(String title)
-    {
-        return productDAO.getProductsByTitle(title);
-    }
-
-    public List<Product> getProductsByUserId(long userId)
-    {
-        return productDAO.getProductsByUserId(userId);
-    }
-
-    public boolean deleteProductById(long id)
-    {
-        return productDAO.deleteProductById(id);
-    }
 }

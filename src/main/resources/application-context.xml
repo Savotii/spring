@@ -20,18 +20,21 @@
     </bean>
 
     <!-- Service beans -->
-    <bean id="ProductService" class="com.andersen.spring.controllers.ProductService">
+    <bean id="ProductServiceImpl" class="com.andersen.spring.impl.ProductServiceImpl">
         <constructor-arg ref="MySqlConnection"/>
     </bean>
 
-    <bean id="UserService" class="com.andersen.spring.controllers.UserService">
+    <bean id="UserServiceImpl" class="com.andersen.spring.impl.UserServiceImpl">
         <constructor-arg ref="MySqlConnection"/>
     </bean>
-
 
     <!-- Storage bean -->
-    <bean id="MarketStorage" class="com.andersen.spring.facade.MarketStorage">
+    <bean id="MarketFacadeImpl" class="com.andersen.spring.facade.MarketFacadeImpl">
         <constructor-arg ref="MySqlConnection"/>
+    </bean>
+
+    <bean id="MarketStorage" class="com.andersen.spring.storage.MarketStorage" init-method="init">
+
     </bean>
 
 

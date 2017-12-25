@@ -1,9 +1,6 @@
-import com.andersen.spring.controllers.ProductService;
-import com.andersen.spring.controllers.UserService;
-import com.andersen.spring.entity.Product;
-import com.andersen.spring.facade.MarketStorage;
-import com.andersen.spring.jdbc.MySqlHelper;
-import org.springframework.context.ApplicationContext;
+import com.andersen.spring.impl.ProductServiceImpl;
+import com.andersen.spring.impl.UserServiceImpl;
+import com.andersen.spring.storage.MarketStorage;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -19,11 +16,9 @@ public class App {
         ConfigurableApplicationContext ctx = new ClassPathXmlApplicationContext("application-context.xml");
         Connection connection = (Connection)ctx.getBean("MySqlConnection");
 
-        ProductService productService = (ProductService)ctx.getBean("ProductService");
-        UserService userService = (UserService)ctx.getBean("UserService");
-
+        ProductServiceImpl productServiceImpl = (ProductServiceImpl)ctx.getBean("ProductServiceImpl");
+        UserServiceImpl userServiceImpl = (UserServiceImpl)ctx.getBean("UserServiceImpl");
         MarketStorage marketStorage = (MarketStorage)ctx.getBean("MarketStorage");
-
 
 
     }
