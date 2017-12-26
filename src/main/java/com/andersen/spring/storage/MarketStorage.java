@@ -49,6 +49,16 @@ public class MarketStorage {
 
     }
 
+    public Product createProduct(Product product)
+    {
+        Product p = product;
+
+        products.put(product, 15);
+
+        return p;
+    }
+
+
     private void initFileProducts(File file) {
 
         FileWriter fw = null;

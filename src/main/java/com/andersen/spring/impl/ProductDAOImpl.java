@@ -3,6 +3,7 @@ package com.andersen.spring.impl;
 import com.andersen.spring.dao.ProductDAO;
 import com.andersen.spring.entity.Product;
 import com.andersen.spring.dao.AbstractDAO;
+import com.andersen.spring.storage.MarketStorage;
 
 import java.sql.*;
 import java.util.LinkedList;
@@ -11,6 +12,7 @@ import java.util.List;
 public class ProductDAOImpl extends AbstractDAO implements ProductDAO {
 
     private Connection connection;
+    private MarketStorage marketStorage;
 
     private final String GET_BY_USERID_QUERY = "SELECT * FROM products WHERE userId = ?";
     private final String GET_BY_TITLE_QUERY = "SELECT * FROM products WHERE title LIKE ?";
@@ -113,6 +115,41 @@ public class ProductDAOImpl extends AbstractDAO implements ProductDAO {
         return pr;
     }
 
+    public Object createdToMock(Object item) {
+
+        Product product = (Product) item;
+
+        return marketStorage.createProduct((Product) item);
+/*
+        Product pr = null;
+
+        PreparedStatement statement = null;
+        try {
+            statement = connection.prepareStatement(INSERT_INTO_QUERY);
+            statement.setString(1, product.getTitle());
+            statement.setString(2, product.getDescription());
+            statement.setDouble(3, product.getPrice());
+            statement.setLong(4, product.getUserId());
+            int affectedRows = statement.executeUpdate();
+
+            if (affectedRows == 0) {
+                throw new SQLException("Добавление товара неудачно.");
+            }
+
+            ResultSet generatedKeys = statement.getGeneratedKeys();
+
+            if (generatedKeys.next()) {
+                product.setId(generatedKeys.getLong(1));
+            }
+
+            pr = (Product) getById(product.getId());
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return pr;*/
+    }
     public Object getById(long id) {
 
         Product product = null;
