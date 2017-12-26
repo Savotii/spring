@@ -13,14 +13,11 @@ public abstract class AbstractDAO {
     @Autowired
     protected MarketStorage marketStorage;
 
-    protected Connection connection;
-
     {
         id = 0;
     }
 
-    public AbstractDAO(){
-        this.connection = MySqlHelper.createConnection();
+    public AbstractDAO() {
     }
 
     public MarketStorage getStorage() {

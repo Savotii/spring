@@ -16,13 +16,10 @@ public class MarketFacadeImpl implements MarketFacade {
 
     private ProductServiceImpl productServiceImpl;
     private UserServiceImpl userServiceImpl;
-    private Connection connection;
 
     public MarketFacadeImpl(ProductServiceImpl productServiceImpl, UserServiceImpl userServiceImpl) {
-
-        this.connection = MySqlHelper.createConnection();
-        this.productServiceImpl = productServiceImpl;//new ProductServiceImpl();
-        this.userServiceImpl = userServiceImpl;//new UserServiceImpl();
+        this.productServiceImpl = productServiceImpl;
+        this.userServiceImpl = userServiceImpl;
 
     }
 

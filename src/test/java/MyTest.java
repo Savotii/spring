@@ -19,6 +19,12 @@ import org.mockito.runners.MockitoJUnitRunner;
 @RunWith(MockitoJUnitRunner.class)
 public class MyTest {
 
+    @InjectMocks
+    ProductServiceImpl productServiceImpl;
+
+    @InjectMocks
+    UserServiceImpl userServiceImpl;
+
     @Mock
     Product product;
 
@@ -28,13 +34,14 @@ public class MyTest {
     @Test
     public void TestServices() {
 
+        UserService userServiceImpl = mock(UserServiceImpl.class);
+        ProductService productServiceImpl = mock(ProductServiceImpl.class);
+
         Product product = mock(Product.class);
 
         productDAO = mock(ProductDAOImpl.class);
-
-        when(productDAO.createdToMock(product)).thenReturn(product);
-
-        Product p = (Product)productDAO.createdToMock(product);
+        when( productServiceImpl.create(product)).thenReturn(product);
+        Product p = productServiceImpl.create(product);
 
         assertEquals(p, product);
 

@@ -4,31 +4,39 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
 	   					   http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+    <bean id="Product" class="com.andersen.spring.entity.Product"/>
+
+    <bean id="User" class="com.andersen.spring.entity.User" />
+
     <!-- MySqlHelper beans -->
-    <bean id="MySqlConnection" class="com.andersen.spring.jdbc.MySqlHelper" factory-method="createConnection"/>
+    <bean id="MySqlHelper" class="com.andersen.spring.jdbc.MySqlHelper" init-method="init"/>
 
     <!-- DAO beans (just an example)-->
     <bean id="userDAOImpl" class="com.andersen.spring.impl.UserDAOImpl">
         <!--<constructor-arg ref="MySqlConnection"/>-->
         <!--<property name="connection" ref="MySqlConnection"/>-->
         <property name="storage" ref="MarketStorage"/>
+        <property name="helper" ref="MySqlHelper"/>
     </bean>
 
     <bean id="productDAOImpl" class="com.andersen.spring.impl.ProductDAOImpl">
         <!--<constructor-arg ref="MySqlConnection"/>-->
         <!--<property name="connection" ref="MySqlConnection"/>-->
         <property name="storage" ref="MarketStorage"/>
+        <property name="helper" ref="MySqlHelper"/>
     </bean>
 
     <!-- Service beans -->
     <bean id="ProductServiceImpl" class="com.andersen.spring.impl.ProductServiceImpl">
         <!--<constructor-arg ref="MySqlConnection"/>-->
         <!--<property name="connection" ref="MySqlConnection"/>-->
+        <property name="productDAO" ref="productDAOImpl"/>
     </bean>
 
     <bean id="UserServiceImpl" class="com.andersen.spring.impl.UserServiceImpl">
         <!-- <constructor-arg ref="MySqlConnection"/>-->
         <!--<property name="connection" ref="MySqlConnection"/>-->
+        <property name="userDAO" ref="userDAOImpl"/>
     </bean>
 
     <!-- Storage bean -->

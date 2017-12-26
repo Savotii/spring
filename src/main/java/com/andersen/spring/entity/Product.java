@@ -11,6 +11,7 @@ public class Product {
     private long userId;
 
     public Product() {
+
     }
 
     public Product(String title, String description, double price, long userId) {

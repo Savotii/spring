@@ -12,8 +12,7 @@ public class UserServiceImpl implements UserService {
 
     private UserDAOImpl userDAO;
 
-    public UserServiceImpl(){//(Connection connection) {
-        this.userDAO = new UserDAOImpl();
+    public UserServiceImpl(){
     }
 
     public User create(User user) {
@@ -40,4 +39,7 @@ public class UserServiceImpl implements UserService {
         return userDAO.delete(id);
     }
 
+    public void setUserDAO(UserDAOImpl userDAO) {
+        this.userDAO = userDAO;
+    }
 }

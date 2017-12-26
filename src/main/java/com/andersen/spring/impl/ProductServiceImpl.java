@@ -10,10 +10,9 @@ import java.util.List;
 
 public class ProductServiceImpl implements ProductService {
 
-    private ProductDAOImpl productDAO;
+     private ProductDAOImpl productDAO;
 
-    public ProductServiceImpl() {//Connection connection) {
-        this.productDAO = new ProductDAOImpl();
+    public ProductServiceImpl() {
     }
 
     public Product create(Product product) {
@@ -44,4 +43,9 @@ public class ProductServiceImpl implements ProductService {
     public List<Product> getAll() {
         return productDAO.getAll();
     }
+
+    public void setProductDAO(ProductDAOImpl productDAO) {
+        this.productDAO = productDAO;
+    }
+
 }

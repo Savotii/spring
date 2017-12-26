@@ -14,7 +14,7 @@ import java.util.Map;
 
 public class MarketStorage {
 
-    private Map<Product, Integer> products = new LinkedHashMap<Product, Integer>();
+    private List<Product> products = new LinkedList<Product>();
 
     private final String FILEPATH = "products.txt";
 
@@ -40,7 +40,7 @@ public class MarketStorage {
 
             for (String line : lines) {
               Product product = gson.fromJson(line, Product.class);
-              products.put(product, 10);
+              products.add(product);
             }
         }
 
@@ -54,7 +54,7 @@ public class MarketStorage {
     {
         Product p = product;
 
-        products.put(product, 15);
+        products.add(product);
 
         return p;
     }
