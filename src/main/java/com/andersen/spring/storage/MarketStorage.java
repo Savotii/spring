@@ -2,6 +2,7 @@ package com.andersen.spring.storage;
 
 import com.andersen.spring.entity.Product;
 import com.google.gson.Gson;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.io.*;
 import java.nio.file.Files;

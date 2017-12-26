@@ -2,12 +2,15 @@ package com.andersen.spring.dao;
 
 import com.andersen.spring.jdbc.MySqlHelper;
 import com.andersen.spring.storage.MarketStorage;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.sql.Connection;
 
 public abstract class AbstractDAO {
 
     private static long id;
+
+    @Autowired
     protected MarketStorage marketStorage;
 
     protected Connection connection;
