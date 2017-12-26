@@ -10,25 +10,25 @@
     <!-- DAO beans (just an example)-->
     <bean id="userDAOImpl" class="com.andersen.spring.impl.UserDAOImpl">
         <!--<constructor-arg ref="MySqlConnection"/>-->
-        <property name="connection" ref="MySqlConnection"/>
+        <!--<property name="connection" ref="MySqlConnection"/>-->
         <property name="storage" ref="MarketStorage"/>
     </bean>
 
     <bean id="productDAOImpl" class="com.andersen.spring.impl.ProductDAOImpl">
         <!--<constructor-arg ref="MySqlConnection"/>-->
-        <property name="connection" ref="MySqlConnection"/>
+        <!--<property name="connection" ref="MySqlConnection"/>-->
         <property name="storage" ref="MarketStorage"/>
     </bean>
 
     <!-- Service beans -->
     <bean id="ProductServiceImpl" class="com.andersen.spring.impl.ProductServiceImpl">
         <!--<constructor-arg ref="MySqlConnection"/>-->
-        <property name="connection" ref="MySqlConnection"/>
+        <!--<property name="connection" ref="MySqlConnection"/>-->
     </bean>
 
     <bean id="UserServiceImpl" class="com.andersen.spring.impl.UserServiceImpl">
         <!-- <constructor-arg ref="MySqlConnection"/>-->
-        <property name="connection" ref="MySqlConnection"/>
+        <!--<property name="connection" ref="MySqlConnection"/>-->
     </bean>
 
     <!-- Storage bean -->

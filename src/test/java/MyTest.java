@@ -12,6 +12,7 @@ import com.andersen.spring.impl.ProductServiceImpl;
 import com.andersen.spring.impl.UserServiceImpl;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 
@@ -19,31 +20,21 @@ import org.mockito.runners.MockitoJUnitRunner;
 public class MyTest {
 
     @Mock
-    ProductService productServiceImpl;
-
-    @Mock
-    UserService userServiceImpl;
-
-    @Mock
     Product product;
 
-    @Mock
-    DAO productDAO;
+    @InjectMocks
+    ProductDAOImpl productDAO;
 
     @Test
     public void TestServices() {
-
-        UserService userServiceImpl = mock(UserServiceImpl.class);
-        ProductService productServiceImpl = mock(ProductServiceImpl.class);
 
         Product product = mock(Product.class);
 
         productDAO = mock(ProductDAOImpl.class);
 
-        Product pr = new Product("title", "description", 10D, 1);
-        when( productDAO.createdToMock(pr)).thenReturn(product);
+        when(productDAO.createdToMock(product)).thenReturn(product);
 
-        Product p = (Product)productDAO.createdToMock(pr);
+        Product p = (Product)productDAO.createdToMock(product);
 
         assertEquals(p, product);
 

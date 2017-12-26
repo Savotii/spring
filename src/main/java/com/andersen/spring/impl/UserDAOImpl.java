@@ -3,14 +3,13 @@ package com.andersen.spring.impl;
 import com.andersen.spring.dao.UserDAO;
 import com.andersen.spring.entity.User;
 import com.andersen.spring.dao.AbstractDAO;
+import com.andersen.spring.jdbc.MySqlHelper;
 
 import java.sql.*;
 import java.util.LinkedList;
 import java.util.List;
 
 public class UserDAOImpl extends AbstractDAO implements UserDAO {
-
-     private Connection connection;
 
     private final String GET_BY_NAME_QUERY = "SELECT * FROM users WHERE name LIKE ?";
     private final String GET_BY_Email_QUERY = "SELECT * FROM users WHERE email = ?";
@@ -23,12 +22,7 @@ public class UserDAOImpl extends AbstractDAO implements UserDAO {
     private final String UPDATE_USER = "UPDATE products SET name = ?, email = ?, phoneNumber =? WHERE id = ?";
 
 
-    public UserDAOImpl(){//(Connection connection) {
-        //this.connection = connection;
-    }
-
-    public void setConnection(Connection connection) {
-        this.connection = connection;
+    public UserDAOImpl(){
     }
 
     public User getUserByEmail(String email) {

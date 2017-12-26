@@ -11,9 +11,6 @@ import java.util.List;
 
 public class ProductDAOImpl extends AbstractDAO implements ProductDAO {
 
-    private Connection connection;
-    private MarketStorage marketStorage;
-
     private final String GET_BY_USERID_QUERY = "SELECT * FROM products WHERE userId = ?";
     private final String GET_BY_TITLE_QUERY = "SELECT * FROM products WHERE title LIKE ?";
     private final String GET_BY_ID_QUERY = "SELECT * FROM products WHERE id = ?";
@@ -23,12 +20,7 @@ public class ProductDAOImpl extends AbstractDAO implements ProductDAO {
     private final String INSERT_INTO_QUERY = "INSERT INTO products(title, description, price, userId) VALUES(?, ?, ?, ?)";
     private final String UPDATE_PRODUCT = "UPDATE products SET title = ?, description = ?, price = ?, userId =? WHERE id = ?";
 
-    public ProductDAOImpl(){//(Connection connection) {
-        //this.connection = connection;
-    }
-
-    public void setConnection(Connection connection) {
-        this.connection = connection;
+    public ProductDAOImpl(){
     }
 
     public List<Product> getProductsByTitle(String title) {
