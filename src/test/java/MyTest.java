@@ -41,10 +41,11 @@ public class MyTest {
         productDAO = mock(ProductDAOImpl.class);
 
         Product pr = new Product("title", "description", 10D, 1);
-        productDAO.created(pr);
-        when( productDAO.created(pr)).thenReturn(product);
+        when( productDAO.createdToMock(pr)).thenReturn(product);
 
-        assertEquals(productServiceImpl.create(product), product);
+        Product p = (Product)productDAO.createdToMock(pr);
+
+        assertEquals(p, product);
 
     }
 

@@ -8,6 +8,8 @@ public interface DAO<T> {
 
     T update(T item);
 
+    T createdToMock(T item);
+
     boolean delete(long id);
 
 }

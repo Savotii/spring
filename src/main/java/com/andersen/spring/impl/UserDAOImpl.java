@@ -103,6 +103,34 @@ public class UserDAOImpl extends AbstractDAO implements UserDAO {
         return user;
     }
 
+    public Object createdToMock(Object item) {
+
+        User user = (User) item;
+
+        try {
+            PreparedStatement statement = connection.prepareStatement(INSERT_INTO_QUERY);
+
+            statement.setString(1, user.getName());
+            statement.setString(2, user.getEmail());
+            statement.setString(3, user.getPhoneNumber());
+
+            int affectedRows = statement.executeUpdate();
+            if (affectedRows == 0) {
+                throw new SQLException("Не удалось записать пользователя в базу");
+            }
+
+            ResultSet generatedSet = statement.getGeneratedKeys();
+            if (generatedSet.next()) {
+                user.setId(generatedSet.getLong(1));
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return user;
+    }
+
     public Object getById(long id) {
 
         User user = null;
