@@ -15,14 +15,12 @@
     <bean id="userDAOImpl" class="com.andersen.spring.impl.UserDAOImpl">
         <!--<constructor-arg ref="MySqlConnection"/>-->
         <!--<property name="connection" ref="MySqlConnection"/>-->
-        <property name="storage" ref="MarketStorage"/>
         <property name="helper" ref="MySqlHelper"/>
     </bean>
 
     <bean id="productDAOImpl" class="com.andersen.spring.impl.ProductDAOImpl">
         <!--<constructor-arg ref="MySqlConnection"/>-->
         <!--<property name="connection" ref="MySqlConnection"/>-->
-        <property name="storage" ref="MarketStorage"/>
         <property name="helper" ref="MySqlHelper"/>
     </bean>
 
@@ -44,10 +42,5 @@
         <constructor-arg ref="ProductServiceImpl"/>
         <constructor-arg ref="UserServiceImpl"/>
     </bean>
-
-    <bean id="MarketStorage" class="com.andersen.spring.storage.MarketStorage" init-method="init">
-
-    </bean>
-
 
 </beans>

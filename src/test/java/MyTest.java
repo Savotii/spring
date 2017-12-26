@@ -41,7 +41,7 @@ public class MyTest {
 
     @Test
     public void TestServices() {
-
+        //Проработать.
         when( productServiceImpl.create(product)).thenReturn(product);
         when(userServiceImpl.create(user)).thenReturn(user);
     }

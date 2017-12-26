@@ -1,15 +1,15 @@
 package com.andersen.spring.impl;
 
 import com.andersen.spring.dao.UserDAO;
+import com.andersen.spring.entity.Product;
 import com.andersen.spring.entity.User;
-import com.andersen.spring.dao.AbstractDAO;
 import com.andersen.spring.jdbc.MySqlHelper;
 
 import java.sql.*;
 import java.util.LinkedList;
 import java.util.List;
 
-public class UserDAOImpl extends AbstractDAO {
+public class UserDAOImpl implements UserDAO {
 
     private final String GET_BY_NAME_QUERY = "SELECT * FROM users WHERE name LIKE ?";
     private final String GET_BY_Email_QUERY = "SELECT * FROM users WHERE email = ?";
@@ -49,9 +49,13 @@ public class UserDAOImpl extends AbstractDAO {
 
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
-
-        helper.closeConnection();
 
         return user;
     }
@@ -76,21 +80,25 @@ public class UserDAOImpl extends AbstractDAO {
 
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
-
-        helper.closeConnection();
 
         return users;
     }
 
-    public Object created(Object item) {
+    public User created(User item) {
 
         Connection connection = helper.createConnection();
 
         User user = (User) item;
 
         try {
-            PreparedStatement statement = connection.prepareStatement(INSERT_INTO_QUERY);
+            PreparedStatement statement = connection.prepareStatement(INSERT_INTO_QUERY, Statement.RETURN_GENERATED_KEYS);
 
             statement.setString(1, user.getName());
             statement.setString(2, user.getEmail());
@@ -119,7 +127,7 @@ public class UserDAOImpl extends AbstractDAO {
         return user;
     }
 
-    public Object getById(long id) {
+    public User getById(long id) {
 
         Connection connection = helper.createConnection();
 
@@ -149,7 +157,7 @@ public class UserDAOImpl extends AbstractDAO {
         return user;
     }
 
-    public Object update(Object item) {
+    public User update(User item) {
 
         Connection connection = helper.createConnection();
 
@@ -203,5 +211,35 @@ public class UserDAOImpl extends AbstractDAO {
         }
 
         return affectedAction;
+    }
+
+    public List<User> getAll() {
+
+        Connection connection = helper.createConnection();
+
+        List<User> users = new LinkedList<User>();
+
+        try {
+            PreparedStatement statement = connection.prepareStatement(GET_ALL);
+
+            ResultSet resultSet = statement.executeQuery();
+
+            while (resultSet.next()) {
+                User user = new User(resultSet.getString("name"), resultSet.getString("email"), resultSet.getString("phoneNumber"));
+                user.setId(resultSet.getLong("id"));
+                users.add(user);
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+
+        return users;
     }
 }

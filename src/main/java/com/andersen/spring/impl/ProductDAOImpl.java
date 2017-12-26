@@ -2,14 +2,13 @@ package com.andersen.spring.impl;
 
 import com.andersen.spring.dao.ProductDAO;
 import com.andersen.spring.entity.Product;
-import com.andersen.spring.dao.AbstractDAO;
 import com.andersen.spring.jdbc.MySqlHelper;
 
 import java.sql.*;
 import java.util.LinkedList;
 import java.util.List;
 
-public class ProductDAOImpl extends AbstractDAO {
+public class ProductDAOImpl implements ProductDAO {
 
     private final String GET_BY_USERID_QUERY = "SELECT * FROM products WHERE userId = ?";
     private final String GET_BY_TITLE_QUERY = "SELECT * FROM products WHERE title LIKE ?";
@@ -95,7 +94,7 @@ public class ProductDAOImpl extends AbstractDAO {
 
     }
 
-    public Object created(Object item) {
+    public Product created(Product item) {
 
         Connection connection = helper.createConnection();
 
@@ -105,7 +104,7 @@ public class ProductDAOImpl extends AbstractDAO {
 
         PreparedStatement statement = null;
         try {
-            statement = connection.prepareStatement(INSERT_INTO_QUERY);
+            statement = connection.prepareStatement(INSERT_INTO_QUERY, Statement.RETURN_GENERATED_KEYS);
             statement.setString(1, product.getTitle());
             statement.setString(2, product.getDescription());
             statement.setDouble(3, product.getPrice());
@@ -137,7 +136,7 @@ public class ProductDAOImpl extends AbstractDAO {
         return pr;
     }
 
-    public Object getById(long id) {
+    public Product getById(long id) {
 
         Connection connection = helper.createConnection();
 
@@ -148,9 +147,11 @@ public class ProductDAOImpl extends AbstractDAO {
             statement.setLong(1, id);
             ResultSet resultSet = statement.executeQuery();
 
-            product = new Product(resultSet.getString("title"), resultSet.getString("description"),
-                    resultSet.getDouble("price"), resultSet.getLong("userId"));
-            product.setId(id);
+            if (resultSet.next()) {
+                product = new Product(resultSet.getString("title"), resultSet.getString("description"),
+                        resultSet.getDouble("price"), resultSet.getLong("userId"));
+                product.setId(id);
+            }
 
         } catch (SQLException e) {
             e.printStackTrace();
@@ -165,7 +166,7 @@ public class ProductDAOImpl extends AbstractDAO {
         return product;
     }
 
-    public Object update(Object item) {
+    public Product update(Product item) {
 
         Connection connection = helper.createConnection();
 
