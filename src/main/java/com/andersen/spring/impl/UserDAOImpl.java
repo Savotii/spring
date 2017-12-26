@@ -108,9 +108,13 @@ public class UserDAOImpl extends AbstractDAO {
 
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
-
-        helper.closeConnection();
 
         return user;
     }
@@ -134,9 +138,13 @@ public class UserDAOImpl extends AbstractDAO {
 
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
-
-        helper.closeConnection();
 
         return user;
     }
@@ -161,9 +169,13 @@ public class UserDAOImpl extends AbstractDAO {
 
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
-
-        helper.closeConnection();
 
         return (User) getById(user.getId());
     }
@@ -182,9 +194,13 @@ public class UserDAOImpl extends AbstractDAO {
 
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
-
-        helper.closeConnection();
 
         return affectedAction;
     }

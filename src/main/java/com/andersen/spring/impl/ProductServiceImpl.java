@@ -1,16 +1,15 @@
 package com.andersen.spring.impl;
 
 import com.andersen.spring.controllers.ProductService;
+import com.andersen.spring.dao.ProductDAO;
 import com.andersen.spring.entity.Product;
 import com.andersen.spring.impl.ProductDAOImpl;
-
-import java.sql.Connection;
-import java.sql.SQLException;
+import com.andersen.spring.dao.DAO;
 import java.util.List;
 
 public class ProductServiceImpl implements ProductService {
 
-     private ProductDAOImpl productDAO;
+    private ProductDAO productDAO;
 
     public ProductServiceImpl() {
     }
@@ -44,7 +43,7 @@ public class ProductServiceImpl implements ProductService {
         return productDAO.getAll();
     }
 
-    public void setProductDAO(ProductDAOImpl productDAO) {
+    public void setProductDAO(ProductDAO productDAO) {
         this.productDAO = productDAO;
     }
 

@@ -1,16 +1,14 @@
 package com.andersen.spring.impl;
 
 import com.andersen.spring.controllers.UserService;
+import com.andersen.spring.dao.UserDAO;
 import com.andersen.spring.entity.User;
-import com.andersen.spring.impl.UserDAOImpl;
 
-import java.sql.Connection;
-import java.sql.SQLException;
 import java.util.List;
 
 public class UserServiceImpl implements UserService {
 
-    private UserDAOImpl userDAO;
+    private UserDAO userDAO;
 
     public UserServiceImpl(){
     }
@@ -39,7 +37,7 @@ public class UserServiceImpl implements UserService {
         return userDAO.delete(id);
     }
 
-    public void setUserDAO(UserDAOImpl userDAO) {
+    public void setUserDAO(UserDAO userDAO) {
         this.userDAO = userDAO;
     }
 }

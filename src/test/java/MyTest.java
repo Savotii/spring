@@ -13,9 +13,12 @@ import com.andersen.spring.impl.ProductServiceImpl;
 import com.andersen.spring.impl.UserDAOImpl;
 import com.andersen.spring.impl.UserServiceImpl;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.mockito.runners.MockitoJUnitRunner;
 
+@RunWith(MockitoJUnitRunner.class)
 public class MyTest {
 
     @Mock
@@ -39,13 +42,7 @@ public class MyTest {
     @Test
     public void TestServices() {
 
-        UserService userServiceImpl = mock(UserServiceImpl.class);
-        ProductService productServiceImpl = mock(ProductServiceImpl.class);
-
-        productDAO = mock(ProductDAOImpl.class);
         when( productServiceImpl.create(product)).thenReturn(product);
-
-        userDAO = mock(UserDAOImpl.class);
         when(userServiceImpl.create(user)).thenReturn(user);
     }
 

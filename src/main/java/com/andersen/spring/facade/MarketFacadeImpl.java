@@ -24,17 +24,15 @@ public class MarketFacadeImpl implements MarketFacade {
     }
 
     public User createUser(User user) {
-
         return userServiceImpl.create(user);
     }
 
     public User updateUser(User user) {
-        return null;
+        return userServiceImpl.update(user);
     }
 
     public User getUserById(long id) {
         return userServiceImpl.getById(id);
-
     }
 
     public User getUserByEmail(String email) {
@@ -46,12 +44,7 @@ public class MarketFacadeImpl implements MarketFacade {
     }
 
     public boolean deleteUser(long id) {
-
-        boolean action = false;
-
-        action = userServiceImpl.delete(id);
-
-        return action;
+        return userServiceImpl.delete(id);
     }
 
     public Product createProduct(Product product) {

@@ -4,7 +4,7 @@ import com.andersen.spring.entity.User;
 
 import java.util.List;
 
-public interface UserDAO extends DAO {
+public interface UserDAO extends DAO<User> {
 
     User getUserByEmail(String email);
 

@@ -50,9 +50,13 @@ public class ProductDAOImpl extends AbstractDAO {
 
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
-
-        helper.closeConnection();
 
         return products;
 
@@ -79,9 +83,13 @@ public class ProductDAOImpl extends AbstractDAO {
 
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
-
-        helper.closeConnection();
 
         return products;
 
@@ -118,9 +126,13 @@ public class ProductDAOImpl extends AbstractDAO {
 
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
-
-        helper.closeConnection();
 
         return pr;
     }
@@ -142,9 +154,13 @@ public class ProductDAOImpl extends AbstractDAO {
 
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
-
-        helper.closeConnection();
 
         return product;
     }
@@ -175,9 +191,13 @@ public class ProductDAOImpl extends AbstractDAO {
 
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
-
-        helper.closeConnection();
 
         return pr;
     }
@@ -200,9 +220,13 @@ public class ProductDAOImpl extends AbstractDAO {
                 isOk = true;
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
-
-        helper.closeConnection();
 
         return isOk;
     }
@@ -226,9 +250,13 @@ public class ProductDAOImpl extends AbstractDAO {
 
         } catch (SQLException e) {
             e.printStackTrace();
+        } finally {
+            try {
+                connection.close();
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
         }
-
-        helper.closeConnection();
 
         return products;
 

@@ -1,5 +1,7 @@
 package com.andersen.spring.dao;
 
+import java.util.List;
+
 public interface DAO<T> {
 
     T created(T item);
@@ -11,5 +13,7 @@ public interface DAO<T> {
     T createdToMock(T item);
 
     boolean delete(long id);
+
+    List<T> getAll();
 
 }
