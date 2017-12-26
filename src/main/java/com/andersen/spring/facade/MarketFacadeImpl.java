@@ -1,5 +1,6 @@
 package com.andersen.spring.facade;
 
+import com.andersen.spring.controllers.ProductService;
 import com.andersen.spring.impl.ProductServiceImpl;
 import com.andersen.spring.impl.UserServiceImpl;
 import com.andersen.spring.entity.Product;
@@ -17,12 +18,11 @@ public class MarketFacadeImpl implements MarketFacade {
     private UserServiceImpl userServiceImpl;
     private Connection connection;
 
-    public MarketFacadeImpl(Connection connection) {
+    public MarketFacadeImpl(ProductServiceImpl productServiceImpl, UserServiceImpl userServiceImpl) {
 
-        this.connection = connection;
-        this.productServiceImpl = new ProductServiceImpl(connection);
-        this.userServiceImpl = new UserServiceImpl(connection);
         this.connection = MySqlHelper.createConnection();
+        this.productServiceImpl = productServiceImpl;//new ProductServiceImpl();
+        this.userServiceImpl = userServiceImpl;//new UserServiceImpl();
 
     }
 

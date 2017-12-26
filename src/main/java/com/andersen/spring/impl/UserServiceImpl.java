@@ -13,9 +13,13 @@ public class UserServiceImpl implements UserService {
     private UserDAOImpl userDAO;
     private Connection connection;
 
-    public UserServiceImpl(Connection connection) {
+    public UserServiceImpl(){//(Connection connection) {
+       // this.connection = connection;
+        this.userDAO = new UserDAOImpl();
+    }
+
+    public void setConnection(Connection connection) {
         this.connection = connection;
-        this.userDAO = new UserDAOImpl(connection);
     }
 
     public User create(User user) {

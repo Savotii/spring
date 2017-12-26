@@ -10,7 +10,7 @@ import java.util.List;
 
 public class UserDAOImpl extends AbstractDAO implements UserDAO {
 
-    private Connection connection;
+     private Connection connection;
 
     private final String GET_BY_NAME_QUERY = "SELECT * FROM users WHERE name LIKE ?";
     private final String GET_BY_Email_QUERY = "SELECT * FROM users WHERE email = ?";
@@ -23,7 +23,11 @@ public class UserDAOImpl extends AbstractDAO implements UserDAO {
     private final String UPDATE_USER = "UPDATE products SET name = ?, email = ?, phoneNumber =? WHERE id = ?";
 
 
-    public UserDAOImpl(Connection connection) {
+    public UserDAOImpl(){//(Connection connection) {
+        //this.connection = connection;
+    }
+
+    public void setConnection(Connection connection) {
         this.connection = connection;
     }
 

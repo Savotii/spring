@@ -4,33 +4,37 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
 	   					   http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-
-    <bean id="App" class="App"/>
-
     <!-- MySqlHelper beans -->
     <bean id="MySqlConnection" class="com.andersen.spring.jdbc.MySqlHelper" factory-method="createConnection"/>
 
     <!-- DAO beans (just an example)-->
     <bean id="userDAOImpl" class="com.andersen.spring.impl.UserDAOImpl">
-        <constructor-arg ref="MySqlConnection"/>
+        <!--<constructor-arg ref="MySqlConnection"/>-->
+        <property name="connection" ref="MySqlConnection"/>
+        <property name="storage" ref="MarketStorage"/>
     </bean>
 
-    <bean id = "productDAOImpl" class="com.andersen.spring.impl.ProductDAOImpl">
-        <constructor-arg ref="MySqlConnection"/>
+    <bean id="productDAOImpl" class="com.andersen.spring.impl.ProductDAOImpl">
+        <!--<constructor-arg ref="MySqlConnection"/>-->
+        <property name="connection" ref="MySqlConnection"/>
+        <property name="storage" ref="MarketStorage"/>
     </bean>
 
     <!-- Service beans -->
     <bean id="ProductServiceImpl" class="com.andersen.spring.impl.ProductServiceImpl">
-        <constructor-arg ref="MySqlConnection"/>
+        <!--<constructor-arg ref="MySqlConnection"/>-->
+        <property name="connection" ref="MySqlConnection"/>
     </bean>
 
     <bean id="UserServiceImpl" class="com.andersen.spring.impl.UserServiceImpl">
-        <constructor-arg ref="MySqlConnection"/>
+        <!-- <constructor-arg ref="MySqlConnection"/>-->
+        <property name="connection" ref="MySqlConnection"/>
     </bean>
 
     <!-- Storage bean -->
     <bean id="MarketFacadeImpl" class="com.andersen.spring.facade.MarketFacadeImpl">
-        <constructor-arg ref="MySqlConnection"/>
+        <constructor-arg ref="ProductServiceImpl"/>
+        <constructor-arg ref="UserServiceImpl"/>
     </bean>
 
     <bean id="MarketStorage" class="com.andersen.spring.storage.MarketStorage" init-method="init">

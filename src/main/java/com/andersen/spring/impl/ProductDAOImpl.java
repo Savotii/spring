@@ -21,7 +21,11 @@ public class ProductDAOImpl extends AbstractDAO implements ProductDAO {
     private final String INSERT_INTO_QUERY = "INSERT INTO products(title, description, price, userId) VALUES(?, ?, ?, ?)";
     private final String UPDATE_PRODUCT = "UPDATE products SET title = ?, description = ?, price = ?, userId =? WHERE id = ?";
 
-    public ProductDAOImpl(Connection connection) {
+    public ProductDAOImpl(){//(Connection connection) {
+        //this.connection = connection;
+    }
+
+    public void setConnection(Connection connection) {
         this.connection = connection;
     }
 

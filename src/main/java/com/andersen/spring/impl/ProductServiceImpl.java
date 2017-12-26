@@ -13,9 +13,14 @@ public class ProductServiceImpl implements ProductService {
     private ProductDAOImpl productDAO;
     private Connection connection;
 
-    public ProductServiceImpl(Connection connection) {
+    public ProductServiceImpl() {//Connection connection) {
+        // this.connection = connection;
+        this.productDAO = new ProductDAOImpl();
+    }
+
+    public void setConnection(Connection connection)
+    {
         this.connection = connection;
-        this.productDAO = new ProductDAOImpl(connection);
     }
 
     public Product create(Product product) {
