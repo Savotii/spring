@@ -4,7 +4,6 @@ import com.andersen.spring.dao.ProductDAO;
 import com.andersen.spring.entity.Product;
 import com.andersen.spring.dao.AbstractDAO;
 import com.andersen.spring.jdbc.MySqlHelper;
-import com.andersen.spring.storage.MarketStorage;
 
 import java.sql.*;
 import java.util.LinkedList;
