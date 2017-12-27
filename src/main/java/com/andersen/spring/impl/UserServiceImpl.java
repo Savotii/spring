@@ -40,4 +40,8 @@ public class UserServiceImpl implements UserService {
     public void setUserDAO(UserDAO userDAO) {
         this.userDAO = userDAO;
     }
+
+    public User getUser(){
+        return new User();
+    }
 }

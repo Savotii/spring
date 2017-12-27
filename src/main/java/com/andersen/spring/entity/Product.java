@@ -87,4 +87,5 @@ public class Product {
         result = 31 * result + (int) (userId ^ (userId >>> 32));
         return result;
     }
+
 }

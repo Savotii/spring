@@ -47,4 +47,8 @@ public class ProductServiceImpl implements ProductService {
         this.productDAO = productDAO;
     }
 
+    public Product getProduct()
+    {
+        return new Product();
+    }
 }
