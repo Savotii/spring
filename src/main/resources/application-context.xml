@@ -4,9 +4,11 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
 	   					   http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="Product" class="com.andersen.spring.entity.Product"/>
+    <bean id="Product" class="com.andersen.spring.entity.Product" scope="prototype">
+          <property name="price" value="10"/>
+    </bean>
 
-    <bean id="User" class="com.andersen.spring.entity.User" />
+    <bean id="User" class="com.andersen.spring.entity.User" scope="prototype"/>
 
     <!-- MySqlHelper beans -->
     <bean id="MySqlHelper" class="com.andersen.spring.jdbc.MySqlHelper" init-method="init"/>

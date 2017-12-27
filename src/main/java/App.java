@@ -12,7 +12,7 @@ public class App {
         Product p = (Product)ctx.getBean("Product");
         p.setTitle("Тест продукт");
         p.setDescription("Описание продукта тратататататата");
-        p.setPrice(10);
+        //p.setPrice(10);
         p.setUserId(1);
 
         Product newProduct = productService.create(p);
