@@ -1,6 +1,6 @@
-import com.andersen.spring.controllers.ProductService;
-import com.andersen.spring.dao.ProductDAO;
+
 import com.andersen.spring.entity.Product;
+import com.andersen.spring.impl.ProductDAOImpl;
 import com.andersen.spring.impl.ProductServiceImpl;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -18,7 +18,7 @@ public class ProductServiceTest {
     ProductServiceImpl productService;
 
     @Mock
-    ProductDAO productDAO;
+    ProductDAOImpl productDAO;
 
     @Mock
     Product product;
@@ -26,17 +26,21 @@ public class ProductServiceTest {
     @Test
     public void testService()
     {
-        when(productService.create(product)).thenReturn(new Product("title", "description", 10.5D, 1));
-        assertEquals(new Product("title", "description", 10.5D, 1), productService.create(product));
 
-        when(productService.update(product)).thenReturn(new Product("title", "description", 10.6D, 1));
-        assertEquals(new Product("title", "description", 10.6D, 1), productService.update(product));
+        when(productDAO.create(product)).thenReturn(new Product("title", "description", 10, 1));
+        Product result = productService.create(product);
 
-        when(productService.getById(1)).thenReturn(new Product("title", "description", 10.6D, 1));
-        assertEquals(new Product("title", "description", 10.6D, 1), productService.getById(1));
+        when(product.getTitle()).thenReturn("title");
+        when(product.getDescription()).thenReturn("description");
+        when(product.getPrice()).thenReturn(10d);
+        when(product.getUserId()).thenReturn(1l);
+        when(product.getId()).thenReturn(1l);
 
-        when(productService.delete(1)).thenReturn(true);
-        assertEquals(true, productService.delete(1));
+        assertEquals(result.getTitle(), product.getTitle());
+        assertEquals(result.getDescription(), product.getDescription());
+        assertEquals(result.getPrice(), product.getPrice() , 0);
+        assertEquals(result.getUserId() , product.getUserId());
+
     }
 
 }

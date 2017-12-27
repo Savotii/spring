@@ -4,7 +4,7 @@ import java.util.List;
 
 public interface DAO<T> {
 
-    T created(T item);
+    T create(T item);
 
     T getById(long id);
 

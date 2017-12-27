@@ -91,7 +91,7 @@ public class UserDAOImpl implements UserDAO {
         return users;
     }
 
-    public User created(User item) {
+    public User create(User item) {
 
         Connection connection = helper.createConnection();
 

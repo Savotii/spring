@@ -28,18 +28,6 @@ public class UserServiceTest {
     public void testService()
     {
 
-        when(userService.create(user)).thenReturn(new User("test", "email.test", "+380000000"));
-        assertEquals(new User("test", "email.test", "+380000000"), userService.create(user));
-
-        when(userService.update(user)).thenReturn(new User("test", "email.test", "+3811111111"));
-        assertEquals(new User("test", "email.test", "+3811111111"), userService.update(user));
-
-        when(userService.getById(1)).thenReturn(new User("test", "email.test", "+380000000"));
-        assertEquals(new User("test", "email.test", "+380000000"), userService.getById(1));
-
-        when(userService.delete(1)).thenReturn(true);
-        assertEquals(true, userService.delete(1));
-
 
     }
 }

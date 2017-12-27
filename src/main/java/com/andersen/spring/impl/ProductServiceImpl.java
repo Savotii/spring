@@ -3,8 +3,6 @@ package com.andersen.spring.impl;
 import com.andersen.spring.controllers.ProductService;
 import com.andersen.spring.dao.ProductDAO;
 import com.andersen.spring.entity.Product;
-import com.andersen.spring.impl.ProductDAOImpl;
-import com.andersen.spring.dao.DAO;
 import java.util.List;
 
 public class ProductServiceImpl implements ProductService {
@@ -15,7 +13,7 @@ public class ProductServiceImpl implements ProductService {
     }
 
     public Product create(Product product) {
-        Product pr = (Product) productDAO.created(product);
+        Product pr = (Product) productDAO.create(product);
         return pr;
     }
 

@@ -94,7 +94,7 @@ public class ProductDAOImpl implements ProductDAO {
 
     }
 
-    public Product created(Product item) {
+    public Product create(Product item) {
 
         Connection connection = helper.createConnection();
 
