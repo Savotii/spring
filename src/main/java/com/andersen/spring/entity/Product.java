@@ -60,4 +60,31 @@ public class Product {
     public void setDescription(String description) {
         this.description = description;
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Product product = (Product) o;
+
+        if (id != product.id) return false;
+        if (Double.compare(product.price, price) != 0) return false;
+        if (userId != product.userId) return false;
+        if (title != null ? !title.equals(product.title) : product.title != null) return false;
+        return description != null ? description.equals(product.description) : product.description == null;
+    }
+
+    @Override
+    public int hashCode() {
+        int result;
+        long temp;
+        result = (int) (id ^ (id >>> 32));
+        result = 31 * result + (title != null ? title.hashCode() : 0);
+        result = 31 * result + (description != null ? description.hashCode() : 0);
+        temp = Double.doubleToLongBits(price);
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        result = 31 * result + (int) (userId ^ (userId >>> 32));
+        return result;
+    }
 }
