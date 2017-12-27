@@ -27,7 +27,16 @@ public class ProductServiceTest {
     public void testService()
     {
         when(productService.create(product)).thenReturn(new Product("title", "description", 10.5D, 1));
-        assertEquals(new Product("title", "description", 10.5D, 2), productService.create(product));
+        assertEquals(new Product("title", "description", 10.5D, 1), productService.create(product));
+
+        when(productService.update(product)).thenReturn(new Product("title", "description", 10.6D, 1));
+        assertEquals(new Product("title", "description", 10.6D, 1), productService.update(product));
+
+        when(productService.getById(1)).thenReturn(new Product("title", "description", 10.6D, 1));
+        assertEquals(new Product("title", "description", 10.6D, 1), productService.getById(1));
+
+        when(productService.delete(1)).thenReturn(true);
+        assertEquals(true, productService.delete(1));
     }
 
 }
