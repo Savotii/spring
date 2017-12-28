@@ -1,27 +1,27 @@
 package com.andersen.spring.facade;
 
+import com.andersen.spring.controllers.AccountService;
 import com.andersen.spring.controllers.ProductService;
 import com.andersen.spring.controllers.UserService;
 import com.andersen.spring.entity.UserAccount;
 import com.andersen.spring.impl.ProductServiceImpl;
+import com.andersen.spring.impl.UserAccountServiceImpl;
 import com.andersen.spring.impl.UserServiceImpl;
 import com.andersen.spring.entity.Product;
 import com.andersen.spring.entity.User;
-import com.andersen.spring.jdbc.MySqlHelper;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
 import java.util.List;
 
 public class MarketFacadeImpl implements MarketFacade {
 
     private ProductService productServiceImpl;
     private UserService userServiceImpl;
+    private AccountService userAccountImpl;
 
-    public MarketFacadeImpl(ProductServiceImpl productServiceImpl, UserServiceImpl userServiceImpl) {
+    public MarketFacadeImpl(ProductServiceImpl productServiceImpl, UserServiceImpl userServiceImpl, UserAccountServiceImpl userAccountImpl) {
         this.productServiceImpl = productServiceImpl;
         this.userServiceImpl = userServiceImpl;
+        this.userAccountImpl = userAccountImpl;
 
     }
 
@@ -75,11 +75,32 @@ public class MarketFacadeImpl implements MarketFacade {
 
     @Override
     public void replenishTheAccount(UserAccount account, Double amount) {
-        //TO DO
+        userAccountImpl.replenishTheAccount(account, amount);
     }
 
     @Override
     public void reduceTheAccount(UserAccount account, Double amount) {
-        //TO DO
+        userAccountImpl.reduceTheAccount(account, amount);
     }
+
+    @Override
+    public UserAccount create(UserAccount account) {
+        return userAccountImpl.create(account);
+    }
+
+    @Override
+    public UserAccount getById(long id) {
+        return userAccountImpl.getById(id);
+    }
+
+    @Override
+    public boolean deleteUserAccount(long id) {
+        return userAccountImpl.delete(id);
+    }
+
+    @Override
+    public List<UserAccount> getAll() {
+        return userAccountImpl.getAll();
+    }
+
 }

@@ -62,6 +62,8 @@ public class MySqlHelper {
             statement.addBatch("CREATE TABLE IF NOT EXISTS PRODUCTS (id INTEGER auto_increment PRIMARY KEY , title VARCHAR(50), description VARCHAR(200), price DOUBLE, userId INTEGER )");
             statement.addBatch("CREATE TABLE IF NOT EXISTS  USERS (id INTEGER auto_increment PRIMARY  KEY , name VARCHAR (50), email VARCHAR (50), phoneNumber VARCHAR(100))");
 
+            // Добавляем таблицу аккаунт
+            statement.addBatch("CREATE TABLE IF NOT EXISTS ACCOUNTS (id INTEGER  auto_increment PRIMARY  KEY, accountsNumber INTEGER NOT NULL, amount DOUBLE, ownerId INTEGER NOT NULL)");
             statement.executeBatch();
 
         } catch (SQLException e) {

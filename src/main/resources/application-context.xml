@@ -11,6 +11,8 @@
 
     <bean id="User" class="com.andersen.spring.entity.User" scope="prototype"/>
 
+    <bean id="UserAccount" class="com.andersen.spring.entity.UserAccount" scope="prototype"/>
+
     <!-- MySqlHelper beans -->
     <bean id="MySqlHelper" class="com.andersen.spring.jdbc.MySqlHelper" init-method="init"/>
 
@@ -21,6 +23,16 @@
 
     <bean id="productDAOImpl" class="com.andersen.spring.impl.ProductDAOImpl">
         <property name="helper" ref="MySqlHelper"/>
+    </bean>
+
+    <bean id="UserAccountDAOImpl" class="com.andersen.spring.impl.UserAccountDAOImpl">
+        <property name="userServiceImpl" ref="UserServiceImpl" />
+        <property name="helper" ref="MySqlHelper"/>
+    </bean>
+
+    <bean id="UserAccountServiceImpl" class="com.andersen.spring.impl.UserAccountServiceImpl">
+        <property name="userAccountDAO" ref="UserAccountDAOImpl" />
+        <lookup-method name="getUserAccount" bean="UserAccount"/>
     </bean>
 
     <!-- Service beans -->
@@ -38,6 +50,7 @@
     <bean id="MarketFacadeImpl" class="com.andersen.spring.facade.MarketFacadeImpl">
         <constructor-arg ref="ProductServiceImpl"/>
         <constructor-arg ref="UserServiceImpl"/>
+        <constructor-arg ref="UserAccountServiceImpl"/>
     </bean>
 
 </beans>

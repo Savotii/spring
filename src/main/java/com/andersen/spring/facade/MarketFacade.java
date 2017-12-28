@@ -116,7 +116,16 @@ public interface MarketFacade {
 	 */
 	boolean deleteProductById(long id);
 
+
 	void replenishTheAccount(UserAccount account, Double amount);
 
 	void reduceTheAccount(UserAccount account, Double amount);
+
+	UserAccount create(UserAccount account);
+
+	UserAccount getById(long id);
+
+	boolean deleteUserAccount(long id);
+
+	List<UserAccount> getAll();
 }
