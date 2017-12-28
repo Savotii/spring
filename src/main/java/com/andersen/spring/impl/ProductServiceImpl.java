@@ -13,7 +13,7 @@ public class ProductServiceImpl implements ProductService {
     }
 
     public Product create(Product product) {
-        Product pr = (Product) productDAO.create(product);
+        Product pr = productDAO.create(product);
         return pr;
     }
 

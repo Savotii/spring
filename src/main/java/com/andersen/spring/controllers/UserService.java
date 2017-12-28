@@ -14,6 +14,8 @@ public interface UserService {
 
     boolean delete(long id);
 
-   // List<User> getAll();
+    User getUserByEmail(String email);
+
+    List<User> getUsersByName(String name);
 
 }

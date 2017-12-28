@@ -1,6 +1,7 @@
 package com.andersen.spring.facade;
 
 import com.andersen.spring.controllers.ProductService;
+import com.andersen.spring.controllers.UserService;
 import com.andersen.spring.impl.ProductServiceImpl;
 import com.andersen.spring.impl.UserServiceImpl;
 import com.andersen.spring.entity.Product;
@@ -14,8 +15,8 @@ import java.util.List;
 
 public class MarketFacadeImpl implements MarketFacade {
 
-    private ProductServiceImpl productServiceImpl;
-    private UserServiceImpl userServiceImpl;
+    private ProductService productServiceImpl;
+    private UserService userServiceImpl;
 
     public MarketFacadeImpl(ProductServiceImpl productServiceImpl, UserServiceImpl userServiceImpl) {
         this.productServiceImpl = productServiceImpl;
