@@ -4,24 +4,33 @@ import com.andersen.spring.controllers.UserService;
 import com.andersen.spring.dao.UserAccountDAO;
 import com.andersen.spring.entity.User;
 import com.andersen.spring.entity.UserAccount;
+import com.andersen.spring.exceptions.InsufficientFunds;
 import com.andersen.spring.jdbc.MySqlHelper;
+import org.omg.CORBA.INTERNAL;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.RowMapper;
 
+import javax.sql.DataSource;
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
 public class UserAccountDAOImpl implements UserAccountDAO {
 
-    private final String GET_BY_ACCOUNTID_QUERY = "SELECT * FROM ACCOUNTS WHERE ownerId = ?";
+    private final String GET_BY_ACCOUNTID_QUERY = "SELECT * FROM ACCOUNTS WHERE id = ?";
     private final String GET_BY_ID_QUERY = "SELECT * FROM ACCOUNTS WHERE id = ?";
-    private final String GET_ALL = "SELECT * FROM ACCOUNTS";
+    private final String GET_ALL = "SELECT * FROM ACCOUNTS WHERE ownerId = ?";
     private final String DELETE_BY_ID_QUERY = "DELETE FROM ACCOUNTS WHERE id = ?";
-    private final String INSERT_INTO_QUERY = "INSERT INTO ACCOUNTS(accounsNumber, amount, ownerId) VALUES(?, ?, ?)";
+    private final String INSERT_INTO_QUERY = "INSERT INTO ACCOUNTS(accountsNumber, amount, ownerId) VALUES(?, ?, ?)";
     private final String UPDATE_ACCOUNT = "UPDATE ACCOUNTS SET accountsNumber = ?, amount = ?, ownerId = ? WHERE id = ?";
 
     private MySqlHelper helper;
 
     private UserService userServiceImpl;
+
+    private DataSource dataSource;
 
     public MySqlHelper getHelper() {
         return helper;
@@ -34,9 +43,25 @@ public class UserAccountDAOImpl implements UserAccountDAO {
     @Override
     public UserAccount create(UserAccount item) {
 
-        Connection connection = helper.createConnection();
-
         UserAccount ua = null;
+
+        JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
+
+        Object[] args = new Object[]{item.getAccountsNumber(), item.getAmount(), item.getUser().getId()};
+
+        int out = jdbcTemplate.update(INSERT_INTO_QUERY, args);
+        if (out != 0) {
+            System.out.println("UserAccount saved");
+        } else {
+            System.out.println("UserAccount not saved");
+        }
+
+        ua = getById(item.getId());
+
+        return ua;
+
+        /* На время теста спрячу
+        Connection connection = helper.createConnection();
 
         try {
             PreparedStatement statement = connection.prepareStatement(INSERT_INTO_QUERY, Statement.RETURN_GENERATED_KEYS);
@@ -67,15 +92,32 @@ public class UserAccountDAOImpl implements UserAccountDAO {
             }
         }
 
-        return ua;
+        return ua;*/
     }
 
     @Override
     public UserAccount getById(long id) {
 
-        Connection connection = helper.createConnection();
-
         UserAccount ua = null;
+
+        JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
+
+        Object[] args = new Object[]{id};
+
+        ua = jdbcTemplate.queryForObject(GET_BY_ACCOUNTID_QUERY, args, new RowMapper<UserAccount>() {
+            @Override
+            public UserAccount mapRow(ResultSet resultSet, int i) throws SQLException {
+                UserAccount userAccount1 = new UserAccount();
+                userAccount1.setAccountsNumber(resultSet.getInt("accountsNumber"));
+                userAccount1.setId(resultSet.getLong("id"));
+                userAccount1.setAmount(resultSet.getDouble("amount"));
+                userAccount1.setUser(userServiceImpl.getById(resultSet.getLong("ownerId")));
+                return userAccount1;
+            }
+        });
+
+        /* На время теста
+        Connection connection = helper.createConnection();
 
         try {
             PreparedStatement statement = connection.prepareStatement(GET_BY_ID_QUERY, Statement.RETURN_GENERATED_KEYS);
@@ -99,16 +141,31 @@ public class UserAccountDAOImpl implements UserAccountDAO {
                 e.printStackTrace();
             }
         }
-
+*/
         return ua;
     }
 
     @Override
     public UserAccount update(UserAccount item) {
 
-        Connection connection = helper.createConnection();
-
         UserAccount ua = null;
+
+        JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
+
+        Object[] args = new Object[]{item.getAccountsNumber(), item.getAmount(), item.getUser().getId(), item.getId()};
+
+        int out = jdbcTemplate.update(UPDATE_ACCOUNT, args);
+
+        if (out != 0) {
+            System.out.println(" Аккаунт обновлен.");
+        } else {
+            System.out.println(" Не удалось обновить аккаунт.");
+        }
+
+        return getById(item.getId());
+
+        /*
+        Connection connection = helper.createConnection();
 
         try {
             PreparedStatement statement = connection.prepareStatement(UPDATE_ACCOUNT);
@@ -133,15 +190,20 @@ public class UserAccountDAOImpl implements UserAccountDAO {
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-        }
+        }*/
 
-        return ua;
+        //return ua;
     }
 
     @Override
     public boolean delete(long id) {
 
-        Connection connection = helper.createConnection();
+        JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
+
+        return jdbcTemplate.update(DELETE_BY_ID_QUERY, id) != 0;
+
+
+      /*  Connection connection = helper.createConnection();
 
         int affectRows = 0;
 
@@ -165,7 +227,7 @@ public class UserAccountDAOImpl implements UserAccountDAO {
             }
         }
 
-        return isOk;
+        return isOk;*/
     }
 
     @Override
@@ -176,11 +238,27 @@ public class UserAccountDAOImpl implements UserAccountDAO {
     @Override
     public List<UserAccount> getAccounts(long id) {
 
-        Connection connection = helper.createConnection();
+        List<UserAccount> userAccountList = new ArrayList<UserAccount>();
+
+        JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
+
+        List<Map<String, Object>> uaRows = jdbcTemplate.queryForList(GET_ALL, id);
+
+        for (Map<String, Object> uaRow: uaRows) {
+
+            UserAccount userAccount = new UserAccount();
+            userAccount.setId(Long.parseLong(String.valueOf(uaRow.get("id"))));
+            userAccount.setAmount(Double.parseDouble(String.valueOf(uaRow.get("amount"))));
+            userAccount.setAccountsNumber(Integer.parseInt(String.valueOf(uaRow.get("accountsNumber"))));
+
+            userAccount.setUser(userServiceImpl.getById(Long.parseLong(String.valueOf(uaRow.get("ownerId")))));
+
+            userAccountList.add(userAccount);
+        }
+
+        /*Connection connection = helper.createConnection();
 
         UserAccount ua = null;
-
-        List<UserAccount> userAccountList = new LinkedList<>();
 
         try {
             PreparedStatement statement = connection.prepareStatement(GET_BY_ACCOUNTID_QUERY, Statement.RETURN_GENERATED_KEYS);
@@ -205,7 +283,7 @@ public class UserAccountDAOImpl implements UserAccountDAO {
                 e.printStackTrace();
             }
         }
-
+*/
         return userAccountList;
     }
 
@@ -216,4 +294,10 @@ public class UserAccountDAOImpl implements UserAccountDAO {
     public void setUserServiceImpl(UserService userServiceImpl) {
         this.userServiceImpl = userServiceImpl;
     }
+
+
+    public void setDataSource(DataSource dataSource) {
+        this.dataSource = dataSource;
+    }
+
 }

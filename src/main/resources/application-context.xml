@@ -28,6 +28,7 @@
     <bean id="UserAccountDAOImpl" class="com.andersen.spring.impl.UserAccountDAOImpl">
         <property name="userServiceImpl" ref="UserServiceImpl" />
         <property name="helper" ref="MySqlHelper"/>
+        <property name="dataSource" ref="dataSource"/>
     </bean>
 
     <bean id="UserAccountServiceImpl" class="com.andersen.spring.impl.UserAccountServiceImpl">
@@ -51,6 +52,13 @@
         <constructor-arg ref="ProductServiceImpl"/>
         <constructor-arg ref="UserServiceImpl"/>
         <constructor-arg ref="UserAccountServiceImpl"/>
+    </bean>
+
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver" />
+        <property name="url" value="jdbc:mysql://localhost:3306/Test" />
+        <property name="username" value="root" />
+        <property name="password" value="1111" />
     </bean>
 
 </beans>
