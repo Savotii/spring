@@ -62,8 +62,9 @@ public class ProductServiceTest {
 
         List<Product> resultList = productService.getProductsByTitle("title");
 
-        assertEquals(resultList.get(0).getTitle(), "titl");
-
+        assertEquals(resultList.get(0).getTitle(), "title");
+        assertEquals(resultList.get(1).getTitle(), "titles");
+        assertEquals(resultList.get(1).getTitle(), "titles1");
     }
 
 }
