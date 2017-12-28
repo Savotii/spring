@@ -213,7 +213,6 @@ public class UserAccountDAOImpl implements UserAccountDAO {
         return userServiceImpl;
     }
 
-
     public void setUserServiceImpl(UserService userServiceImpl) {
         this.userServiceImpl = userServiceImpl;
     }
