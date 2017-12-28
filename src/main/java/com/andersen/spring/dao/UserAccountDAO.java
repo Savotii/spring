@@ -6,5 +6,5 @@ import java.util.List;
 
 public interface UserAccountDAO extends DAO<UserAccount> {
 
-    List<UserAccount> getAccount(long id);
+    List<UserAccount> getAccounts(long id);
 }

@@ -174,7 +174,7 @@ public class UserAccountDAOImpl implements UserAccountDAO {
     }
 
     @Override
-    public List<UserAccount> getAccount(long id) {
+    public List<UserAccount> getAccounts(long id) {
 
         Connection connection = helper.createConnection();
 

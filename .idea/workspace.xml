@@ -2,18 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6ef6becb-44c8-4ff6-8943-191810be9e73" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/App.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/andersen/spring/controllers/AccountService.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/andersen/spring/dao/UserAccountDAO.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/andersen/spring/exceptions/InsufficientFunds.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/UserAccountDAOImpl.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/UserAccountServiceImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/andersen/spring/entity/UserAccount.java" afterPath="$PROJECT_DIR$/src/main/java/com/andersen/spring/entity/UserAccount.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/andersen/spring/facade/MarketFacade.java" afterPath="$PROJECT_DIR$/src/main/java/com/andersen/spring/facade/MarketFacade.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/andersen/spring/facade/MarketFacadeImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/andersen/spring/facade/MarketFacadeImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/andersen/spring/jdbc/MySqlHelper.java" afterPath="$PROJECT_DIR$/src/main/java/com/andersen/spring/jdbc/MySqlHelper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/application-context.xml" afterPath="$PROJECT_DIR$/src/main/resources/application-context.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/andersen/spring/dao/UserAccountDAO.java" afterPath="$PROJECT_DIR$/src/main/java/com/andersen/spring/dao/UserAccountDAO.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/UserAccountDAOImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/UserAccountDAOImpl.java" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path=".idea/" />
@@ -65,7 +56,7 @@
       <file leaf-file-name="AccountService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/controllers/AccountService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
+            <state relative-caret-position="204">
               <caret line="12" column="61" lean-forward="false" selection-start-line="12" selection-start-column="61" selection-end-line="12" selection-end-column="61" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -103,11 +94,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserAccountDAOImpl.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="UserAccountDAOImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/UserAccountDAOImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="222">
-              <caret line="201" column="17" lean-forward="true" selection-start-line="201" selection-start-column="17" selection-end-line="201" selection-end-column="17" />
+            <state relative-caret-position="17">
+              <caret line="176" column="40" lean-forward="false" selection-start-line="176" selection-start-column="40" selection-end-line="176" selection-end-column="40" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="method#create#0;class#UserAccountDAOImpl#0" expanded="false" />
@@ -115,25 +106,25 @@
                 <element signature="method#delete#0;class#UserAccountDAOImpl#0" expanded="false" />
                 <element signature="e#5111#5112#0" expanded="true" />
                 <element signature="e#5163#5164#0" expanded="true" />
-                <element signature="e#6360#6361#0" expanded="true" />
-                <element signature="e#6398#6399#0" expanded="true" />
-                <element signature="e#6466#6467#0" expanded="true" />
-                <element signature="e#6520#6521#0" expanded="true" />
-                <marker date="1514471733987" expanded="true" signature="451:491" ph="SELECT * FRO... ACCOUNTS" />
-                <marker date="1514471733987" expanded="true" signature="538:573" ph="SELECT * FRO... ACCOUNTS" />
-                <marker date="1514471733987" expanded="true" signature="684:717" ph="DELETE FROM " />
-                <marker date="1514471733987" expanded="true" signature="766:834" ph="INSERT INTO ACCOUNTS... " />
-                <marker date="1514471733987" expanded="true" signature="880:956" ph="UPDATE ACCOU... " />
+                <element signature="e#6361#6362#0" expanded="true" />
+                <element signature="e#6399#6400#0" expanded="true" />
+                <element signature="e#6467#6468#0" expanded="true" />
+                <element signature="e#6521#6522#0" expanded="true" />
+                <marker date="1514472049670" expanded="true" signature="451:491" ph="SELECT * FRO... ACCOUNTS" />
+                <marker date="1514472049670" expanded="true" signature="538:573" ph="SELECT * FRO... ACCOUNTS" />
+                <marker date="1514472049670" expanded="true" signature="684:717" ph="DELETE FROM " />
+                <marker date="1514472049670" expanded="true" signature="766:834" ph="INSERT INTO ACCOUNTS... " />
+                <marker date="1514472049670" expanded="true" signature="880:956" ph="UPDATE ACCOU... " />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserAccountDAO.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="UserAccountDAO.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/dao/UserAccountDAO.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="136">
-              <caret line="8" column="40" lean-forward="false" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
+              <caret line="8" column="33" lean-forward="false" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -278,8 +269,8 @@
         <option value="$PROJECT_DIR$/src/main/java/com/andersen/spring/entity/UserAccount.java" />
         <option value="$PROJECT_DIR$/src/main/resources/application-context.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/UserAccountServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/andersen/spring/dao/UserAccountDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/UserAccountDAOImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/andersen/spring/dao/UserAccountDAO.java" />
       </list>
     </option>
   </component>
@@ -703,7 +694,7 @@
       <workItem from="1514318766373" duration="1096000" />
       <workItem from="1514360269320" duration="3904000" />
       <workItem from="1514364719305" duration="15020000" />
-      <workItem from="1514447696826" duration="13845000" />
+      <workItem from="1514447696826" duration="13971000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <created>1513944425461</created>
@@ -915,7 +906,14 @@
       <option name="project" value="LOCAL" />
       <updated>1514465138319</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Реализация слоя сервиса и дао для UserAccount">
+      <created>1514471956346</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1514471956346</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -951,7 +949,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="86085000" />
+    <option name="totallyTimeSpent" value="86211000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -966,9 +964,9 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962137" sideWeight="0.2835821" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850778" sideWeight="0.4936034" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.52895325" sideWeight="0.7164179" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.52895325" sideWeight="0.7164179" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850778" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40200445" sideWeight="0.4552239" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.40200445" sideWeight="0.4552239" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17963752" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -1014,7 +1012,8 @@
     <MESSAGE value="Реализация списочного теста" />
     <MESSAGE value="Merge branch 'master' into task_0&#10;&#10;# Conflicts:&#10;#&#9;src/main/java/App.java" />
     <MESSAGE value="Реализация таска 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Реализация таска 2" />
+    <MESSAGE value="Реализация слоя сервиса и дао для UserAccount" />
+    <option name="LAST_COMMIT_MESSAGE" value="Реализация слоя сервиса и дао для UserAccount" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1375,16 +1374,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/controllers/AccountService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="12" column="61" lean-forward="false" selection-start-line="12" selection-start-column="61" selection-end-line="12" selection-end-column="61" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/exceptions/InsufficientFunds.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="153">
@@ -1505,20 +1494,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/dao/UserAccountDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="40" lean-forward="false" selection-start-line="8" selection-start-column="40" selection-end-line="8" selection-end-column="40" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/UserAccountDAOImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="222">
-          <caret line="201" column="17" lean-forward="true" selection-start-line="201" selection-start-column="17" selection-end-line="201" selection-end-column="17" />
+        <state relative-caret-position="17">
+          <caret line="176" column="40" lean-forward="false" selection-start-line="176" selection-start-column="40" selection-end-line="176" selection-end-column="40" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="method#create#0;class#UserAccountDAOImpl#0" expanded="false" />
@@ -1526,15 +1505,35 @@
             <element signature="method#delete#0;class#UserAccountDAOImpl#0" expanded="false" />
             <element signature="e#5111#5112#0" expanded="true" />
             <element signature="e#5163#5164#0" expanded="true" />
-            <element signature="e#6360#6361#0" expanded="true" />
-            <element signature="e#6398#6399#0" expanded="true" />
-            <element signature="e#6466#6467#0" expanded="true" />
-            <element signature="e#6520#6521#0" expanded="true" />
-            <marker date="1514471733987" expanded="true" signature="451:491" ph="SELECT * FRO... ACCOUNTS" />
-            <marker date="1514471733987" expanded="true" signature="538:573" ph="SELECT * FRO... ACCOUNTS" />
-            <marker date="1514471733987" expanded="true" signature="684:717" ph="DELETE FROM " />
-            <marker date="1514471733987" expanded="true" signature="766:834" ph="INSERT INTO ACCOUNTS... " />
-            <marker date="1514471733987" expanded="true" signature="880:956" ph="UPDATE ACCOU... " />
+            <element signature="e#6361#6362#0" expanded="true" />
+            <element signature="e#6399#6400#0" expanded="true" />
+            <element signature="e#6467#6468#0" expanded="true" />
+            <element signature="e#6521#6522#0" expanded="true" />
+            <marker date="1514472049670" expanded="true" signature="451:491" ph="SELECT * FRO... ACCOUNTS" />
+            <marker date="1514472049670" expanded="true" signature="538:573" ph="SELECT * FRO... ACCOUNTS" />
+            <marker date="1514472049670" expanded="true" signature="684:717" ph="DELETE FROM " />
+            <marker date="1514472049670" expanded="true" signature="766:834" ph="INSERT INTO ACCOUNTS... " />
+            <marker date="1514472049670" expanded="true" signature="880:956" ph="UPDATE ACCOU... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/controllers/AccountService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="61" lean-forward="false" selection-start-line="12" selection-start-column="61" selection-end-line="12" selection-end-column="61" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/dao/UserAccountDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="33" lean-forward="false" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
