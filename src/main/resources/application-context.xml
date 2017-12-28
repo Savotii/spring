@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+	   					   http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="Product" class="com.andersen.spring.entity.Product" scope="prototype" >
+          <property name="price" value="10"/>
+          <property name="userId" value="1"/>
+    </bean>
+
+    <bean id="User" class="com.andersen.spring.entity.User" scope="prototype"/>
+
+    <!-- MySqlHelper beans -->
+    <bean id="MySqlHelper" class="com.andersen.spring.jdbc.MySqlHelper" init-method="init"/>
+
+    <!-- DAO beans (just an example)-->
+    <bean id="userDAOImpl" class="com.andersen.spring.impl.UserDAOImpl">
+        <property name="helper" ref="MySqlHelper"/>
+    </bean>
+
+    <bean id="productDAOImpl" class="com.andersen.spring.impl.ProductDAOImpl">
+        <property name="helper" ref="MySqlHelper"/>
+    </bean>
+
+    <!-- Service beans -->
+    <bean id="ProductServiceImpl" class="com.andersen.spring.impl.ProductServiceImpl">
+        <property name="productDAO" ref="productDAOImpl"/>
+        <lookup-method name="getProduct" bean="Product"/>
+    </bean>
+
+    <bean id="UserServiceImpl" class="com.andersen.spring.impl.UserServiceImpl">
+        <property name="userDAO" ref="userDAOImpl"/>
+        <lookup-method name="getUser" bean="User"/>
+    </bean>
+
+    <!-- Storage bean -->
+    <bean id="MarketFacadeImpl" class="com.andersen.spring.facade.MarketFacadeImpl">
+        <constructor-arg ref="ProductServiceImpl"/>
+        <constructor-arg ref="UserServiceImpl"/>
+    </bean>
+
+</beans>
