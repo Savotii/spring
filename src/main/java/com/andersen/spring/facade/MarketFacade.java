@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.andersen.spring.entity.Product;
 import com.andersen.spring.entity.User;
+import com.andersen.spring.entity.UserAccount;
 
 /**
  * This class groups all operations related to the ordering goods in the market
@@ -114,4 +115,8 @@ public interface MarketFacade {
 	 * @return Flag that shows whether product has been deleted.
 	 */
 	boolean deleteProductById(long id);
+
+	void replenishTheAccount(UserAccount account, Double amount);
+
+	void reduceTheAccount(UserAccount account, Double amount);
 }

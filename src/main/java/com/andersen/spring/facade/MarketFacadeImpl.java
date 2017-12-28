@@ -2,6 +2,7 @@ package com.andersen.spring.facade;
 
 import com.andersen.spring.controllers.ProductService;
 import com.andersen.spring.controllers.UserService;
+import com.andersen.spring.entity.UserAccount;
 import com.andersen.spring.impl.ProductServiceImpl;
 import com.andersen.spring.impl.UserServiceImpl;
 import com.andersen.spring.entity.Product;
@@ -70,5 +71,15 @@ public class MarketFacadeImpl implements MarketFacade {
 
     public boolean deleteProductById(long id) {
         return productServiceImpl.delete(id);
+    }
+
+    @Override
+    public void replenishTheAccount(UserAccount account, Double amount) {
+        //TO DO
+    }
+
+    @Override
+    public void reduceTheAccount(UserAccount account, Double amount) {
+        //TO DO
     }
 }

@@ -57,7 +57,6 @@ public class ProductServiceTest {
         productList.add(new Product("titles1","desription3", 10, 1));
         productList.add(new Product("ti","desription4", 10, 1));
 
-        when(productDAO.getProductsByTitle("title")).thenReturn(productList);
         when(productDAO.getAll()).thenReturn(productList);
 
         List<Product> resultList = productService.getProductsByTitle("title");
