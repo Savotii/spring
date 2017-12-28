@@ -3,7 +3,11 @@ package com.andersen.spring.impl;
 import com.andersen.spring.controllers.ProductService;
 import com.andersen.spring.dao.ProductDAO;
 import com.andersen.spring.entity.Product;
+
+import java.util.LinkedList;
 import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class ProductServiceImpl implements ProductService {
 
@@ -26,7 +30,22 @@ public class ProductServiceImpl implements ProductService {
     }
 
     public List<Product> getProductsByTitle(String title) {
-        return productDAO.getProductsByTitle(title);
+
+        List<Product> productList = productDAO.getAll();
+
+        List<Product> newProductList = new LinkedList<>();
+
+        Pattern pattern = Pattern.compile(title + ".+");
+
+        for (Product product : productList) {
+
+            if (product.getTitle().indexOf(title) != -1)
+                newProductList.add(product);
+        }
+
+        return newProductList;
+
+        //return productDAO.getProductsByTitle(title);
     }
 
     public List<Product> getProductsByUserId(long userId) {
@@ -45,8 +64,7 @@ public class ProductServiceImpl implements ProductService {
         this.productDAO = productDAO;
     }
 
-    public Product getProduct()
-    {
+    public Product getProduct() {
         return new Product();
     }
 }

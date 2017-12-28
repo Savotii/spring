@@ -8,6 +8,9 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 
+import java.util.LinkedList;
+import java.util.List;
+
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.*;
 
@@ -24,7 +27,7 @@ public class ProductServiceTest {
     Product product;
 
     @Test
-    public void testService()
+    public void testServiceCreate()
     {
 
         when(productDAO.create(product)).thenReturn(new Product("title", "description", 10, 1));
@@ -40,6 +43,26 @@ public class ProductServiceTest {
         assertEquals(result.getDescription(), product.getDescription());
         assertEquals(result.getPrice(), product.getPrice() , 0);
         assertEquals(result.getUserId() , product.getUserId());
+
+    }
+
+    @Test
+    public void testServiceGetAll()
+    {
+
+        List<Product> productList = new LinkedList<>();
+        productList.add(new Product("titl","desription1", 10, 1));
+        productList.add(new Product("title","desription2", 10, 1));
+        productList.add(new Product("titles","desription3", 10, 1));
+        productList.add(new Product("titles1","desription3", 10, 1));
+        productList.add(new Product("ti","desription4", 10, 1));
+
+        when(productDAO.getProductsByTitle("title")).thenReturn(productList);
+        when(productDAO.getAll()).thenReturn(productList);
+
+        List<Product> resultList = productService.getProductsByTitle("title");
+
+        assertEquals(resultList.get(0).getTitle(), "titl");
 
     }
 
