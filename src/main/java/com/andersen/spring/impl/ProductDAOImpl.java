@@ -80,7 +80,13 @@ public class ProductDAOImpl implements ProductDAO {
 
     public List<Product> getProductsByUserId(long userId) {
 
-        List<Product> products = new LinkedList<Product>();
+        JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
+
+        List<Product> products = jdbcTemplate.query(GET_BY_USERID_QUERY, new Object[]{userId}, new BeanPropertyRowMapper<Product>(Product.class));
+
+        return products;
+
+       /* List<Product> products = new LinkedList<Product>();
 
         Connection connection = helper.createConnection();
 
@@ -107,7 +113,7 @@ public class ProductDAOImpl implements ProductDAO {
             }
         }
 
-        return products;
+        return products;*/
 
     }
 

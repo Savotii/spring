@@ -2,16 +2,12 @@ package com.andersen.spring.impl;
 
 import com.andersen.spring.controllers.UserService;
 import com.andersen.spring.dao.UserAccountDAO;
-import com.andersen.spring.entity.User;
 import com.andersen.spring.entity.UserAccount;
 import com.andersen.spring.entity.UserAccountRowMapper;
-import com.andersen.spring.exceptions.InsufficientFunds;
 import com.andersen.spring.jdbc.MySqlHelper;
-import org.omg.CORBA.INTERNAL;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCreator;
-import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.support.GeneratedKeyHolder;
 import org.springframework.jdbc.support.KeyHolder;
 

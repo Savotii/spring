@@ -70,4 +70,10 @@ public class User {
         result = 31 * result + phoneNumber.hashCode();
         return result;
     }
+
+    @Override
+    public String toString() {
+        return "name: " + this.name + " email: "+ this.email + " phone: " + this.phoneNumber;
+    }
+
 }

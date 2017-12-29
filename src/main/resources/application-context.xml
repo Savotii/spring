@@ -24,17 +24,17 @@
     <bean id="MySqlHelper" class="com.andersen.spring.jdbc.MySqlHelper" init-method="init"/>
 
     <!-- DAO beans (just an example)-->
-    <bean id="userDAOImpl" class="com.andersen.spring.impl.UserDAOImpl">
+    <bean id="userDAOImpl" class="com.andersen.spring.impl.UserDAOImpl" scope="singleton">
         <property name="helper" ref="MySqlHelper"/>
         <property name="dataSource" ref="dataSource"/>
     </bean>
 
-    <bean id="productDAOImpl" class="com.andersen.spring.impl.ProductDAOImpl">
+    <bean id="productDAOImpl" class="com.andersen.spring.impl.ProductDAOImpl" scope="singleton">
         <property name="helper" ref="MySqlHelper"/>
         <property name="dataSource" ref="dataSource"/>
     </bean>
 
-    <bean id="UserAccountDAOImpl" class="com.andersen.spring.impl.UserAccountDAOImpl">
+    <bean id="UserAccountDAOImpl" class="com.andersen.spring.impl.UserAccountDAOImpl" scope="singleton">
         <property name="userServiceImpl" ref="UserServiceImpl" />
         <property name="helper" ref="MySqlHelper"/>
         <property name="dataSource" ref="dataSource"/>
@@ -56,7 +56,7 @@
         <lookup-method name="getUser" bean="User"/>
     </bean>
 
-    <bean name="UserAccountRowMapper" class="com.andersen.spring.entity.UserAccountRowMapper" scope="singleton">
+    <bean name="UserAccountRowMapper" class="com.andersen.spring.entity.UserAccountRowMapper" >
         <property name="userServiceImpl" ref="UserServiceImpl"/>
     </bean>
 

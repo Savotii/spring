@@ -13,18 +13,19 @@ public class UserAccountRowMapper implements RowMapper<UserAccount> {
 
     private UserServiceImpl userServiceImpl;
 
-    {
+   /* {
         //НЕ СОЗДАЕТ БИН. при инициализации создает, а когда вызывается из jdbctemplate, то банан.
-        if(userServiceImpl == null)
+      *//*  if(userServiceImpl == null)
         {
             userServiceImpl = new UserServiceImpl();
             UserDAOImpl userDAO = new UserDAOImpl();
             userDAO.setHelper(new MySqlHelper());
             userServiceImpl.setUserDAO(userDAO);
 
-        }
-    }
 
+        }*//*
+    }
+*/
     @Override
     public UserAccount mapRow(ResultSet resultSet, int i) throws SQLException {
 
@@ -32,8 +33,9 @@ public class UserAccountRowMapper implements RowMapper<UserAccount> {
         userAccount.setAccountsNumber(resultSet.getInt("accountsNumber"));
         userAccount.setAmount(resultSet.getDouble("amount"));
         userAccount.setId(resultSet.getLong("id"));
-
-        userAccount.setUser(userServiceImpl.getById(resultSet.getLong("ownerId")));
+        userAccount.setUserId(resultSet.getLong("ownerId"));
+        //Тут фигня. не прокидывает юзерсервис..
+       // userAccount.setUser(userServiceImpl.getById(resultSet.getLong("ownerId")));
 
         return userAccount;
     }

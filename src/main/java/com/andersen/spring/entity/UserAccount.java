@@ -12,6 +12,8 @@ public class UserAccount {
 
     private long id;
 
+    private long userId;
+
     public UserAccount() {
 
     }
@@ -58,5 +60,9 @@ public class UserAccount {
 
     public void setUser(User user) {
         this.user = user;
+    }
+
+    public void setUserId(Long id) {
+        this.userId = id;
     }
 }

@@ -1,5 +1,6 @@
 import com.andersen.spring.controllers.AccountService;
 import com.andersen.spring.controllers.ProductService;
+import com.andersen.spring.controllers.UserService;
 import com.andersen.spring.dao.ProductDAO;
 import com.andersen.spring.dao.UserAccountDAO;
 import com.andersen.spring.dao.UserDAO;
@@ -8,6 +9,8 @@ import com.andersen.spring.entity.User;
 import com.andersen.spring.entity.UserAccount;
 import com.andersen.spring.impl.ProductDAOImpl;
 import com.andersen.spring.impl.ProductServiceImpl;
+import com.andersen.spring.impl.UserDAOImpl;
+import com.andersen.spring.impl.UserServiceImpl;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -18,7 +21,9 @@ public class App {
         ConfigurableApplicationContext ctx = new ClassPathXmlApplicationContext("application-context.xml");
         UserAccountDAO uad = (UserAccountDAO) ctx.getBean("UserAccountDAOImpl");
 
-        ProductService pdi = (ProductServiceImpl)ctx.getBean("ProductServiceImpl");
+        ProductDAO pdi = (ProductDAO)ctx.getBean("productDAOImpl");
+
+        UserDAO us = (UserDAO) ctx.getBean("userDAOImpl");
 
         User user = new User();
         user.setId(1);
@@ -59,5 +64,20 @@ public class App {
 
         boolean result = pdi.delete(product.getId());
         System.out.println("delete: " + result);
+
+        User user1 = new User();
+        user1.setPhoneNumber("3333443");
+        user1.setEmail("sdfsf@mail.ru");
+        user1.setName("Yurij");
+
+        User user2 = us.create(user1);
+        System.out.println("create user: " + user2);
+
+        user2 = us.getById(user2.getId());
+        System.out.println("getByID : " + user2);
+
+        user2.setEmail("eeee@yandex.ru");
+        user2 = us.update(user2);
+        System.out.println("update: " + user2);
     }
 }
