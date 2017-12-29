@@ -11,7 +11,7 @@ public class MySqlHelper {
     private String login = "root";
     private String password = "1111";
 
-    private String driverClassName = "com.mysql.jdbc.Driver;";
+    private String driverClassName = "com.mysql.cj.jdbc.Driver";
 
     private Connection connection = null;
 

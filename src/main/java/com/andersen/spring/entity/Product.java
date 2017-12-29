@@ -88,4 +88,8 @@ public class Product {
         return result;
     }
 
+    @Override
+    public String toString() {
+        return "title: " + this.title + " description: " + this.description + " price: " + this.price + " userId: " + userId;
+    }
 }

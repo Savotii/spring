@@ -3,10 +3,19 @@ package com.andersen.spring.impl;
 import com.andersen.spring.dao.ProductDAO;
 import com.andersen.spring.entity.Product;
 import com.andersen.spring.jdbc.MySqlHelper;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.PreparedStatementCreator;
+import org.springframework.jdbc.support.GeneratedKeyHolder;
+import org.springframework.jdbc.support.KeyHolder;
 
+import javax.sql.DataSource;
+import javax.sql.rowset.JdbcRowSet;
+import javax.xml.crypto.Data;
 import java.sql.*;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
 
 public class ProductDAOImpl implements ProductDAO {
 
@@ -21,6 +30,8 @@ public class ProductDAOImpl implements ProductDAO {
 
     private MySqlHelper helper;
 
+    private DataSource dataSource;
+
     public ProductDAOImpl() {
     }
 
@@ -30,6 +41,12 @@ public class ProductDAOImpl implements ProductDAO {
 
     public List<Product> getProductsByTitle(String title) {
 
+        JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
+
+        List<Product> productsList = jdbcTemplate.query(GET_BY_TITLE_QUERY, new BeanPropertyRowMapper<Product>(Product.class), title);
+
+        return productsList;
+       /*
         List<Product> products = new LinkedList<Product>();
 
         Connection connection = helper.createConnection();
@@ -58,7 +75,7 @@ public class ProductDAOImpl implements ProductDAO {
         }
 
         return products;
-
+*/
     }
 
     public List<Product> getProductsByUserId(long userId) {
@@ -94,50 +111,46 @@ public class ProductDAOImpl implements ProductDAO {
 
     }
 
-    public Product create(Product item) {
+    public Product create(final Product item) {
 
-        Connection connection = helper.createConnection();
+        Product product = null;
 
-        Product product = (Product) item;
+        JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
 
-        Product pr = null;
+        KeyHolder keyHolder = new GeneratedKeyHolder();
 
-        PreparedStatement statement = null;
-        try {
-            statement = connection.prepareStatement(INSERT_INTO_QUERY, Statement.RETURN_GENERATED_KEYS);
-            statement.setString(1, product.getTitle());
-            statement.setString(2, product.getDescription());
-            statement.setDouble(3, product.getPrice());
-            statement.setLong(4, product.getUserId());
-            int affectedRows = statement.executeUpdate();
+        int result = jdbcTemplate.update(new PreparedStatementCreator() {
+                                             @Override
+                                             public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
 
-            if (affectedRows == 0) {
-                throw new SQLException("Добавление товара неудачно.");
-            }
+                                                 PreparedStatement statement = connection.prepareStatement(INSERT_INTO_QUERY, Statement.RETURN_GENERATED_KEYS);
+                                                 statement.setString(1, item.getTitle());
+                                                 statement.setString(2, item.getDescription());
+                                                 statement.setDouble(3, item.getPrice());
+                                                 statement.setLong(4, item.getUserId());
+                                                 return statement;
+                                             }
+                                         },
+                keyHolder
+        );
 
-            ResultSet generatedKeys = statement.getGeneratedKeys();
-
-            if (generatedKeys.next()) {
-                product.setId(generatedKeys.getLong(1));
-            }
-
-            pr = (Product) getById(product.getId());
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                connection.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
+        if (result != 0) {
+            item.setId(keyHolder.getKey().longValue());
+            product = item;
         }
 
-        return pr;
+        return product;
     }
 
     public Product getById(long id) {
 
+        JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
+
+        Product product = jdbcTemplate.queryForObject(GET_BY_ID_QUERY, new Object[]{id}, new BeanPropertyRowMapper<Product>(Product.class));
+
+        return product;
+
+        /*
         Connection connection = helper.createConnection();
 
         Product product = null;
@@ -163,11 +176,22 @@ public class ProductDAOImpl implements ProductDAO {
             }
         }
 
-        return product;
+       return product;*/
     }
 
     public Product update(Product item) {
 
+        Product product = item;
+
+        JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
+
+        int result = jdbcTemplate.update(UPDATE_PRODUCT, new Object[]{item.getTitle(), item.getDescription(), item.getPrice(), item.getUserId(), item.getId()});
+        if (result != 0) {
+            product = getById(item.getId());
+        }
+
+        return product;
+        /*
         Connection connection = helper.createConnection();
 
         Product product = (Product) item;
@@ -200,12 +224,16 @@ public class ProductDAOImpl implements ProductDAO {
             }
         }
 
-        return pr;
+        return pr;*/
     }
 
     public boolean delete(long id) {
 
-        Connection connection = helper.createConnection();
+        JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
+
+        return jdbcTemplate.update(DELETE_BY_ID_QUERY, id) != 0;
+
+        /*Connection connection = helper.createConnection();
 
         int affectRows = 0;
 
@@ -229,12 +257,19 @@ public class ProductDAOImpl implements ProductDAO {
             }
         }
 
-        return isOk;
+        return isOk;*/
     }
 
     public List<Product> getAll() {
 
-        Connection connection = helper.createConnection();
+
+        JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
+
+        List<Product> productsList = jdbcTemplate.query(GET_ALL, new BeanPropertyRowMapper<Product>(Product.class));
+
+        return productsList;
+
+       /* Connection connection = helper.createConnection();
 
         List<Product> products = new LinkedList<Product>();
 
@@ -259,7 +294,12 @@ public class ProductDAOImpl implements ProductDAO {
             }
         }
 
-        return products;
+        return products;*/
 
     }
+
+    public void setDataSource(DataSource dataSource) {
+        this.dataSource = dataSource;
+    }
 }
+

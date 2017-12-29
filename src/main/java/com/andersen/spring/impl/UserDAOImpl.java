@@ -5,6 +5,7 @@ import com.andersen.spring.entity.Product;
 import com.andersen.spring.entity.User;
 import com.andersen.spring.jdbc.MySqlHelper;
 
+import javax.sql.DataSource;
 import java.sql.*;
 import java.util.LinkedList;
 import java.util.List;
@@ -22,6 +23,8 @@ public class UserDAOImpl implements UserDAO {
     private final String UPDATE_USER = "UPDATE products SET name = ?, email = ?, phoneNumber =? WHERE id = ?";
 
     private MySqlHelper helper;
+
+    private DataSource dataSource;
 
     public UserDAOImpl() {
     }
@@ -241,5 +244,9 @@ public class UserDAOImpl implements UserDAO {
         }
 
         return users;
+    }
+
+    public void setDataSource(DataSource dataSource) {
+        this.dataSource = dataSource;
     }
 }

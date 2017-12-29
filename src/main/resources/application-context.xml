@@ -4,6 +4,13 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
 	   					   http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+        <property name="driverClassName" value="com.mysql.cj.jdbc.Driver" />
+        <property name="url" value="jdbc:mysql://localhost:3306/Test" />
+        <property name="username" value="root" />
+        <property name="password" value="1111" />
+    </bean>
+
     <bean id="Product" class="com.andersen.spring.entity.Product" scope="prototype" >
           <property name="price" value="10"/>
           <property name="userId" value="1"/>
@@ -19,10 +26,12 @@
     <!-- DAO beans (just an example)-->
     <bean id="userDAOImpl" class="com.andersen.spring.impl.UserDAOImpl">
         <property name="helper" ref="MySqlHelper"/>
+        <property name="dataSource" ref="dataSource"/>
     </bean>
 
     <bean id="productDAOImpl" class="com.andersen.spring.impl.ProductDAOImpl">
         <property name="helper" ref="MySqlHelper"/>
+        <property name="dataSource" ref="dataSource"/>
     </bean>
 
     <bean id="UserAccountDAOImpl" class="com.andersen.spring.impl.UserAccountDAOImpl">
@@ -47,18 +56,15 @@
         <lookup-method name="getUser" bean="User"/>
     </bean>
 
+    <bean name="UserAccountRowMapper" class="com.andersen.spring.entity.UserAccountRowMapper" scope="singleton">
+        <property name="userServiceImpl" ref="UserServiceImpl"/>
+    </bean>
+
     <!-- Storage bean -->
     <bean id="MarketFacadeImpl" class="com.andersen.spring.facade.MarketFacadeImpl">
         <constructor-arg ref="ProductServiceImpl"/>
         <constructor-arg ref="UserServiceImpl"/>
         <constructor-arg ref="UserAccountServiceImpl"/>
-    </bean>
-
-    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
-        <property name="driverClassName" value="com.mysql.jdbc.Driver" />
-        <property name="url" value="jdbc:mysql://localhost:3306/Test" />
-        <property name="username" value="root" />
-        <property name="password" value="1111" />
     </bean>
 
 </beans>
