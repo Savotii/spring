@@ -3,6 +3,9 @@ package com.andersen.spring.impl;
 import com.andersen.spring.controllers.ProductService;
 import com.andersen.spring.dao.ProductDAO;
 import com.andersen.spring.entity.Product;
+import com.andersen.spring.entity.User;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -11,6 +14,7 @@ import java.util.regex.Pattern;
 
 public class ProductServiceImpl implements ProductService {
 
+    @Autowired
     private ProductDAO productDAO;
 
     public ProductServiceImpl() {
@@ -67,4 +71,5 @@ public class ProductServiceImpl implements ProductService {
     public Product getProduct() {
         return new Product();
     }
+
 }

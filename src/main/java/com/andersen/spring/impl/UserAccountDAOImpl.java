@@ -5,6 +5,7 @@ import com.andersen.spring.dao.UserAccountDAO;
 import com.andersen.spring.entity.UserAccount;
 import com.andersen.spring.entity.UserAccountRowMapper;
 import com.andersen.spring.jdbc.MySqlHelper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCreator;
@@ -24,10 +25,13 @@ public class UserAccountDAOImpl implements UserAccountDAO {
     private final String INSERT_INTO_QUERY = "INSERT INTO ACCOUNTS(accountsNumber, amount, ownerId) VALUES(?, ?, ?)";
     private final String UPDATE_ACCOUNT = "UPDATE ACCOUNTS SET accountsNumber = ?, amount = ?, ownerId = ? WHERE id = ?";
 
+    @Autowired
     private MySqlHelper helper;
 
+    @Autowired
     private UserService userServiceImpl;
 
+    @Autowired
     private DataSource dataSource;
 
     public MySqlHelper getHelper() {

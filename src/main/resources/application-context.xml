@@ -60,6 +60,15 @@
         <property name="userServiceImpl" ref="UserServiceImpl"/>
     </bean>
 
+    <bean name="BasketDAOImpl" class="com.andersen.spring.impl.BasketDAOImpl" >
+        <property name="dataSource" ref="dataSource"/>
+        <property name="helper" ref="MySqlHelper" />
+    </bean>
+    
+    <bean name="BasketServiceImpl" class="com.andersen.spring.impl.BasketServiceImpl">
+        <property name="basketDAO" ref="BasketDAOImpl"/>
+    </bean>
+    
     <!-- Storage bean -->
     <bean id="MarketFacadeImpl" class="com.andersen.spring.facade.MarketFacadeImpl">
         <constructor-arg ref="ProductServiceImpl"/>

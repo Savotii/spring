@@ -3,6 +3,7 @@ package com.andersen.spring.impl;
 import com.andersen.spring.dao.ProductDAO;
 import com.andersen.spring.entity.Product;
 import com.andersen.spring.jdbc.MySqlHelper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCreator;
@@ -28,8 +29,10 @@ public class ProductDAOImpl implements ProductDAO {
     private final String INSERT_INTO_QUERY = "INSERT INTO products(title, description, price, userId) VALUES(?, ?, ?, ?)";
     private final String UPDATE_PRODUCT = "UPDATE products SET title = ?, description = ?, price = ?, userId =? WHERE id = ?";
 
+    @Autowired
     private MySqlHelper helper;
 
+    @Autowired
     private DataSource dataSource;
 
     public ProductDAOImpl() {

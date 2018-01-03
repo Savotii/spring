@@ -3,6 +3,7 @@ package com.andersen.spring.impl;
 import com.andersen.spring.dao.UserDAO;
 import com.andersen.spring.entity.User;
 import com.andersen.spring.jdbc.MySqlHelper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCreator;
@@ -25,8 +26,10 @@ public class UserDAOImpl implements UserDAO {
     private final String INSERT_INTO_QUERY = "INSERT INTO users(name, email, phoneNumber) VALUES( ?, ?, ?)";
     private final String UPDATE_USER = "UPDATE users SET name = ?, email = ?, phoneNumber =? WHERE id = ?";
 
+    @Autowired
     private MySqlHelper helper;
 
+    @Autowired
     private DataSource dataSource;
 
     public UserDAOImpl() {

@@ -1,6 +1,7 @@
 package com.andersen.spring.facade;
 
 import com.andersen.spring.controllers.AccountService;
+import com.andersen.spring.controllers.BasketService;
 import com.andersen.spring.controllers.ProductService;
 import com.andersen.spring.controllers.UserService;
 import com.andersen.spring.entity.UserAccount;
@@ -9,14 +10,24 @@ import com.andersen.spring.impl.UserAccountServiceImpl;
 import com.andersen.spring.impl.UserServiceImpl;
 import com.andersen.spring.entity.Product;
 import com.andersen.spring.entity.User;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
 public class MarketFacadeImpl implements MarketFacade {
 
+    @Autowired
     private ProductService productServiceImpl;
+
+    @Autowired
     private UserService userServiceImpl;
+
+    @Autowired
     private AccountService userAccountImpl;
+
+    @Autowired
+    private BasketService basketServiceImpl;
 
     public MarketFacadeImpl(ProductServiceImpl productServiceImpl, UserServiceImpl userServiceImpl, UserAccountServiceImpl userAccountImpl) {
         this.productServiceImpl = productServiceImpl;
@@ -101,6 +112,11 @@ public class MarketFacadeImpl implements MarketFacade {
     @Override
     public List<UserAccount> getAll() {
         return userAccountImpl.getAll();
+    }
+
+    @Transactional
+    public void buyProduct(User user, Product product, int count) {
+        basketServiceImpl.buyProduct(user, product, count);
     }
 
 }

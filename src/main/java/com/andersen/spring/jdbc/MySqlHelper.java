@@ -64,6 +64,9 @@ public class MySqlHelper {
 
             // Добавляем таблицу аккаунт
             statement.addBatch("CREATE TABLE IF NOT EXISTS ACCOUNTS (id INTEGER  auto_increment PRIMARY  KEY, accountsNumber INTEGER NOT NULL, amount DOUBLE, ownerId INTEGER NOT NULL)");
+
+            //Добавляем корзину.
+            statement.addBatch("CREATE TABLE IF NOT EXISTS BASKET (id INTEGER auto_increment PRIMARY KEY, userId INTEGER NOT NULL, productId INTEGER NOT NULL, count INTEGER NOT NULL)");
             statement.executeBatch();
 
         } catch (SQLException e) {

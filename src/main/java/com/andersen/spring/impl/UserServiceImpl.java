@@ -3,11 +3,13 @@ package com.andersen.spring.impl;
 import com.andersen.spring.controllers.UserService;
 import com.andersen.spring.dao.UserDAO;
 import com.andersen.spring.entity.User;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
 public class UserServiceImpl implements UserService {
 
+    @Autowired
     private UserDAO userDAO;
 
     public UserServiceImpl(){
