@@ -2,7 +2,7 @@ package com.andersen.spring.entity;
 
 public class Basket {
 
-    private int id;
+    private long id;
 
     private User user;
 
@@ -10,11 +10,11 @@ public class Basket {
 
     private int count;
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
@@ -40,5 +40,15 @@ public class Basket {
 
     public void setCount(int count) {
         this.count = count;
+    }
+
+    @Override
+    public String toString() {
+        return "Basket{" +
+                "id=" + id +
+                ", user=" + user +
+                ", product=" + product +
+                ", count=" + count +
+                '}';
     }
 }

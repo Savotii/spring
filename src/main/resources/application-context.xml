@@ -20,21 +20,23 @@
 
     <bean id="UserAccount" class="com.andersen.spring.entity.UserAccount" scope="prototype"/>
 
+    <bean id="Basket" class="com.andersen.spring.entity.Basket" scope="prototype"/>
+
     <!-- MySqlHelper beans -->
     <bean id="MySqlHelper" class="com.andersen.spring.jdbc.MySqlHelper" init-method="init"/>
 
     <!-- DAO beans (just an example)-->
-    <bean id="userDAOImpl" class="com.andersen.spring.impl.UserDAOImpl" scope="singleton">
+    <bean id="userDAOImpl" class="com.andersen.spring.impl.UserDAOImpl">
         <property name="helper" ref="MySqlHelper"/>
         <property name="dataSource" ref="dataSource"/>
     </bean>
 
-    <bean id="productDAOImpl" class="com.andersen.spring.impl.ProductDAOImpl" scope="singleton">
+    <bean id="productDAOImpl" class="com.andersen.spring.impl.ProductDAOImpl">
         <property name="helper" ref="MySqlHelper"/>
         <property name="dataSource" ref="dataSource"/>
     </bean>
 
-    <bean id="UserAccountDAOImpl" class="com.andersen.spring.impl.UserAccountDAOImpl" scope="singleton">
+    <bean id="UserAccountDAOImpl" class="com.andersen.spring.impl.UserAccountDAOImpl">
         <property name="userServiceImpl" ref="UserServiceImpl" />
         <property name="helper" ref="MySqlHelper"/>
         <property name="dataSource" ref="dataSource"/>
@@ -58,6 +60,11 @@
 
     <bean name="UserAccountRowMapper" class="com.andersen.spring.entity.UserAccountRowMapper" >
         <property name="userServiceImpl" ref="UserServiceImpl"/>
+    </bean>
+
+    <bean name="BasketRowMapper" class="com.andersen.spring.entity.BasketRowMapper">
+        <property name="productService" ref="ProductServiceImpl"/>
+        <property name="userService" ref="UserServiceImpl" />
     </bean>
 
     <bean name="BasketDAOImpl" class="com.andersen.spring.impl.BasketDAOImpl" >

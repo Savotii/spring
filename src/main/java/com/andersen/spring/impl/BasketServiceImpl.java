@@ -17,6 +17,12 @@ public class BasketServiceImpl implements BasketService {
     @Override
     public void buyProduct(User user, Product product, int count) {
 
+        Basket basket = new Basket();
+        basket.setCount(count);
+        basket.setProduct(product);
+        basket.setUser(user);
+
+        basketDAO.create(basket);
     }
 
     @Override

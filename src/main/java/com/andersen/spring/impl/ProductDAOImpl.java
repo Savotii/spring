@@ -159,33 +159,6 @@ public class ProductDAOImpl implements ProductDAO {
 
         return product;
 
-        /*
-        Connection connection = helper.createConnection();
-
-        Product product = null;
-
-        try {
-            PreparedStatement statement = connection.prepareStatement(GET_BY_ID_QUERY);
-            statement.setLong(1, id);
-            ResultSet resultSet = statement.executeQuery();
-
-            if (resultSet.next()) {
-                product = new Product(resultSet.getString("title"), resultSet.getString("description"),
-                        resultSet.getDouble("price"), resultSet.getLong("userId"));
-                product.setId(id);
-            }
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                connection.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
-
-       return product;*/
     }
 
     public Product update(Product item) {
@@ -200,40 +173,7 @@ public class ProductDAOImpl implements ProductDAO {
         }
 
         return product;
-        /*
-        Connection connection = helper.createConnection();
 
-        Product product = (Product) item;
-
-        Product pr = null;
-
-        try {
-            PreparedStatement statement = connection.prepareStatement(UPDATE_PRODUCT);
-
-            statement.setString(1, product.getTitle());
-            statement.setString(2, product.getDescription());
-            statement.setDouble(3, product.getPrice());
-            statement.setLong(4, product.getUserId());
-            statement.setLong(5, product.getId());
-
-            int affectedRows = statement.executeUpdate();
-            if (affectedRows == 0) {
-                throw new SQLException("Процедура обновления товара, провалилась.");
-            }
-
-            pr = (Product) getById(product.getId());
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                connection.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
-
-        return pr;*/
     }
 
     public boolean delete(long id) {
@@ -242,68 +182,15 @@ public class ProductDAOImpl implements ProductDAO {
 
         return jdbcTemplate.update(DELETE_BY_ID_QUERY, id) != 0;
 
-        /*Connection connection = helper.createConnection();
-
-        int affectRows = 0;
-
-        boolean isOk = false;
-
-        PreparedStatement statement = null;
-        try {
-            statement = connection.prepareStatement(DELETE_BY_ID_QUERY);
-            statement.setLong(1, id);
-
-            affectRows = statement.executeUpdate();
-            if (affectRows != 0)
-                isOk = true;
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                connection.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
-
-        return isOk;*/
     }
 
     public List<Product> getAll() {
-
 
         JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
 
         List<Product> productsList = jdbcTemplate.query(GET_ALL, new BeanPropertyRowMapper<Product>(Product.class));
 
         return productsList;
-
-       /* Connection connection = helper.createConnection();
-
-        List<Product> products = new LinkedList<Product>();
-
-        try {
-            PreparedStatement statement = connection.prepareStatement(GET_ALL);
-            ResultSet resultSet = statement.executeQuery();
-
-            while (resultSet.next()) {
-                Product product = new Product(resultSet.getString("title"), resultSet.getString("description"),
-                        resultSet.getDouble("price"), resultSet.getLong("userId"));
-                product.setId(resultSet.getLong("id"));
-                products.add(product);
-            }
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                connection.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
-
-        return products;*/
 
     }
 

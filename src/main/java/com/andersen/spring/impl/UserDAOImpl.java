@@ -71,39 +71,7 @@ public class UserDAOImpl implements UserDAO {
         }
 
         return user;
-        /*
-        Connection connection = helper.createConnection();
 
-        User user = (User) item;
-
-        try {
-            PreparedStatement statement = connection.prepareStatement(INSERT_INTO_QUERY, Statement.RETURN_GENERATED_KEYS);
-
-            statement.setString(1, user.getName());
-            statement.setString(2, user.getEmail());
-            statement.setString(3, user.getPhoneNumber());
-
-            int affectedRows = statement.executeUpdate();
-            if (affectedRows == 0) {
-                throw new SQLException("Не удалось записать пользователя в базу");
-            }
-
-            ResultSet generatedSet = statement.getGeneratedKeys();
-            if (generatedSet.next()) {
-                user.setId(generatedSet.getLong(1));
-            }
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                connection.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
-
-        return user;*/
     }
 
     public User update(User item) {
@@ -119,33 +87,6 @@ public class UserDAOImpl implements UserDAO {
 
         return user;
 
-      /*  Connection connection = helper.createConnection();
-
-        User user = (User) item;
-
-        try {
-            PreparedStatement statement = connection.prepareStatement(UPDATE_USER);
-
-            statement.setString(1, user.getName());
-            statement.setString(2, user.getEmail());
-            statement.setString(3, user.getPhoneNumber());
-
-            int affectedRows = statement.executeUpdate();
-            if (affectedRows == 0) {
-                throw new SQLException("Не удалось обновить данные пользователя.");
-            }
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                connection.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
-
-        return (User) getById(user.getId());*/
     }
 
     public boolean delete(long id) {
@@ -162,33 +103,7 @@ public class UserDAOImpl implements UserDAO {
         List<User> usersList = jdbcTemplate.query(GET_ALL, new BeanPropertyRowMapper<User>(User.class));
 
         return usersList;
-/*
-        Connection connection = helper.createConnection();
 
-        List<User> users = new LinkedList<User>();
-
-        try {
-            PreparedStatement statement = connection.prepareStatement(GET_ALL);
-
-            ResultSet resultSet = statement.executeQuery();
-
-            while (resultSet.next()) {
-                User user = new User(resultSet.getString("name"), resultSet.getString("email"), resultSet.getString("phoneNumber"));
-                user.setId(resultSet.getLong("id"));
-                users.add(user);
-            }
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                connection.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
-
-        return users;*/
     }
 
     public User getById(long id) {
@@ -199,32 +114,6 @@ public class UserDAOImpl implements UserDAO {
 
         return user;
 
-       /* Connection connection = helper.createConnection();
-
-        User user = null;
-
-        try {
-            PreparedStatement statement = connection.prepareStatement(GET_BY_ID_QUERY);
-
-            statement.setLong(1, id);
-            ResultSet resultSet = statement.executeQuery();
-
-            while (resultSet.next()) {
-                user = new User(resultSet.getString("name"), resultSet.getString("email"), resultSet.getString("phoneNumber"));
-                user.setId(id);
-            }
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                connection.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
-
-        return user;*/
     }
 
     public User getUserByEmail(String email) {
@@ -234,33 +123,7 @@ public class UserDAOImpl implements UserDAO {
         User user = jdbcTemplate.queryForObject(GET_BY_Email_QUERY, new BeanPropertyRowMapper<User>(User.class), email);
 
         return user;
-        /*
-        Connection connection = helper.createConnection();
 
-        User user = null;
-
-        try {
-            PreparedStatement statement = connection.prepareStatement(GET_BY_Email_QUERY);
-
-            statement.setString(1, email);
-            ResultSet resultSet = statement.executeQuery();
-
-            while (resultSet.next()) {
-                user = new User(resultSet.getString("name"), resultSet.getString("email"), resultSet.getString("phoneNumber"));
-                user.setId(resultSet.getLong("id"));
-            }
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                connection.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
-
-        return user;*/
     }
 
     public List<User> getUsersByName(String name) {
@@ -270,34 +133,7 @@ public class UserDAOImpl implements UserDAO {
         List<User> usersList = jdbcTemplate.query(GET_BY_NAME_QUERY, new BeanPropertyRowMapper<User>(User.class), name);
 
         return usersList;
-/*
-        Connection connection = helper.createConnection();
 
-        List<User> users = new LinkedList<User>();
-
-        try {
-            PreparedStatement statement = connection.prepareStatement(GET_BY_NAME_QUERY);
-
-            statement.setString(1, name);
-            ResultSet resultSet = statement.executeQuery();
-
-            while (resultSet.next()) {
-                User user = new User(resultSet.getString("name"), resultSet.getString("email"), resultSet.getString("phoneNumber"));
-                user.setId(resultSet.getLong("id"));
-                users.add(user);
-            }
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                connection.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
-
-        return users;*/
     }
 
 
