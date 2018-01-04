@@ -21,13 +21,13 @@ import java.util.List;
 public class App {
     public static void main(String[] args) {
         ConfigurableApplicationContext ctx = new ClassPathXmlApplicationContext("application-context.xml");
-        UserAccountDAO uad = (UserAccountDAO) ctx.getBean("UserAccountDAOImpl");
+        UserAccountDAO uad = (UserAccountDAO) ctx.getBean("userAccountDAOImpl");
 
         ProductDAO pdi = (ProductDAO)ctx.getBean("productDAOImpl");
 
         UserDAO us = (UserDAO) ctx.getBean("userDAOImpl");
 
-        BasketDAO basketDAO = (BasketDAO) ctx.getBean("BasketDAOImpl");
+        BasketDAO basketDAO = (BasketDAO) ctx.getBean("basketDAOImpl");
 
         User user = new User();
         user.setId(1);
@@ -66,8 +66,8 @@ public class App {
             System.out.println("ByUserId: " + p);
         }
 
-        boolean result = pdi.delete(product.getId());
-        System.out.println("delete: " + result);
+      /*  boolean result = pdi.delete(product.getId());
+        System.out.println("delete: " + result);*/
 
         User user1 = new User();
         user1.setPhoneNumber("3333443");

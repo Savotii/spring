@@ -1,86 +1,93 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-	   					   http://www.springframework.org/schema/beans/spring-beans.xsd">
+	   					   http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-    <bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+    <context:component-scan base-package="com.andersen.spring" />
+    <context:annotation-config/>
+    <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>
+
+    <bean name="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="com.mysql.cj.jdbc.Driver" />
         <property name="url" value="jdbc:mysql://localhost:3306/Test" />
         <property name="username" value="root" />
         <property name="password" value="1111" />
     </bean>
 
-    <bean id="Product" class="com.andersen.spring.entity.Product" scope="prototype" >
+    <bean name="product" class="com.andersen.spring.entity.Product" scope="prototype" >
           <property name="price" value="10"/>
           <property name="userId" value="1"/>
     </bean>
 
-    <bean id="User" class="com.andersen.spring.entity.User" scope="prototype"/>
+    <bean name="user" class="com.andersen.spring.entity.User" scope="prototype"/>
 
-    <bean id="UserAccount" class="com.andersen.spring.entity.UserAccount" scope="prototype"/>
+    <bean name="userAccount" class="com.andersen.spring.entity.UserAccount" scope="prototype"/>
 
-    <bean id="Basket" class="com.andersen.spring.entity.Basket" scope="prototype"/>
+    <bean name="basket" class="com.andersen.spring.entity.Basket" scope="prototype"/>
 
     <!-- MySqlHelper beans -->
-    <bean id="MySqlHelper" class="com.andersen.spring.jdbc.MySqlHelper" init-method="init"/>
+    <bean name="mySqlHelper" class="com.andersen.spring.jdbc.MySqlHelper" init-method="init"/>
 
     <!-- DAO beans (just an example)-->
-    <bean id="userDAOImpl" class="com.andersen.spring.impl.UserDAOImpl">
-        <property name="helper" ref="MySqlHelper"/>
+    <bean name="userDAOImpl" class="com.andersen.spring.impl.UserDAOImpl">
+        <property name="helper" ref="mySqlHelper"/>
         <property name="dataSource" ref="dataSource"/>
     </bean>
 
-    <bean id="productDAOImpl" class="com.andersen.spring.impl.ProductDAOImpl">
-        <property name="helper" ref="MySqlHelper"/>
+    <bean name="productDAOImpl" class="com.andersen.spring.impl.ProductDAOImpl">
+        <property name="helper" ref="mySqlHelper"/>
         <property name="dataSource" ref="dataSource"/>
     </bean>
 
-    <bean id="UserAccountDAOImpl" class="com.andersen.spring.impl.UserAccountDAOImpl">
-        <property name="userServiceImpl" ref="UserServiceImpl" />
-        <property name="helper" ref="MySqlHelper"/>
+    <bean name="userAccountDAOImpl" class="com.andersen.spring.impl.UserAccountDAOImpl">
+        <property name="userServiceImpl" ref="userServiceImpl" />
+        <property name="helper" ref="mySqlHelper"/>
         <property name="dataSource" ref="dataSource"/>
     </bean>
 
-    <bean id="UserAccountServiceImpl" class="com.andersen.spring.impl.UserAccountServiceImpl">
-        <property name="userAccountDAO" ref="UserAccountDAOImpl" />
-        <lookup-method name="getUserAccount" bean="UserAccount"/>
+    <bean name="userAccountServiceImpl" class="com.andersen.spring.impl.UserAccountServiceImpl">
+        <property name="userAccountDAO" ref="userAccountDAOImpl" />
+        <lookup-method name="getUserAccount" bean="userAccount"/>
     </bean>
 
     <!-- Service beans -->
-    <bean id="ProductServiceImpl" class="com.andersen.spring.impl.ProductServiceImpl">
+    <bean name="productServiceImpl" class="com.andersen.spring.impl.ProductServiceImpl">
         <property name="productDAO" ref="productDAOImpl"/>
-        <lookup-method name="getProduct" bean="Product"/>
+        <lookup-method name="getProduct" bean="product"/>
     </bean>
 
-    <bean id="UserServiceImpl" class="com.andersen.spring.impl.UserServiceImpl">
+    <bean name="userServiceImpl" class="com.andersen.spring.impl.UserServiceImpl">
         <property name="userDAO" ref="userDAOImpl"/>
-        <lookup-method name="getUser" bean="User"/>
+        <lookup-method name="getUser" bean="user"/>
     </bean>
 
-    <bean name="UserAccountRowMapper" class="com.andersen.spring.entity.UserAccountRowMapper" >
-        <property name="userServiceImpl" ref="UserServiceImpl"/>
+    <bean name="userAccountRowMapper" class="com.andersen.spring.entity.UserAccountRowMapper" >
+        <property name="userServiceImpl" ref="userServiceImpl"/>
     </bean>
 
-    <bean name="BasketRowMapper" class="com.andersen.spring.entity.BasketRowMapper">
-        <property name="productService" ref="ProductServiceImpl"/>
-        <property name="userService" ref="UserServiceImpl" />
+    <bean name="basketRowMapper" class="com.andersen.spring.entity.BasketRowMapper">
+        <!-- <property name="productService" ref="productServiceImpl"/>
+        <property name="userService" ref="userServiceImpl" />
+       <constructor-arg name="productService" ref="productServiceImpl"/>
+        <constructor-arg name="userService" ref="userServiceImpl"/>-->
     </bean>
 
-    <bean name="BasketDAOImpl" class="com.andersen.spring.impl.BasketDAOImpl" >
+    <bean name="basketDAOImpl" class="com.andersen.spring.impl.BasketDAOImpl" >
         <property name="dataSource" ref="dataSource"/>
-        <property name="helper" ref="MySqlHelper" />
+        <property name="helper" ref="mySqlHelper" />
     </bean>
     
-    <bean name="BasketServiceImpl" class="com.andersen.spring.impl.BasketServiceImpl">
-        <property name="basketDAO" ref="BasketDAOImpl"/>
+    <bean name="basketServiceImpl" class="com.andersen.spring.impl.BasketServiceImpl">
+        <property name="basketDAO" ref="basketDAOImpl"/>
     </bean>
     
     <!-- Storage bean -->
-    <bean id="MarketFacadeImpl" class="com.andersen.spring.facade.MarketFacadeImpl">
-        <constructor-arg ref="ProductServiceImpl"/>
-        <constructor-arg ref="UserServiceImpl"/>
-        <constructor-arg ref="UserAccountServiceImpl"/>
+    <bean name="marketFacadeImpl" class="com.andersen.spring.facade.MarketFacadeImpl">
+        <constructor-arg ref="productServiceImpl"/>
+        <constructor-arg ref="userServiceImpl"/>
+        <constructor-arg ref="userAccountServiceImpl"/>
     </bean>
 
-</beans>
+  </beans>
