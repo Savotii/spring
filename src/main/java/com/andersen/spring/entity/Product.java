@@ -10,6 +10,8 @@ public class Product {
     private double price;
     private long userId;
 
+     private User user;
+
     public Product() {
 
     }
@@ -33,7 +35,7 @@ public class Product {
         return userId;
     }
 
-    public void setUserId(int userId) {
+    public void setUserId(long userId) {
         this.userId = userId;
     }
 
@@ -59,6 +61,14 @@ public class Product {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
     @Override

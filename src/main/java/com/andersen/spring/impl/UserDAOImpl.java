@@ -26,11 +26,12 @@ public class UserDAOImpl implements UserDAO {
     private final String INSERT_INTO_QUERY = "INSERT INTO users(name, email, phoneNumber) VALUES( ?, ?, ?)";
     private final String UPDATE_USER = "UPDATE users SET name = ?, email = ?, phoneNumber =? WHERE id = ?";
 
-    @Autowired
     private MySqlHelper helper;
 
-    @Autowired
     private DataSource dataSource;
+
+    @Autowired
+    JdbcTemplate jdbcTemplate;
 
     public UserDAOImpl() {
     }
@@ -46,8 +47,6 @@ public class UserDAOImpl implements UserDAO {
     public User create(User item) {
 
         User user = null;
-
-        JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
 
         KeyHolder keyHolder = new GeneratedKeyHolder();
 
@@ -78,8 +77,6 @@ public class UserDAOImpl implements UserDAO {
 
         User user = item;
 
-        JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
-
         int result = jdbcTemplate.update(UPDATE_USER, new Object[]{item.getName(), item.getEmail(), item.getPhoneNumber(),  item.getId()});
         if (result != 0) {
             user = getById(item.getId());
@@ -90,15 +87,10 @@ public class UserDAOImpl implements UserDAO {
     }
 
     public boolean delete(long id) {
-
-        JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
-
         return jdbcTemplate.update(DELETE_BY_ID_QUERY, id) != 0;
     }
 
     public List<User> getAll() {
-
-        JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
 
         List<User> usersList = jdbcTemplate.query(GET_ALL, new BeanPropertyRowMapper<User>(User.class));
 
@@ -108,8 +100,6 @@ public class UserDAOImpl implements UserDAO {
 
     public User getById(long id) {
 
-        JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
-
         User user = jdbcTemplate.queryForObject(GET_BY_ID_QUERY, new Object[]{id},  new BeanPropertyRowMapper<User>(User.class));
 
         return user;
@@ -118,8 +108,6 @@ public class UserDAOImpl implements UserDAO {
 
     public User getUserByEmail(String email) {
 
-        JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
-
         User user = jdbcTemplate.queryForObject(GET_BY_Email_QUERY, new BeanPropertyRowMapper<User>(User.class), email);
 
         return user;
@@ -127,8 +115,6 @@ public class UserDAOImpl implements UserDAO {
     }
 
     public List<User> getUsersByName(String name) {
-
-        JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
 
         List<User> usersList = jdbcTemplate.query(GET_BY_NAME_QUERY, new BeanPropertyRowMapper<User>(User.class), name);
 

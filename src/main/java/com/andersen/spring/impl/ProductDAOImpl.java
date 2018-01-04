@@ -2,6 +2,7 @@ package com.andersen.spring.impl;
 
 import com.andersen.spring.dao.ProductDAO;
 import com.andersen.spring.entity.Product;
+import com.andersen.spring.entity.ProductRowMapper;
 import com.andersen.spring.jdbc.MySqlHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
@@ -29,11 +30,15 @@ public class ProductDAOImpl implements ProductDAO {
     private final String INSERT_INTO_QUERY = "INSERT INTO products(title, description, price, userId) VALUES(?, ?, ?, ?)";
     private final String UPDATE_PRODUCT = "UPDATE products SET title = ?, description = ?, price = ?, userId =? WHERE id = ?";
 
-    @Autowired
     private MySqlHelper helper;
 
-    @Autowired
     private DataSource dataSource;
+
+    @Autowired
+    ProductRowMapper productRowMapper;
+
+    @Autowired
+    JdbcTemplate jdbcTemplate;
 
     public ProductDAOImpl() {
     }
@@ -44,87 +49,23 @@ public class ProductDAOImpl implements ProductDAO {
 
     public List<Product> getProductsByTitle(String title) {
 
-        JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
-
-        List<Product> productsList = jdbcTemplate.query(GET_BY_TITLE_QUERY, new BeanPropertyRowMapper<Product>(Product.class), title);
+        List<Product> productsList = jdbcTemplate.query(GET_BY_TITLE_QUERY, productRowMapper, title);
 
         return productsList;
-       /*
-        List<Product> products = new LinkedList<Product>();
 
-        Connection connection = helper.createConnection();
-
-        try {
-            PreparedStatement statement = connection.prepareStatement(GET_BY_TITLE_QUERY);
-
-            statement.setString(1, title);
-            ResultSet resultSet = statement.executeQuery();
-
-            while (resultSet.next()) {
-                Product product = new Product(resultSet.getString("title"), resultSet.getString("description"),
-                        resultSet.getDouble("price"), resultSet.getLong("userId"));
-                product.setId(resultSet.getLong("id"));
-                products.add(product);
-            }
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                connection.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
-
-        return products;
-*/
     }
 
     public List<Product> getProductsByUserId(long userId) {
 
-        JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
-
-        List<Product> products = jdbcTemplate.query(GET_BY_USERID_QUERY, new Object[]{userId}, new BeanPropertyRowMapper<Product>(Product.class));
+        List<Product> products = jdbcTemplate.query(GET_BY_USERID_QUERY, new Object[]{userId}, productRowMapper);//new BeanPropertyRowMapper<Product>(Product.class));
 
         return products;
-
-       /* List<Product> products = new LinkedList<Product>();
-
-        Connection connection = helper.createConnection();
-
-        try {
-            PreparedStatement statement = connection.prepareStatement(GET_BY_USERID_QUERY);
-
-            statement.setLong(1, userId);
-            ResultSet resultSet = statement.executeQuery();
-
-            while (resultSet.next()) {
-                Product product = new Product(resultSet.getString("title"), resultSet.getString("description"),
-                        resultSet.getDouble("price"), resultSet.getLong("userId"));
-                product.setId(resultSet.getLong("id"));
-                products.add(product);
-            }
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                connection.close();
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
-
-        return products;*/
 
     }
 
     public Product create(final Product item) {
 
         Product product = null;
-
-        JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
 
         KeyHolder keyHolder = new GeneratedKeyHolder();
 
@@ -153,9 +94,7 @@ public class ProductDAOImpl implements ProductDAO {
 
     public Product getById(long id) {
 
-        JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
-
-        Product product = jdbcTemplate.queryForObject(GET_BY_ID_QUERY, new Object[]{id}, new BeanPropertyRowMapper<Product>(Product.class));
+        Product product = jdbcTemplate.queryForObject(GET_BY_ID_QUERY, new Object[]{id}, productRowMapper); //new BeanPropertyRowMapper<Product>(Product.class));
 
         return product;
 
@@ -164,8 +103,6 @@ public class ProductDAOImpl implements ProductDAO {
     public Product update(Product item) {
 
         Product product = item;
-
-        JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
 
         int result = jdbcTemplate.update(UPDATE_PRODUCT, new Object[]{item.getTitle(), item.getDescription(), item.getPrice(), item.getUserId(), item.getId()});
         if (result != 0) {
@@ -178,15 +115,11 @@ public class ProductDAOImpl implements ProductDAO {
 
     public boolean delete(long id) {
 
-        JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
-
         return jdbcTemplate.update(DELETE_BY_ID_QUERY, id) != 0;
 
     }
 
     public List<Product> getAll() {
-
-        JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
 
         List<Product> productsList = jdbcTemplate.query(GET_ALL, new BeanPropertyRowMapper<Product>(Product.class));
 

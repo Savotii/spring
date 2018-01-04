@@ -1,18 +1,19 @@
 package com.andersen.spring.entity;
 
-import com.andersen.spring.controllers.ProductService;
 import com.andersen.spring.impl.ProductServiceImpl;
 import com.andersen.spring.impl.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.Scope;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Component;
-import org.springframework.web.context.support.SpringBeanAutowiringSupport;
+import org.springframework.stereotype.Service;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
 @Component
+@Scope("prototype")
 public class BasketRowMapper implements RowMapper<Basket> {
 
     @Autowired
@@ -21,17 +22,8 @@ public class BasketRowMapper implements RowMapper<Basket> {
     @Autowired
     UserServiceImpl userService;
 
-    private static ApplicationContext ctx;
-
     public BasketRowMapper() {
 
-        if (productService == null && ctx != null) {
-            productService = (ProductServiceImpl) ctx.getBean("productServiceImpl");
-        }
-
-        if (userService == null && ctx != null) {
-            userService = (UserServiceImpl) ctx.getBean("userServiceImpl");
-        }
     }
 
     @Override
@@ -45,19 +37,4 @@ public class BasketRowMapper implements RowMapper<Basket> {
         return basket;
     }
 
-    @Autowired
-    public void setProductService(ProductServiceImpl productService) {
-        this.productService = productService;
-    }
-
-    @Autowired
-    public void setUserService(UserServiceImpl userService) {
-        this.userService = userService;
-    }
-
-    @Autowired
-    public void setCtx(ApplicationContext ctx) {
-        if (BasketRowMapper.ctx == null)
-            BasketRowMapper.ctx = ctx;
-    }
 }

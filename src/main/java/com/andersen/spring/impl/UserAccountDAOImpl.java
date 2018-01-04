@@ -25,14 +25,15 @@ public class UserAccountDAOImpl implements UserAccountDAO {
     private final String INSERT_INTO_QUERY = "INSERT INTO ACCOUNTS(accountsNumber, amount, ownerId) VALUES(?, ?, ?)";
     private final String UPDATE_ACCOUNT = "UPDATE ACCOUNTS SET accountsNumber = ?, amount = ?, ownerId = ? WHERE id = ?";
 
-    @Autowired
     private MySqlHelper helper;
 
-    @Autowired
     private UserService userServiceImpl;
 
     @Autowired
     private DataSource dataSource;
+
+    @Autowired
+    private JdbcTemplate jdbcTemplate;
 
     public MySqlHelper getHelper() {
         return helper;
@@ -46,8 +47,6 @@ public class UserAccountDAOImpl implements UserAccountDAO {
     public UserAccount create(UserAccount item) {
 
         UserAccount ua = item;
-
-        JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
 
         KeyHolder keyHolder = new GeneratedKeyHolder();
 
@@ -73,20 +72,6 @@ public class UserAccountDAOImpl implements UserAccountDAO {
         }
 
         return ua;
-        //INSERT_INTO_QUERY, new Object[]{item.getAccountsNumber(), item.getAmount(), item.getUser().getId()});
-
-        /*//Решить вопрос с получением ID из базы
-
-        if (out != 0) {
-            System.out.println("UserAccount saved");
-          *//*  item.setId(keyHolder.getKey().longValue());
-            ua = getById(item.getId());*//*
-        } else {
-            System.out.println("UserAccount not saved");
-        */
-  //  }
-
-    // return ua;
 
 }
 
@@ -95,10 +80,7 @@ public class UserAccountDAOImpl implements UserAccountDAO {
 
         UserAccount ua = null;
 
-        JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
-
         ua = jdbcTemplate.queryForObject(GET_BY_ACCOUNTID_QUERY, new Object[]{id}, new UserAccountRowMapper());
-        //ua = jdbcTemplate.queryForObject(GET_BY_ACCOUNTID_QUERY,  new Object[]{id}, new BeanPropertyRowMapper<UserAccount>(UserAccount.class));
 
         return ua;
     }
@@ -107,8 +89,6 @@ public class UserAccountDAOImpl implements UserAccountDAO {
     public UserAccount update(UserAccount item) {
 
         UserAccount ua = null;
-
-        JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
 
         int out = jdbcTemplate.update(UPDATE_ACCOUNT, new Object[]{item.getAccountsNumber(), item.getAmount(), item.getUser().getId(), item.getId()});
 
@@ -125,8 +105,6 @@ public class UserAccountDAOImpl implements UserAccountDAO {
     @Override
     public boolean delete(long id) {
 
-        JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
-
         return jdbcTemplate.update(DELETE_BY_ID_QUERY, id) != 0;
 
     }
@@ -139,25 +117,7 @@ public class UserAccountDAOImpl implements UserAccountDAO {
     @Override
     public List<UserAccount> getAccounts(long id) {
 
-        //List<UserAccount> userAccountList = new ArrayList<UserAccount>();
-
-        JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
-
         List<UserAccount> userAccounts = jdbcTemplate.query(GET_ALL, new BeanPropertyRowMapper<UserAccount>(UserAccount.class), id);
-
-        /*List<Map<String, Object>> uaRows = jdbcTemplate.queryForList(GET_ALL, id);
-
-        for (Map<String, Object> uaRow: uaRows) {
-
-            UserAccount userAccount = new UserAccount();
-            userAccount.setId(Long.parseLong(String.valueOf(uaRow.get("id"))));
-            userAccount.setAmount(Double.parseDouble(String.valueOf(uaRow.get("amount"))));
-            userAccount.setAccountsNumber(Integer.parseInt(String.valueOf(uaRow.get("accountsNumber"))));
-
-            userAccount.setUser(userServiceImpl.getById(Long.parseLong(String.valueOf(uaRow.get("ownerId")))));
-
-            userAccountList.add(userAccount);
-        }*/
 
         return userAccounts;//userAccountList;
     }

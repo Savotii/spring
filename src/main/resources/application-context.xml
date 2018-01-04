@@ -6,14 +6,16 @@
 	   					   http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
     <context:component-scan base-package="com.andersen.spring" />
-    <context:annotation-config/>
-    <bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>
 
     <bean name="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
         <property name="driverClassName" value="com.mysql.cj.jdbc.Driver" />
         <property name="url" value="jdbc:mysql://localhost:3306/Test" />
         <property name="username" value="root" />
         <property name="password" value="1111" />
+    </bean>
+
+    <bean name="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
+        <constructor-arg name="dataSource" ref="dataSource"/>
     </bean>
 
     <bean name="product" class="com.andersen.spring.entity.Product" scope="prototype" >
@@ -67,12 +69,12 @@
         <property name="userServiceImpl" ref="userServiceImpl"/>
     </bean>
 
-    <bean name="basketRowMapper" class="com.andersen.spring.entity.BasketRowMapper">
-        <!-- <property name="productService" ref="productServiceImpl"/>
+    <!--<bean name="basketRowMapper" class="com.andersen.spring.entity.BasketRowMapper">
+         <property name="productService" ref="productServiceImpl"/>
         <property name="userService" ref="userServiceImpl" />
        <constructor-arg name="productService" ref="productServiceImpl"/>
-        <constructor-arg name="userService" ref="userServiceImpl"/>-->
-    </bean>
+        <constructor-arg name="userService" ref="userServiceImpl"/>
+    </bean>-->
 
     <bean name="basketDAOImpl" class="com.andersen.spring.impl.BasketDAOImpl" >
         <property name="dataSource" ref="dataSource"/>
