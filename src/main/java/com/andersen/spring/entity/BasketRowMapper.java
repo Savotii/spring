@@ -13,7 +13,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 @Component
-@Scope("prototype")
 public class BasketRowMapper implements RowMapper<Basket> {
 
     @Autowired

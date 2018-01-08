@@ -22,7 +22,6 @@ public class UserAccountRowMapper implements RowMapper<UserAccount> {
         userAccount.setAccountsNumber(resultSet.getInt("accountsNumber"));
         userAccount.setAmount(resultSet.getDouble("amount"));
         userAccount.setId(resultSet.getLong("id"));
-        userAccount.setUserId(resultSet.getLong("ownerId"));
         userAccount.setUser(userServiceImpl.getById(resultSet.getLong("ownerId")));
 
         return userAccount;

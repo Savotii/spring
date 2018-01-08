@@ -1,7 +1,6 @@
 package com.andersen.spring.entity;
 
 import com.andersen.spring.exceptions.InsufficientFunds;
-import org.springframework.beans.factory.annotation.Autowired;
 
 public class UserAccount {
 
@@ -9,12 +8,9 @@ public class UserAccount {
 
     private Double amount;
 
-    @Autowired
     private User user;
 
     private long id;
-
-    private long userId;
 
     public UserAccount() {
 
@@ -64,7 +60,4 @@ public class UserAccount {
         this.user = user;
     }
 
-    public void setUserId(Long id) {
-        this.userId = id;
-    }
 }
