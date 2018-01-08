@@ -34,24 +34,20 @@
 
     <!-- DAO beans (just an example)-->
     <bean name="userDAOImpl" class="com.andersen.spring.impl.UserDAOImpl">
-        <property name="helper" ref="mySqlHelper"/>
         <property name="dataSource" ref="dataSource"/>
     </bean>
 
     <bean name="productDAOImpl" class="com.andersen.spring.impl.ProductDAOImpl">
-        <property name="helper" ref="mySqlHelper"/>
         <property name="dataSource" ref="dataSource"/>
     </bean>
 
     <bean name="userAccountDAOImpl" class="com.andersen.spring.impl.UserAccountDAOImpl">
         <property name="userServiceImpl" ref="userServiceImpl" />
-        <property name="helper" ref="mySqlHelper"/>
         <property name="dataSource" ref="dataSource"/>
     </bean>
 
     <bean name="userAccountServiceImpl" class="com.andersen.spring.impl.UserAccountServiceImpl">
         <property name="userAccountDAO" ref="userAccountDAOImpl" />
-        <lookup-method name="getUserAccount" bean="userAccount"/>
     </bean>
 
     <!-- Service beans -->
@@ -69,16 +65,8 @@
         <property name="userServiceImpl" ref="userServiceImpl"/>
     </bean>
 
-    <!--<bean name="basketRowMapper" class="com.andersen.spring.entity.BasketRowMapper">
-         <property name="productService" ref="productServiceImpl"/>
-        <property name="userService" ref="userServiceImpl" />
-       <constructor-arg name="productService" ref="productServiceImpl"/>
-        <constructor-arg name="userService" ref="userServiceImpl"/>
-    </bean>-->
-
     <bean name="basketDAOImpl" class="com.andersen.spring.impl.BasketDAOImpl" >
         <property name="dataSource" ref="dataSource"/>
-        <property name="helper" ref="mySqlHelper" />
     </bean>
     
     <bean name="basketServiceImpl" class="com.andersen.spring.impl.BasketServiceImpl">

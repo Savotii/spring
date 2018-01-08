@@ -30,10 +30,6 @@ public class BasketDAOImpl implements BasketDAO {
     private final String INSERT_INTO_QUERY = "INSERT INTO basket(userId, productId, count) VALUES(?, ?, ? )";
     private final String UPDATE_PRODUCT = "UPDATE basket SET userId = ?, productId = ?, count = ? WHERE id = ?";
 
-    @Autowired
-    private MySqlHelper helper;
-
-    @Autowired
     private DataSource dataSource;
 
     @Autowired
@@ -45,8 +41,6 @@ public class BasketDAOImpl implements BasketDAO {
     @Override
     public List<Basket> getAllDeals(long userId) {
 
-        //JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
-
         List<Basket> basketList = jdbcTemplate.query(GET_ALL, new Object[]{userId}, basketRowMapper);//new BeanPropertyRowMapper<Basket>(Basket.class));
 
         return basketList;
@@ -55,8 +49,6 @@ public class BasketDAOImpl implements BasketDAO {
 
     @Override
     public Basket create(Basket item) {
-
-        Basket basket = null;
 
         KeyHolder keyHolder = new GeneratedKeyHolder();
 
@@ -76,16 +68,13 @@ public class BasketDAOImpl implements BasketDAO {
 
         if (result != 0) {
             item.setId(keyHolder.getKey().longValue());
-            basket = item;
         }
 
-        return basket;
+        return item;
     }
 
     @Override
     public Basket getById(long id) {
-
-       // JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
 
         Basket basket = jdbcTemplate.queryForObject(GET_BY_ID_QUERY, new Object[]{id}, basketRowMapper);//new BasketRowMapper());
 
@@ -97,8 +86,6 @@ public class BasketDAOImpl implements BasketDAO {
     public Basket update(Basket item) {
 
         Basket basket = item;
-
-        //JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
 
         int result = jdbcTemplate.update(UPDATE_PRODUCT, new Object[]{item.getUser().getId(), item.getProduct().getId(), item.getCount() , item.getId()});
         if (result != 0) {
@@ -112,8 +99,6 @@ public class BasketDAOImpl implements BasketDAO {
     @Override
     public boolean delete(long id) {
 
-        //JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
-
         return jdbcTemplate.update(DELETE_BY_ID_QUERY, id) != 0;
 
     }
@@ -121,16 +106,10 @@ public class BasketDAOImpl implements BasketDAO {
     @Override
     public List<Basket> getAll() {
 
-      //  JdbcTemplate jdbcTemplate = new JdbcTemplate(dataSource);
-
         List<Basket> basketList = jdbcTemplate.query(GET_ALL_FROM_TABLE, basketRowMapper);//new BeanPropertyRowMapper<Basket>(Basket.class));
 
         return basketList;
 
-    }
-
-    public void setHelper(MySqlHelper helper) {
-        this.helper = helper;
     }
 
     public void setDataSource(DataSource dataSource) {

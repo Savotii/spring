@@ -27,6 +27,7 @@ public class UserAccountServiceImpl implements AccountService {
 
         try {
             updAccount.reduceTheAccount(amount);
+            userAccountDAO.update(updAccount);
         } catch (InsufficientFunds insufficientFunds) {
             insufficientFunds.printStackTrace();
         }
@@ -56,8 +57,4 @@ public class UserAccountServiceImpl implements AccountService {
         this.userAccountDAO = userAccountDAO;
     }
 
-    public UserAccount getUserAccount()
-    {
-        return new UserAccount();
-    }
 }

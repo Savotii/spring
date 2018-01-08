@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6ef6becb-44c8-4ff6-8943-191810be9e73" name="Default" comment="">
+    <list default="true" id="6ef6becb-44c8-4ff6-8943-191810be9e73" name="Default" comment="Переделал мапперы под бины.&#10;рефактор кода">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/andersen/spring/entity/BasketRowMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/andersen/spring/entity/BasketRowMapper.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/andersen/spring/entity/Product.java" afterPath="$PROJECT_DIR$/src/main/java/com/andersen/spring/entity/Product.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/andersen/spring/entity/ProductRowMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/andersen/spring/entity/ProductRowMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/andersen/spring/entity/UserAccountRowMapper.java" afterPath="$PROJECT_DIR$/src/main/java/com/andersen/spring/entity/UserAccountRowMapper.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/andersen/spring/exceptions/InsufficientFunds.java" afterPath="$PROJECT_DIR$/src/main/java/com/andersen/spring/exceptions/InsufficientFunds.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/BasketDAOImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/BasketDAOImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/ProductDAOImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/ProductDAOImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/UserAccountDAOImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/UserAccountDAOImpl.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/UserAccountServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/UserAccountServiceImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/UserDAOImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/UserDAOImpl.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/application-context.xml" afterPath="$PROJECT_DIR$/src/main/resources/application-context.xml" />
     </list>
@@ -29,19 +29,23 @@
       <file leaf-file-name="BasketDAOImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/BasketDAOImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="49" column="101" lean-forward="false" selection-start-line="49" selection-start-column="7" selection-end-line="49" selection-end-column="101" />
+            <state relative-caret-position="488">
+              <caret line="106" column="33" lean-forward="false" selection-start-line="106" selection-start-column="33" selection-end-line="106" selection-end-column="33" />
               <folding>
-                <element signature="e#4499#4500#0" expanded="true" />
-                <element signature="e#4535#4536#0" expanded="true" />
-                <element signature="e#4591#4592#0" expanded="true" />
-                <element signature="e#4635#4636#0" expanded="true" />
-                <marker date="1515082936783" expanded="true" signature="969:1002" ph="SELECT * FRO... basket" />
-                <marker date="1515082936783" expanded="false" signature="1042:1079" ph="SELECT * FRO... basket" />
-                <marker date="1515082936783" expanded="true" signature="1129:1149" ph="SELECT * FRO... basket" />
-                <marker date="1515082936783" expanded="true" signature="1276:1307" ph="DELETE FROM " />
-                <marker date="1515082936783" expanded="false" signature="1356:1417" ph="INSERT INTO basket... " />
-                <marker date="1515082936783" expanded="true" signature="1463:1530" ph="UPDATE baske... " />
+                <element signature="method#getAllDeals#0;class#BasketDAOImpl#0" expanded="false" />
+                <element signature="method#create#0;class#BasketDAOImpl#0" expanded="false" />
+                <element signature="class#2082:2902" expanded="false" />
+                <element signature="method#createPreparedStatement#0;class#2082:2902" expanded="false" />
+                <element signature="method#getById#0;class#BasketDAOImpl#0" expanded="false" />
+                <element signature="method#update#0;class#BasketDAOImpl#0" expanded="false" />
+                <element signature="method#delete#0;class#BasketDAOImpl#0" expanded="false" />
+                <element signature="method#getAll#0;class#BasketDAOImpl#0" expanded="false" />
+                <marker date="1515394673831" expanded="false" signature="969:1002" ph="SELECT * FRO... basket" />
+                <marker date="1515394673831" expanded="false" signature="1042:1079" ph="SELECT * FRO... basket" />
+                <marker date="1515394673831" expanded="false" signature="1129:1149" ph="SELECT * FRO... basket" />
+                <marker date="1515394673831" expanded="false" signature="1276:1307" ph="DELETE FROM " />
+                <marker date="1515394673831" expanded="false" signature="1356:1417" ph="INSERT INTO basket... " />
+                <marker date="1515394673831" expanded="false" signature="1463:1530" ph="UPDATE baske... " />
               </folding>
             </state>
           </provider>
@@ -50,8 +54,8 @@
       <file leaf-file-name="application-context.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/application-context.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="18" column="11" lean-forward="true" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
+            <state relative-caret-position="308">
+              <caret line="49" column="67" lean-forward="false" selection-start-line="49" selection-start-column="67" selection-end-line="49" selection-end-column="67" />
               <folding />
             </state>
           </provider>
@@ -60,21 +64,27 @@
       <file leaf-file-name="UserDAOImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/UserDAOImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-605">
-              <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+            <state relative-caret-position="340">
+              <caret line="85" column="59" lean-forward="false" selection-start-line="85" selection-start-column="59" selection-end-line="85" selection-end-column="59" />
               <folding>
-                <element signature="e#1582#1583#0" expanded="true" />
-                <element signature="e#1626#1627#0" expanded="true" />
-                <element signature="e#3146#3147#0" expanded="true" />
-                <element signature="e#3217#3218#0" expanded="true" />
-                <marker date="1515083288746" expanded="true" signature="674:711" ph="SELECT * FRO... users" />
-                <marker date="1515083288746" expanded="true" signature="761:796" ph="SELECT * FRO... users" />
-                <marker date="1515083288746" expanded="true" signature="843:875" ph="SELECT * FRO... users" />
-                <marker date="1515083288746" expanded="true" signature="915:934" ph="SELECT * FRO... users" />
-                <marker date="1515083288746" expanded="true" signature="1043:1073" ph="DELETE FROM " />
-                <marker date="1515083288746" expanded="true" signature="1122:1182" ph="INSERT INTO users... " />
-                <marker date="1515083288746" expanded="true" signature="1225:1290" ph="UPDATE produ... " />
+                <marker date="1515395182203" expanded="true" signature="730:767" ph="SELECT * FRO... users" />
+                <marker date="1515395182203" expanded="true" signature="817:852" ph="SELECT * FRO... users" />
+                <marker date="1515395182203" expanded="true" signature="899:931" ph="SELECT * FRO... users" />
+                <marker date="1515395182203" expanded="true" signature="971:990" ph="SELECT * FRO... users" />
+                <marker date="1515395182203" expanded="true" signature="1099:1129" ph="DELETE FROM " />
+                <marker date="1515395182203" expanded="true" signature="1178:1238" ph="INSERT INTO users... " />
+                <marker date="1515395182203" expanded="true" signature="1281:1346" ph="UPDATE produ... " />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/UserServiceImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="11" column="14" lean-forward="false" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -82,25 +92,20 @@
       <file leaf-file-name="ProductDAOImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/ProductDAOImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="96" column="0" lean-forward="false" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
+            <state relative-caret-position="408">
+              <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
               <folding>
                 <element signature="method#ProductDAOImpl#0;class#ProductDAOImpl#0" expanded="false" />
                 <element signature="method#getProductsByTitle#0;class#ProductDAOImpl#0" expanded="false" />
                 <element signature="method#getProductsByUserId#0;class#ProductDAOImpl#0" expanded="false" />
-                <element signature="method#create#0;class#ProductDAOImpl#0" expanded="false" />
-                <element signature="class#2469:3374" expanded="false" />
-                <element signature="method#createPreparedStatement#0;class#2469:3374" expanded="false" />
-                <element signature="method#update#0;class#ProductDAOImpl#0" expanded="false" />
-                <element signature="method#delete#0;class#ProductDAOImpl#0" expanded="false" />
                 <element signature="method#getAll#0;class#ProductDAOImpl#0" expanded="false" />
-                <marker date="1515083456381" expanded="false" signature="857:896" ph="SELECT * FRO... products" />
-                <marker date="1515083456381" expanded="false" signature="946:987" ph="SELECT * FRO... products" />
-                <marker date="1515083456381" expanded="false" signature="1034:1069" ph="SELECT * FRO... products" />
-                <marker date="1515083456381" expanded="false" signature="1108:1130" ph="SELECT * FRO... products" />
-                <marker date="1515083456381" expanded="false" signature="1242:1275" ph="DELETE FROM " />
-                <marker date="1515083456381" expanded="false" signature="1324:1398" ph="INSERT INTO products... " />
-                <marker date="1515083456381" expanded="false" signature="1444:1525" ph="UPDATE produ... " />
+                <marker date="1515394673780" expanded="false" signature="857:896" ph="SELECT * FRO... products" />
+                <marker date="1515394673780" expanded="false" signature="946:987" ph="SELECT * FRO... products" />
+                <marker date="1515394673780" expanded="false" signature="1034:1069" ph="SELECT * FRO... products" />
+                <marker date="1515394673780" expanded="false" signature="1108:1130" ph="SELECT * FRO... products" />
+                <marker date="1515394673780" expanded="false" signature="1242:1275" ph="DELETE FROM " />
+                <marker date="1515394673780" expanded="false" signature="1324:1398" ph="INSERT INTO products... " />
+                <marker date="1515394673780" expanded="false" signature="1444:1525" ph="UPDATE produ... " />
               </folding>
             </state>
           </provider>
@@ -109,89 +114,71 @@
       <file leaf-file-name="UserAccountDAOImpl.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/UserAccountDAOImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-90">
-              <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+            <state relative-caret-position="1423">
+              <caret line="106" column="91" lean-forward="false" selection-start-line="106" selection-start-column="91" selection-end-line="106" selection-end-column="91" />
               <folding>
-                <element signature="method#create#0;class#UserAccountDAOImpl#0" expanded="false" />
-                <element signature="class#1867:2572" expanded="false" />
-                <element signature="method#createPreparedStatement#0;class#1867:2572" expanded="false" />
-                <element signature="method#getById#0;class#UserAccountDAOImpl#0" expanded="false" />
-                <element signature="method#update#0;class#UserAccountDAOImpl#0" expanded="false" />
-                <element signature="method#delete#0;class#UserAccountDAOImpl#0" expanded="false" />
-                <element signature="method#getAccounts#0;class#UserAccountDAOImpl#0" expanded="false" />
-                <marker date="1515083343208" expanded="false" signature="812:847" ph="SELECT * FRO... ACCOUNTS" />
-                <marker date="1515083343208" expanded="false" signature="894:929" ph="SELECT * FRO... ACCOUNTS" />
-                <marker date="1515083343208" expanded="false" signature="968:1006" ph="SELECT * FRO... ACCOUNTS" />
-                <marker date="1515083343208" expanded="false" signature="968:1008" ph="SELECT * FRO... ACCOUNTS" />
-                <marker date="1515083343208" expanded="false" signature="1058:1091" ph="DELETE FROM " />
-                <marker date="1515083343208" expanded="false" signature="1140:1209" ph="INSERT INTO ACCOUNTS... " />
-                <marker date="1515083343208" expanded="false" signature="1255:1331" ph="UPDATE ACCOU... " />
+                <element signature="e#3426#3427#0" expanded="true" />
+                <element signature="e#3478#3479#0" expanded="true" />
+                <element signature="e#3721#3722#0" expanded="true" />
+                <element signature="e#3759#3760#0" expanded="true" />
+                <element signature="e#3826#3827#0" expanded="true" />
+                <element signature="e#3880#3881#0" expanded="true" />
+                <element signature="e#3936#3937#0" expanded="true" />
+                <element signature="e#3980#3981#0" expanded="true" />
+                <marker date="1515395241712" expanded="true" signature="812:847" ph="SELECT * FRO... ACCOUNTS" />
+                <marker date="1515395241712" expanded="true" signature="894:929" ph="SELECT * FRO... ACCOUNTS" />
+                <marker date="1515395241712" expanded="true" signature="968:1006" ph="SELECT * FRO... ACCOUNTS" />
+                <marker date="1515395241712" expanded="true" signature="968:1008" ph="SELECT * FRO... ACCOUNTS" />
+                <marker date="1515395241712" expanded="true" signature="1058:1091" ph="DELETE FROM " />
+                <marker date="1515395241712" expanded="true" signature="1140:1209" ph="INSERT INTO ACCOUNTS... " />
+                <marker date="1515395241712" expanded="true" signature="1255:1331" ph="UPDATE ACCOU... " />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BasketRowMapper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/entity/BasketRowMapper.java">
+      <file leaf-file-name="UserAccount.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/entity/UserAccount.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="364">
-              <caret line="32" column="30" lean-forward="false" selection-start-line="32" selection-start-column="30" selection-end-line="32" selection-end-column="30" />
+            <state relative-caret-position="273">
+              <caret line="42" column="16" lean-forward="false" selection-start-line="42" selection-start-column="16" selection-end-line="42" selection-end-column="16" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="method#UserAccount#0;class#UserAccount#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProductRowMapper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/entity/ProductRowMapper.java">
+      <file leaf-file-name="UserAccountServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/UserAccountServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="24" column="32" lean-forward="false" selection-start-line="24" selection-start-column="32" selection-end-line="24" selection-end-column="32" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Product.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/entity/Product.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="347">
-              <caret line="37" column="30" lean-forward="false" selection-start-line="37" selection-start-column="30" selection-end-line="37" selection-end-column="30" />
+            <state relative-caret-position="272">
+              <caret line="29" column="46" lean-forward="false" selection-start-line="29" selection-start-column="46" selection-end-line="29" selection-end-column="46" />
               <folding>
-                <element signature="method#Product#0;class#Product#0" expanded="false" />
-                <element signature="e#1225#1226#0" expanded="true" />
-                <element signature="e#1252#1253#0" expanded="true" />
-                <element signature="e#1290#1291#0" expanded="true" />
-                <element signature="e#1322#1323#0" expanded="true" />
-                <element signature="method#equals#0;class#Product#0" expanded="false" />
-                <element signature="method#hashCode#0;class#Product#0" expanded="false" />
+                <element signature="method#replenishTheAccount#0;class#UserAccountServiceImpl#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="User.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/entity/User.java">
+      <file leaf-file-name="InsufficientFunds.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/exceptions/InsufficientFunds.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+            <state relative-caret-position="34">
+              <caret line="2" column="55" lean-forward="false" selection-start-line="2" selection-start-column="55" selection-end-line="2" selection-end-column="55" />
               <folding>
-                <element signature="method#User#0;class#User#0" expanded="false" />
-                <element signature="method#User#1;class#User#0" expanded="false" />
-                <element signature="e#406#407#0" expanded="true" />
-                <element signature="method#equals#0;class#User#0" expanded="false" />
-                <element signature="method#hashCode#0;class#User#0" expanded="false" />
+                <element signature="e#182#183#0" expanded="true" />
+                <element signature="e#250#251#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BasketServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/BasketServiceImpl.java">
+      <file leaf-file-name="UserAccountRowMapper.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/entity/UserAccountRowMapper.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="24" column="19" lean-forward="false" selection-start-line="24" selection-start-column="19" selection-end-line="24" selection-end-column="19" />
+            <state relative-caret-position="68">
+              <caret line="12" column="33" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="33" />
               <folding />
             </state>
           </provider>
@@ -223,6 +210,7 @@
       <find>UserServiceImpl</find>
       <find>MySqlConnection</find>
       <find>UserAccountRowMapper</find>
+      <find>redu</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -256,7 +244,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/andersen/spring/controllers/UserService.java" />
         <option value="$PROJECT_DIR$/src/test/java/ProductServiceTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/UserAccountService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/andersen/spring/exceptions/InsufficientFunds.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/andersen/spring/controllers/AccountService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/andersen/spring/dao/UserAccountDAO.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/andersen/spring/controllers/Accounts.java" />
@@ -266,8 +253,6 @@
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/andersen/spring/entity/User.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/andersen/spring/entity/UserAccount.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/andersen/spring/entity/UserAccountRowMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/UserAccountServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/UserServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/andersen/spring/facade/MarketFacade.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/ProductServiceImpl.java" />
@@ -279,14 +264,17 @@
         <option value="$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/BasketServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/andersen/spring/entity/Basket.java" />
         <option value="$PROJECT_DIR$/src/main/java/App.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/application-context.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/BasketDAOImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/andersen/spring/entity/BasketRowMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/UserDAOImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/UserAccountDAOImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/ProductDAOImpl.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/andersen/spring/entity/ProductRowMapper.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/andersen/spring/entity/Product.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/ProductDAOImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/BasketDAOImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/resources/application-context.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/UserAccountServiceImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/andersen/spring/exceptions/InsufficientFunds.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/andersen/spring/entity/UserAccountRowMapper.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/UserDAOImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/UserAccountDAOImpl.java" />
       </list>
     </option>
   </component>
@@ -319,10 +307,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="AndroidView" />
-      <pane id="Scratches" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -457,6 +441,10 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -731,7 +719,8 @@
       <workItem from="1514533704701" duration="16409000" />
       <workItem from="1514967665117" duration="3000" />
       <workItem from="1514967702396" duration="9301000" />
-      <workItem from="1515053182830" duration="16307000" />
+      <workItem from="1515053182830" duration="16468000" />
+      <workItem from="1515394309736" duration="988000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <created>1513944425461</created>
@@ -1006,7 +995,14 @@
       <option name="project" value="LOCAL" />
       <updated>1515061073278</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="Переделал мапперы под бины.&#10;рефактор кода">
+      <created>1515083712186</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1515083712186</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1042,7 +1038,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="133645000" />
+    <option name="totallyTimeSpent" value="134794000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1059,32 +1055,32 @@
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962137" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962137" sideWeight="0.46375266" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27616927" sideWeight="0.23614073" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.52895325" sideWeight="0.71321964" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.52895325" sideWeight="0.71321964" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850778" sideWeight="0.4936034" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850778" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32739422" sideWeight="0.61353946" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32739422" sideWeight="0.61353946" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1684435" sideWeight="0.820331" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1684435" sideWeight="0.83774835" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962137" sideWeight="0.49573562" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27616927" sideWeight="0.7638593" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1684435" sideWeight="0.17966904" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1684435" sideWeight="0.16225165" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962137" sideWeight="0.46375266" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962137" sideWeight="0.49573562" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1124,7 +1120,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Реализация UserDAOImpl" />
     <MESSAGE value="Добавление класса помощника и получение коннекта к mysql" />
     <MESSAGE value="Некоторые настройки бинов" />
     <MESSAGE value="Донастройка файла бинов.&#10;Попытка написания теста." />
@@ -1149,7 +1144,8 @@
     <MESSAGE value="Добавление сущности корзина, слоя сервиса и дао" />
     <MESSAGE value="Проблема в getById, сервисы не инжектятся." />
     <MESSAGE value="Получение контекста в маппере" />
-    <option name="LAST_COMMIT_MESSAGE" value="Получение контекста в маппере" />
+    <MESSAGE value="Переделал мапперы под бины.&#10;рефактор кода" />
+    <option name="LAST_COMMIT_MESSAGE" value="Переделал мапперы под бины.&#10;рефактор кода" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1162,31 +1158,25 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/andersen/spring/entity/UserAccountRowMapper.java</url>
-          <line>26</line>
+          <line>25</line>
           <properties />
           <option name="timeStamp" value="100" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/BasketDAOImpl.java</url>
-          <line>114</line>
-          <properties />
-          <option name="timeStamp" value="135" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/BasketDAOImpl.java</url>
-          <line>125</line>
+          <line>108</line>
           <properties />
           <option name="timeStamp" value="137" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/BasketDAOImpl.java</url>
-          <line>49</line>
+          <line>43</line>
           <properties />
           <option name="timeStamp" value="140" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/ProductDAOImpl.java</url>
-          <line>96</line>
+          <line>87</line>
           <properties />
           <option name="timeStamp" value="144" />
         </line-breakpoint>
@@ -1195,6 +1185,18 @@
           <line>23</line>
           <properties />
           <option name="timeStamp" value="145" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/ProductDAOImpl.java</url>
+          <line>95</line>
+          <properties />
+          <option name="timeStamp" value="146" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/ProductDAOImpl.java</url>
+          <line>108</line>
+          <properties />
+          <option name="timeStamp" value="147" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/ProductServiceTest.java</url>
@@ -1205,7 +1207,7 @@
           <option name="timeStamp" value="57" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="146" />
+      <option name="time" value="148" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="JUnit">
@@ -1280,17 +1282,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/exceptions/InsufficientFunds.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="17" lean-forward="false" selection-start-line="9" selection-start-column="17" selection-end-line="9" selection-end-column="17" />
-          <folding>
-            <element signature="e#175#176#0" expanded="false" />
-            <element signature="e#201#202#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/UserServiceTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -1305,17 +1296,6 @@
           <caret line="63" column="4" lean-forward="false" selection-start-line="63" selection-start-column="4" selection-end-line="63" selection-end-column="4" />
           <folding>
             <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/UserAccountServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="13" column="14" lean-forward="false" selection-start-line="13" selection-start-column="14" selection-end-line="13" selection-end-column="14" />
-          <folding>
-            <element signature="e#1124#1125#0" expanded="false" />
-            <element signature="e#1177#1178#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1388,41 +1368,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/UserServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="11" column="14" lean-forward="false" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/entity/UserAccount.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="11" column="14" lean-forward="false" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
-          <folding>
-            <element signature="method#UserAccount#0;class#UserAccount#0" expanded="false" />
-            <element signature="method#reduceTheAccount#0;class#UserAccount#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/entity/UserRowMapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="34">
           <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/entity/UserAccountRowMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="27" column="0" lean-forward="false" selection-start-line="25" selection-start-column="6" selection-end-line="27" selection-end-column="0" />
-          <folding>
-            <element signature="e#1155#1156#0" expanded="true" />
-            <element signature="e#1209#1210#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1445,7 +1394,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1453,7 +1401,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="149">
           <caret line="75" column="0" lean-forward="false" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1461,7 +1408,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="243">
           <caret line="213" column="0" lean-forward="false" selection-start-line="213" selection-start-column="0" selection-end-line="213" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1469,7 +1415,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
           <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1477,7 +1422,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="183">
           <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1485,7 +1429,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="183">
           <caret line="314" column="0" lean-forward="false" selection-start-line="314" selection-start-column="0" selection-end-line="314" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1493,7 +1436,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="149">
           <caret line="482" column="0" lean-forward="false" selection-start-line="482" selection-start-column="0" selection-end-line="482" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1502,18 +1444,6 @@
         <state relative-caret-position="136">
           <caret line="8" column="6" lean-forward="false" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/ProductServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-          <folding>
-            <element signature="method#ProductServiceImpl#0;class#ProductServiceImpl#0" expanded="false" />
-            <element signature="e#931#932#0" expanded="true" />
-            <element signature="method#getProductsByTitle#0;class#ProductServiceImpl#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1529,7 +1459,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="208">
           <caret line="843" column="0" lean-forward="false" selection-start-line="843" selection-start-column="0" selection-end-line="843" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1555,7 +1484,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="191">
           <caret line="428" column="0" lean-forward="false" selection-start-line="428" selection-start-column="0" selection-end-line="428" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1563,40 +1491,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/BasketDAOImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="49" column="101" lean-forward="false" selection-start-line="49" selection-start-column="7" selection-end-line="49" selection-end-column="101" />
-          <folding>
-            <element signature="e#4499#4500#0" expanded="true" />
-            <element signature="e#4535#4536#0" expanded="true" />
-            <element signature="e#4591#4592#0" expanded="true" />
-            <element signature="e#4635#4636#0" expanded="true" />
-            <marker date="1515082936783" expanded="true" signature="969:1002" ph="SELECT * FRO... basket" />
-            <marker date="1515082936783" expanded="false" signature="1042:1079" ph="SELECT * FRO... basket" />
-            <marker date="1515082936783" expanded="true" signature="1129:1149" ph="SELECT * FRO... basket" />
-            <marker date="1515082936783" expanded="true" signature="1276:1307" ph="DELETE FROM " />
-            <marker date="1515082936783" expanded="false" signature="1356:1417" ph="INSERT INTO basket... " />
-            <marker date="1515082936783" expanded="true" signature="1463:1530" ph="UPDATE baske... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/BasketServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="24" column="19" lean-forward="false" selection-start-line="24" selection-start-column="19" selection-end-line="24" selection-end-column="19" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/entity/BasketRowMapper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
+        <state relative-caret-position="374">
           <caret line="32" column="30" lean-forward="false" selection-start-line="32" selection-start-column="30" selection-end-line="32" selection-end-column="30" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1604,85 +1504,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/UserAccountDAOImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-90">
-          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-          <folding>
-            <element signature="method#create#0;class#UserAccountDAOImpl#0" expanded="false" />
-            <element signature="class#1867:2572" expanded="false" />
-            <element signature="method#createPreparedStatement#0;class#1867:2572" expanded="false" />
-            <element signature="method#getById#0;class#UserAccountDAOImpl#0" expanded="false" />
-            <element signature="method#update#0;class#UserAccountDAOImpl#0" expanded="false" />
-            <element signature="method#delete#0;class#UserAccountDAOImpl#0" expanded="false" />
-            <element signature="method#getAccounts#0;class#UserAccountDAOImpl#0" expanded="false" />
-            <marker date="1515083343208" expanded="false" signature="812:847" ph="SELECT * FRO... ACCOUNTS" />
-            <marker date="1515083343208" expanded="false" signature="894:929" ph="SELECT * FRO... ACCOUNTS" />
-            <marker date="1515083343208" expanded="false" signature="968:1006" ph="SELECT * FRO... ACCOUNTS" />
-            <marker date="1515083343208" expanded="false" signature="968:1008" ph="SELECT * FRO... ACCOUNTS" />
-            <marker date="1515083343208" expanded="false" signature="1058:1091" ph="DELETE FROM " />
-            <marker date="1515083343208" expanded="false" signature="1140:1209" ph="INSERT INTO ACCOUNTS... " />
-            <marker date="1515083343208" expanded="false" signature="1255:1331" ph="UPDATE ACCOU... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/UserDAOImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-605">
-          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
-          <folding>
-            <element signature="e#1582#1583#0" expanded="true" />
-            <element signature="e#1626#1627#0" expanded="true" />
-            <element signature="e#3146#3147#0" expanded="true" />
-            <element signature="e#3217#3218#0" expanded="true" />
-            <marker date="1515083288746" expanded="true" signature="674:711" ph="SELECT * FRO... users" />
-            <marker date="1515083288746" expanded="true" signature="761:796" ph="SELECT * FRO... users" />
-            <marker date="1515083288746" expanded="true" signature="843:875" ph="SELECT * FRO... users" />
-            <marker date="1515083288746" expanded="true" signature="915:934" ph="SELECT * FRO... users" />
-            <marker date="1515083288746" expanded="true" signature="1043:1073" ph="DELETE FROM " />
-            <marker date="1515083288746" expanded="true" signature="1122:1182" ph="INSERT INTO users... " />
-            <marker date="1515083288746" expanded="true" signature="1225:1290" ph="UPDATE produ... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application-context.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="18" column="11" lean-forward="true" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/ProductDAOImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="96" column="0" lean-forward="false" selection-start-line="96" selection-start-column="0" selection-end-line="96" selection-end-column="0" />
-          <folding>
-            <element signature="method#ProductDAOImpl#0;class#ProductDAOImpl#0" expanded="false" />
-            <element signature="method#getProductsByTitle#0;class#ProductDAOImpl#0" expanded="false" />
-            <element signature="method#getProductsByUserId#0;class#ProductDAOImpl#0" expanded="false" />
-            <element signature="method#create#0;class#ProductDAOImpl#0" expanded="false" />
-            <element signature="class#2469:3374" expanded="false" />
-            <element signature="method#createPreparedStatement#0;class#2469:3374" expanded="false" />
-            <element signature="method#update#0;class#ProductDAOImpl#0" expanded="false" />
-            <element signature="method#delete#0;class#ProductDAOImpl#0" expanded="false" />
-            <element signature="method#getAll#0;class#ProductDAOImpl#0" expanded="false" />
-            <marker date="1515083456381" expanded="false" signature="857:896" ph="SELECT * FRO... products" />
-            <marker date="1515083456381" expanded="false" signature="946:987" ph="SELECT * FRO... products" />
-            <marker date="1515083456381" expanded="false" signature="1034:1069" ph="SELECT * FRO... products" />
-            <marker date="1515083456381" expanded="false" signature="1108:1130" ph="SELECT * FRO... products" />
-            <marker date="1515083456381" expanded="false" signature="1242:1275" ph="DELETE FROM " />
-            <marker date="1515083456381" expanded="false" signature="1324:1398" ph="INSERT INTO products... " />
-            <marker date="1515083456381" expanded="false" signature="1444:1525" ph="UPDATE produ... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/entity/User.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
+        <state relative-caret-position="238">
           <caret line="20" column="0" lean-forward="false" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding>
             <element signature="method#User#0;class#User#0" expanded="false" />
@@ -1704,16 +1528,172 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/entity/Product.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="347">
-          <caret line="37" column="30" lean-forward="false" selection-start-line="37" selection-start-column="30" selection-end-line="37" selection-end-column="30" />
+        <state relative-caret-position="381">
+          <caret line="39" column="5" lean-forward="false" selection-start-line="39" selection-start-column="5" selection-end-line="39" selection-end-column="5" />
           <folding>
             <element signature="method#Product#0;class#Product#0" expanded="false" />
-            <element signature="e#1225#1226#0" expanded="true" />
-            <element signature="e#1252#1253#0" expanded="true" />
-            <element signature="e#1290#1291#0" expanded="true" />
-            <element signature="e#1322#1323#0" expanded="true" />
+            <element signature="e#738#739#0" expanded="true" />
+            <element signature="e#774#775#0" expanded="true" />
             <element signature="method#equals#0;class#Product#0" expanded="false" />
             <element signature="method#hashCode#0;class#Product#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/BasketServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="24" column="19" lean-forward="false" selection-start-line="24" selection-start-column="19" selection-end-line="24" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/ProductServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding>
+            <element signature="method#ProductServiceImpl#0;class#ProductServiceImpl#0" expanded="false" />
+            <element signature="e#931#932#0" expanded="true" />
+            <element signature="method#getProductsByTitle#0;class#ProductServiceImpl#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/UserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="11" column="14" lean-forward="false" selection-start-line="11" selection-start-column="14" selection-end-line="11" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/BasketDAOImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="488">
+          <caret line="106" column="33" lean-forward="false" selection-start-line="106" selection-start-column="33" selection-end-line="106" selection-end-column="33" />
+          <folding>
+            <element signature="method#getAllDeals#0;class#BasketDAOImpl#0" expanded="false" />
+            <element signature="method#create#0;class#BasketDAOImpl#0" expanded="false" />
+            <element signature="class#2082:2902" expanded="false" />
+            <element signature="method#createPreparedStatement#0;class#2082:2902" expanded="false" />
+            <element signature="method#getById#0;class#BasketDAOImpl#0" expanded="false" />
+            <element signature="method#update#0;class#BasketDAOImpl#0" expanded="false" />
+            <element signature="method#delete#0;class#BasketDAOImpl#0" expanded="false" />
+            <element signature="method#getAll#0;class#BasketDAOImpl#0" expanded="false" />
+            <marker date="1515394673831" expanded="false" signature="969:1002" ph="SELECT * FRO... basket" />
+            <marker date="1515394673831" expanded="false" signature="1042:1079" ph="SELECT * FRO... basket" />
+            <marker date="1515394673831" expanded="false" signature="1129:1149" ph="SELECT * FRO... basket" />
+            <marker date="1515394673831" expanded="false" signature="1276:1307" ph="DELETE FROM " />
+            <marker date="1515394673831" expanded="false" signature="1356:1417" ph="INSERT INTO basket... " />
+            <marker date="1515394673831" expanded="false" signature="1463:1530" ph="UPDATE baske... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application-context.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="49" column="67" lean-forward="false" selection-start-line="49" selection-start-column="67" selection-end-line="49" selection-end-column="67" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/exceptions/InsufficientFunds.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="55" lean-forward="false" selection-start-line="2" selection-start-column="55" selection-end-line="2" selection-end-column="55" />
+          <folding>
+            <element signature="e#182#183#0" expanded="true" />
+            <element signature="e#250#251#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/ProductDAOImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="42" column="0" lean-forward="false" selection-start-line="42" selection-start-column="0" selection-end-line="42" selection-end-column="0" />
+          <folding>
+            <element signature="method#ProductDAOImpl#0;class#ProductDAOImpl#0" expanded="false" />
+            <element signature="method#getProductsByTitle#0;class#ProductDAOImpl#0" expanded="false" />
+            <element signature="method#getProductsByUserId#0;class#ProductDAOImpl#0" expanded="false" />
+            <element signature="method#getAll#0;class#ProductDAOImpl#0" expanded="false" />
+            <marker date="1515394673780" expanded="false" signature="857:896" ph="SELECT * FRO... products" />
+            <marker date="1515394673780" expanded="false" signature="946:987" ph="SELECT * FRO... products" />
+            <marker date="1515394673780" expanded="false" signature="1034:1069" ph="SELECT * FRO... products" />
+            <marker date="1515394673780" expanded="false" signature="1108:1130" ph="SELECT * FRO... products" />
+            <marker date="1515394673780" expanded="false" signature="1242:1275" ph="DELETE FROM " />
+            <marker date="1515394673780" expanded="false" signature="1324:1398" ph="INSERT INTO products... " />
+            <marker date="1515394673780" expanded="false" signature="1444:1525" ph="UPDATE produ... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/entity/UserAccountRowMapper.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="12" column="33" lean-forward="false" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/UserAccountServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="29" column="46" lean-forward="false" selection-start-line="29" selection-start-column="46" selection-end-line="29" selection-end-column="46" />
+          <folding>
+            <element signature="method#replenishTheAccount#0;class#UserAccountServiceImpl#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/UserDAOImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="85" column="59" lean-forward="false" selection-start-line="85" selection-start-column="59" selection-end-line="85" selection-end-column="59" />
+          <folding>
+            <marker date="1515395182203" expanded="true" signature="730:767" ph="SELECT * FRO... users" />
+            <marker date="1515395182203" expanded="true" signature="817:852" ph="SELECT * FRO... users" />
+            <marker date="1515395182203" expanded="true" signature="899:931" ph="SELECT * FRO... users" />
+            <marker date="1515395182203" expanded="true" signature="971:990" ph="SELECT * FRO... users" />
+            <marker date="1515395182203" expanded="true" signature="1099:1129" ph="DELETE FROM " />
+            <marker date="1515395182203" expanded="true" signature="1178:1238" ph="INSERT INTO users... " />
+            <marker date="1515395182203" expanded="true" signature="1281:1346" ph="UPDATE produ... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/UserAccountDAOImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1423">
+          <caret line="106" column="91" lean-forward="false" selection-start-line="106" selection-start-column="91" selection-end-line="106" selection-end-column="91" />
+          <folding>
+            <element signature="e#3426#3427#0" expanded="true" />
+            <element signature="e#3478#3479#0" expanded="true" />
+            <element signature="e#3721#3722#0" expanded="true" />
+            <element signature="e#3759#3760#0" expanded="true" />
+            <element signature="e#3826#3827#0" expanded="true" />
+            <element signature="e#3880#3881#0" expanded="true" />
+            <element signature="e#3936#3937#0" expanded="true" />
+            <element signature="e#3980#3981#0" expanded="true" />
+            <marker date="1515395241712" expanded="true" signature="812:847" ph="SELECT * FRO... ACCOUNTS" />
+            <marker date="1515395241712" expanded="true" signature="894:929" ph="SELECT * FRO... ACCOUNTS" />
+            <marker date="1515395241712" expanded="true" signature="968:1006" ph="SELECT * FRO... ACCOUNTS" />
+            <marker date="1515395241712" expanded="true" signature="968:1008" ph="SELECT * FRO... ACCOUNTS" />
+            <marker date="1515395241712" expanded="true" signature="1058:1091" ph="DELETE FROM " />
+            <marker date="1515395241712" expanded="true" signature="1140:1209" ph="INSERT INTO ACCOUNTS... " />
+            <marker date="1515395241712" expanded="true" signature="1255:1331" ph="UPDATE ACCOU... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/entity/UserAccount.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="42" column="16" lean-forward="false" selection-start-line="42" selection-start-column="16" selection-end-line="42" selection-end-column="16" />
+          <folding>
+            <element signature="method#UserAccount#0;class#UserAccount#0" expanded="false" />
           </folding>
         </state>
       </provider>

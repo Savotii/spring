@@ -1,13 +1,13 @@
 package com.andersen.spring.exceptions;
 
-public class InsufficientFunds extends Exception {
+public class InsufficientFunds extends RuntimeException {
 
     public InsufficientFunds() {
 
     }
 
     public InsufficientFunds(String msg) {
-        super(msg);
+        super("Недостаточно денег для совершения операции.");
     }
 
 }

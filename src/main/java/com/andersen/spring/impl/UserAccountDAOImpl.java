@@ -25,28 +25,18 @@ public class UserAccountDAOImpl implements UserAccountDAO {
     private final String INSERT_INTO_QUERY = "INSERT INTO ACCOUNTS(accountsNumber, amount, ownerId) VALUES(?, ?, ?)";
     private final String UPDATE_ACCOUNT = "UPDATE ACCOUNTS SET accountsNumber = ?, amount = ?, ownerId = ? WHERE id = ?";
 
-    private MySqlHelper helper;
-
     private UserService userServiceImpl;
 
-    @Autowired
     private DataSource dataSource;
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
-    public MySqlHelper getHelper() {
-        return helper;
-    }
-
-    public void setHelper(MySqlHelper helper) {
-        this.helper = helper;
-    }
+    @Autowired
+    UserAccountRowMapper userAccountRowMapper;
 
     @Override
     public UserAccount create(UserAccount item) {
-
-        UserAccount ua = item;
 
         KeyHolder keyHolder = new GeneratedKeyHolder();
 
@@ -65,13 +55,10 @@ public class UserAccountDAOImpl implements UserAccountDAO {
         );
 
         if(result != 0) {
-            ua.setId(keyHolder.getKey().longValue());
-        }
-        else {
-            ua = null;
+            item.setId(keyHolder.getKey().longValue());
         }
 
-        return ua;
+        return item;
 
 }
 
@@ -80,7 +67,7 @@ public class UserAccountDAOImpl implements UserAccountDAO {
 
         UserAccount ua = null;
 
-        ua = jdbcTemplate.queryForObject(GET_BY_ACCOUNTID_QUERY, new Object[]{id}, new UserAccountRowMapper());
+        ua = jdbcTemplate.queryForObject(GET_BY_ACCOUNTID_QUERY, new Object[]{id}, userAccountRowMapper);
 
         return ua;
     }
@@ -117,9 +104,9 @@ public class UserAccountDAOImpl implements UserAccountDAO {
     @Override
     public List<UserAccount> getAccounts(long id) {
 
-        List<UserAccount> userAccounts = jdbcTemplate.query(GET_ALL, new BeanPropertyRowMapper<UserAccount>(UserAccount.class), id);
+        List<UserAccount> userAccounts = jdbcTemplate.query(GET_ALL, userAccountRowMapper);
 
-        return userAccounts;//userAccountList;
+        return userAccounts;
     }
 
     public UserService getUserServiceImpl() {

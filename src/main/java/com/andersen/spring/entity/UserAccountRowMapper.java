@@ -23,8 +23,7 @@ public class UserAccountRowMapper implements RowMapper<UserAccount> {
         userAccount.setAmount(resultSet.getDouble("amount"));
         userAccount.setId(resultSet.getLong("id"));
         userAccount.setUserId(resultSet.getLong("ownerId"));
-        //Тут фигня. не прокидывает юзерсервис..
-       // userAccount.setUser(userServiceImpl.getById(resultSet.getLong("ownerId")));
+        userAccount.setUser(userServiceImpl.getById(resultSet.getLong("ownerId")));
 
         return userAccount;
     }

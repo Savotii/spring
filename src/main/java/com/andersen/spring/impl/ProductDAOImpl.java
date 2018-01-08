@@ -30,8 +30,6 @@ public class ProductDAOImpl implements ProductDAO {
     private final String INSERT_INTO_QUERY = "INSERT INTO products(title, description, price, userId) VALUES(?, ?, ?, ?)";
     private final String UPDATE_PRODUCT = "UPDATE products SET title = ?, description = ?, price = ?, userId =? WHERE id = ?";
 
-    private MySqlHelper helper;
-
     private DataSource dataSource;
 
     @Autowired
@@ -41,10 +39,6 @@ public class ProductDAOImpl implements ProductDAO {
     JdbcTemplate jdbcTemplate;
 
     public ProductDAOImpl() {
-    }
-
-    public void setHelper(MySqlHelper helper) {
-        this.helper = helper;
     }
 
     public List<Product> getProductsByTitle(String title) {
@@ -63,9 +57,7 @@ public class ProductDAOImpl implements ProductDAO {
 
     }
 
-    public Product create(final Product item) {
-
-        Product product = null;
+    public Product create(Product item) {
 
         KeyHolder keyHolder = new GeneratedKeyHolder();
 
@@ -86,10 +78,9 @@ public class ProductDAOImpl implements ProductDAO {
 
         if (result != 0) {
             item.setId(keyHolder.getKey().longValue());
-            product = item;
         }
 
-        return product;
+        return item;
     }
 
     public Product getById(long id) {

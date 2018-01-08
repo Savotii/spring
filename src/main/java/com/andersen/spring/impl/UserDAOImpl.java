@@ -2,6 +2,7 @@ package com.andersen.spring.impl;
 
 import com.andersen.spring.dao.UserDAO;
 import com.andersen.spring.entity.User;
+import com.andersen.spring.entity.UserAccountRowMapper;
 import com.andersen.spring.jdbc.MySqlHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
@@ -26,8 +27,6 @@ public class UserDAOImpl implements UserDAO {
     private final String INSERT_INTO_QUERY = "INSERT INTO users(name, email, phoneNumber) VALUES( ?, ?, ?)";
     private final String UPDATE_USER = "UPDATE users SET name = ?, email = ?, phoneNumber =? WHERE id = ?";
 
-    private MySqlHelper helper;
-
     private DataSource dataSource;
 
     @Autowired
@@ -36,17 +35,11 @@ public class UserDAOImpl implements UserDAO {
     public UserDAOImpl() {
     }
 
-    public void setHelper(MySqlHelper helper) {
-        this.helper = helper;
-    }
-
     public void setDataSource(DataSource dataSource) {
         this.dataSource = dataSource;
     }
 
     public User create(User item) {
-
-        User user = null;
 
         KeyHolder keyHolder = new GeneratedKeyHolder();
 
@@ -66,11 +59,9 @@ public class UserDAOImpl implements UserDAO {
 
         if (result != 0) {
             item.setId(keyHolder.getKey().longValue());
-            user = item;
         }
 
-        return user;
-
+        return item;
     }
 
     public User update(User item) {
