@@ -20,9 +20,9 @@
         <property name="password" value="1111" />
     </bean>
 
-    <jdbc:initialize-database data-source="dataSource" enabled="true">
-        <jdbc:script location="db_schema.sql"/>
-    </jdbc:initialize-database>
+    <!-- проверить после запуска под веб<jdbc:initialize-database data-source="dataSource" enabled="true">
+     <jdbc:script location="db_schema.sql"/>
+    </jdbc:initialize-database> -->
 
     <bean name="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
         <constructor-arg name="dataSource" ref="dataSource"/>
