@@ -32,6 +32,10 @@
        <constructor-arg ref="dataSource"/>
     </bean>
 
+    <bean name="transactionTemplate" class="org.springframework.transaction.support.TransactionTemplate">
+        <property name="transactionManager" ref="txManager"/>
+    </bean>
+
   <!-- НУЖНО ПОНЯТЬ. НЕ ХОЧЕТ . КРЕШИТСЯ.
   <tx:annotation-driven transaction-manager="txManager" />
 
@@ -54,8 +58,6 @@
     <bean name="user" class="com.andersen.spring.entity.User"/>
 
     <bean name="userAccount" class="com.andersen.spring.entity.UserAccount" />
-
-    <bean name="basket" class="com.andersen.spring.entity.Basket"/>
 
     <!-- DAO beans (just an example)-->
     <bean name="userDAOImpl" class="com.andersen.spring.impl.user.UserDAOImpl">
@@ -90,19 +92,13 @@
         <property name="userServiceImpl" ref="userServiceImpl"/>
     </bean>
 
-    <bean name="basketDAOImpl" class="com.andersen.spring.impl.BasketDAOImpl" >
-    </bean>
-    
-    <bean name="basketServiceImpl" class="com.andersen.spring.impl.BasketServiceImpl">
-        <property name="basketDAO" ref="basketDAOImpl"/>
-    </bean>
-    
     <!-- Storage bean -->
     <bean name="marketFacadeImpl" class="com.andersen.spring.facade.MarketFacadeImpl">
         <constructor-arg ref="productServiceImpl"/>
         <constructor-arg ref="userServiceImpl"/>
         <constructor-arg ref="userAccountServiceImpl"/>
         <property name="transactionManager" ref="txManager" />
+        <property name="transactionTemplate" ref="transactionTemplate"/>
     </bean>
 
   </beans>

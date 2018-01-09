@@ -20,7 +20,9 @@ public class UserAccountServiceImpl implements AccountService {
         UserAccount updAccount = userAccountDAO.getById(account.getId());
 
         try {
-            checkMoney(account, amount);
+            if (!checkMoney(account, amount))
+                throw new InsufficientFunds("На счету недостаточно денег.");
+
             userAccountDAO.updateBalance(updAccount, amount);
         } catch (InsufficientFunds insufficientFunds) {
             insufficientFunds.printStackTrace();
@@ -30,7 +32,7 @@ public class UserAccountServiceImpl implements AccountService {
     public boolean checkMoney(UserAccount userAccount, Double amount) throws InsufficientFunds {
 
         if (userAccount.getAmount() == null || userAccount.getAmount() < amount)
-            throw new InsufficientFunds("На счету недостаточно денег.");
+            return false;
 
         return true;
     }
@@ -64,12 +66,14 @@ public class UserAccountServiceImpl implements AccountService {
 
         User seller = product.getUser();
 
-        if (checkMoney(buyerAccount, product.getPrice())) {
-            buyerAccount = userAccountDAO.updateBalance(buyerAccount, -product.getPrice());
+        if (!checkMoney(buyerAccount, product.getPrice())) {
+            throw new InsufficientFunds("На счету недостаточно денег.");
         }
+            buyerAccount = userAccountDAO.updateBalance(buyerAccount, -product.getPrice());
+
 
         //2. increase to seller
-       throw new InsufficientFunds();
-       // sellerAccount = userAccountDAO.updateBalance(sellerAccount, product.getPrice());
+        // throw new InsufficientFunds();
+        sellerAccount = userAccountDAO.updateBalance(sellerAccount, product.getPrice());
     }
 }

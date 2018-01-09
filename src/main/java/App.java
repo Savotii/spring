@@ -1,12 +1,9 @@
-import com.andersen.spring.dao.BasketDAO;
 import com.andersen.spring.dao.ProductDAO;
 import com.andersen.spring.dao.UserAccountDAO;
 import com.andersen.spring.dao.UserDAO;
-import com.andersen.spring.entity.Basket;
 import com.andersen.spring.entity.Product;
 import com.andersen.spring.entity.User;
 import com.andersen.spring.entity.UserAccount;
-import com.andersen.spring.exceptions.InsufficientFunds;
 import com.andersen.spring.facade.MarketFacade;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -82,7 +79,7 @@ public class App {
 
         User seller = product.getUser();
 
-        List<UserAccount> buyerAccountList = uad.getAccountsByUserId(3);
+        List<UserAccount> buyerAccountList = uad.getAccountsByUserId(4);
         List<UserAccount> sellerAccountList = uad.getAccountsByUserId(seller.getId());
 
         UserAccount buyerAccount = buyerAccountList.get(0);
