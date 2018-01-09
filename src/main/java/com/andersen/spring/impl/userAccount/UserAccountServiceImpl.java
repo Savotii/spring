@@ -12,7 +12,6 @@ import java.util.List;
 
 public class UserAccountServiceImpl implements AccountService {
 
-    @Autowired
     private UserAccountDAO userAccountDAO;
 
     @Override
@@ -70,7 +69,7 @@ public class UserAccountServiceImpl implements AccountService {
         }
 
         //2. increase to seller
-        throw new InsufficientFunds();
-       // sellerAccount = userAccountDAO.updateBalance(sellerAccount, product.getPrice());
+       throw new InsufficientFunds();
+        //sellerAccount = userAccountDAO.updateBalance(sellerAccount, product.getPrice());
     }
 }

@@ -12,23 +12,25 @@ import com.andersen.spring.impl.user.UserServiceImpl;
 import com.andersen.spring.entity.Product;
 import com.andersen.spring.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.transaction.PlatformTransactionManager;
+import org.springframework.transaction.TransactionDefinition;
+import org.springframework.transaction.TransactionStatus;
 import org.springframework.transaction.annotation.Transactional;
+import org.springframework.transaction.interceptor.DefaultTransactionAttribute;
+import org.springframework.transaction.support.DefaultTransactionDefinition;
 
 import java.util.List;
 
 public class MarketFacadeImpl implements MarketFacade {
 
-    @Autowired
     private ProductService productServiceImpl;
 
-    @Autowired
     private UserService userServiceImpl;
 
-    @Autowired
     private AccountService userAccountImpl;
 
-    @Autowired
-    private BasketService basketServiceImpl;
+    private PlatformTransactionManager transactionManager;
 
     public MarketFacadeImpl(ProductServiceImpl productServiceImpl, UserServiceImpl userServiceImpl, UserAccountServiceImpl userAccountImpl) {
         this.productServiceImpl = productServiceImpl;
@@ -107,14 +109,23 @@ public class MarketFacadeImpl implements MarketFacade {
 
     @Transactional
     public void buyProduct(User user, Product product, UserAccount buyerAccount, UserAccount sellerAccount) {
-        //basketServiceImpl.buyProduct(user, product, count);
+
+        TransactionDefinition txDef = new DefaultTransactionDefinition();
+        TransactionStatus txStatus = transactionManager.getTransaction(txDef);
         try {
             userAccountImpl.buyProduct(user, product, buyerAccount, sellerAccount);
+            transactionManager.commit(txStatus);
         }
         catch (InsufficientFunds e)
         {
             e.printStackTrace();
+            transactionManager.rollback(txStatus);
         }
+    }
+
+
+    public void setTransactionManager(PlatformTransactionManager transactionManager) {
+        this.transactionManager = transactionManager;
     }
 
     public void updateBalance(UserAccount userAccount, Double amount)

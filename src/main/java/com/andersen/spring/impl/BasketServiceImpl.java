@@ -5,16 +5,13 @@ import com.andersen.spring.dao.BasketDAO;
 import com.andersen.spring.entity.Basket;
 import com.andersen.spring.entity.Product;
 import com.andersen.spring.entity.User;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
 public class BasketServiceImpl implements BasketService {
 
-    @Autowired
     private BasketDAO basketDAO;
 
-    @Override
     public void buyProduct(User user, Product product, int count) {
 
         Basket basket = new Basket();

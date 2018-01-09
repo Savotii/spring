@@ -32,7 +32,8 @@
        <constructor-arg ref="dataSource"/>
     </bean>
 
-  <!-- НУЖНО ПОНЯТЬ. НЕ ХОЧЕТ . КРЕШИТСЯ. <tx:annotation-driven transaction-manager="txManager" />
+  <!-- НУЖНО ПОНЯТЬ. НЕ ХОЧЕТ . КРЕШИТСЯ.
+  <tx:annotation-driven transaction-manager="txManager" />
 
     <tx:advice id="txAdvice" transaction-manager="txManager">
         <tx:attributes>
@@ -102,6 +103,7 @@
         <constructor-arg ref="productServiceImpl"/>
         <constructor-arg ref="userServiceImpl"/>
         <constructor-arg ref="userAccountServiceImpl"/>
+        <property name="transactionManager" ref="txManager" />
     </bean>
 
   </beans>

@@ -76,29 +76,6 @@ public class App {
         user2.setEmail("eeee@yandex.ru");
         user2 = us.update(user2);
         System.out.println("update: " + user2);
-/*
-        Basket basket = new Basket();
-        basket.setCount(10);
-        basket.setProduct(product);
-        basket.setUser(user1);
-
-        Basket b = basketDAO.create(basket);
-        System.out.println("Добавление товара в корзину. " + b.getId());
-
-        b = basketDAO.getById(b.getId());
-        System.out.println(" Поиск сделки в корзине : " + b.getId());
-
-        b.setCount(1);
-        basketDAO.update(b);
-        System.out.println(" Изменили количество продуктов: " + b.getCount());
-
-        List<Basket> basketList = basketDAO.getAllDeals(1);
-        for (Basket basket1: basketList) {
-            System.out.println(" Сделка: " + basket1);
-        }
-
-        basketDAO.delete(1);
-        System.out.println(" Удалили объект базы. ");*/
 
 
         MarketFacade marketFacade = (MarketFacade)ctx.getBean("marketFacadeImpl");
