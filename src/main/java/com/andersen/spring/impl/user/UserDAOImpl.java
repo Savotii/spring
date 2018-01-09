@@ -1,4 +1,4 @@
-package com.andersen.spring.impl;
+package com.andersen.spring.impl.user;
 
 import com.andersen.spring.dao.UserDAO;
 import com.andersen.spring.entity.User;

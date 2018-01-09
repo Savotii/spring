@@ -2,8 +2,13 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx" xmlns:aop="http://www.springframework.org/schema/aop"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-	   					   http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+	   					   http://www.springframework.org/schema/beans/spring-beans.xsd
+	   					   http://www.springframework.org/schema/context
+	   					   http://www.springframework.org/schema/context/spring-context.xsd
+                           http://www.springframework.org/schema/tx
+                           http://www.springframework.org/schema/tx/spring-tx-2.5.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
 
     <context:component-scan base-package="com.andersen.spring" />
 
@@ -18,45 +23,62 @@
         <constructor-arg name="dataSource" ref="dataSource"/>
     </bean>
 
-    <bean name="product" class="com.andersen.spring.entity.Product" scope="prototype" >
-          <property name="price" value="10"/>
-          <property name="userId" value="1"/>
+    <bean name="txManager" class = "org.springframework.jdbc.datasource.DataSourceTransactionManager">
+       <constructor-arg ref="dataSource"/>
     </bean>
 
-    <bean name="user" class="com.andersen.spring.entity.User" scope="prototype"/>
+  <!--  <tx:annotation-driven transaction-manager="txManager" />
 
-    <bean name="userAccount" class="com.andersen.spring.entity.UserAccount" scope="prototype"/>
+    <tx:advice id="txAdvice" transaction-manager="txManager">
+        <tx:attributes>
+            <tx:method name="get*" read-only="true"/>
+            <tx:method name="*"/>
+        </tx:attributes>
+    </tx:advice>
 
-    <bean name="basket" class="com.andersen.spring.entity.Basket" scope="prototype"/>
+    <aop:config>
+        <aop:pointcut id="buyProduct" expression="execution(* com.andersen.spring.facade.MarketFacadeImpl.buyProduct(..))" />
+        <aop:advisor advice-ref="txAdvice" pointcut-ref="buyProduct" />
+    </aop:config>-->
+
+    <bean name="product" class="com.andersen.spring.entity.Product" >
+          <property name="price" value="10"/>
+    </bean>
+
+    <bean name="user" class="com.andersen.spring.entity.User"/>
+
+    <bean name="userAccount" class="com.andersen.spring.entity.UserAccount" />
+
+    <bean name="basket" class="com.andersen.spring.entity.Basket"/>
 
     <!-- MySqlHelper beans -->
     <bean name="mySqlHelper" class="com.andersen.spring.jdbc.MySqlHelper" init-method="init"/>
 
     <!-- DAO beans (just an example)-->
-    <bean name="userDAOImpl" class="com.andersen.spring.impl.UserDAOImpl">
+    <bean name="userDAOImpl" class="com.andersen.spring.impl.user.UserDAOImpl">
         <property name="dataSource" ref="dataSource"/>
     </bean>
 
-    <bean name="productDAOImpl" class="com.andersen.spring.impl.ProductDAOImpl">
+    <bean name="productDAOImpl" class="com.andersen.spring.impl.product.ProductDAOImpl">
         <property name="dataSource" ref="dataSource"/>
     </bean>
 
-    <bean name="userAccountDAOImpl" class="com.andersen.spring.impl.UserAccountDAOImpl">
+    <bean name="userAccountDAOImpl" class="com.andersen.spring.impl.userAccount.UserAccountDAOImpl">
         <property name="userServiceImpl" ref="userServiceImpl" />
         <property name="dataSource" ref="dataSource"/>
     </bean>
 
-    <bean name="userAccountServiceImpl" class="com.andersen.spring.impl.UserAccountServiceImpl">
+    <bean name="userAccountServiceImpl" class="com.andersen.spring.impl.userAccount.UserAccountServiceImpl">
         <property name="userAccountDAO" ref="userAccountDAOImpl" />
     </bean>
 
     <!-- Service beans -->
-    <bean name="productServiceImpl" class="com.andersen.spring.impl.ProductServiceImpl">
+    <bean name="productServiceImpl" class="com.andersen.spring.impl.product.ProductServiceImpl">
         <property name="productDAO" ref="productDAOImpl"/>
         <lookup-method name="getProduct" bean="product"/>
     </bean>
 
-    <bean name="userServiceImpl" class="com.andersen.spring.impl.UserServiceImpl">
+    <bean name="userServiceImpl" class="com.andersen.spring.impl.user.UserServiceImpl">
         <property name="userDAO" ref="userDAOImpl"/>
         <lookup-method name="getUser" bean="user"/>
     </bean>

@@ -1,9 +1,6 @@
 package com.andersen.spring.entity;
 
-import com.andersen.spring.dao.UserDAO;
-import com.andersen.spring.impl.UserDAOImpl;
-import com.andersen.spring.impl.UserServiceImpl;
-import com.andersen.spring.jdbc.MySqlHelper;
+import com.andersen.spring.impl.user.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.RowMapper;
 

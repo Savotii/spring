@@ -57,17 +57,17 @@ public class User {
         User user = (User) o;
 
         if (id != user.id) return false;
-        if (!name.equals(user.name)) return false;
-        if (!email.equals(user.email)) return false;
-        return phoneNumber.equals(user.phoneNumber);
+        if (name != null ? !name.equals(user.name) : user.name != null) return false;
+        if (email != null ? !email.equals(user.email) : user.email != null) return false;
+        return phoneNumber != null ? phoneNumber.equals(user.phoneNumber) : user.phoneNumber == null;
     }
 
     @Override
     public int hashCode() {
         int result = (int) (id ^ (id >>> 32));
-        result = 31 * result + name.hashCode();
-        result = 31 * result + email.hashCode();
-        result = 31 * result + phoneNumber.hashCode();
+        result = 31 * result + (name != null ? name.hashCode() : 0);
+        result = 31 * result + (email != null ? email.hashCode() : 0);
+        result = 31 * result + (phoneNumber != null ? phoneNumber.hashCode() : 0);
         return result;
     }
 

@@ -1,7 +1,5 @@
 package com.andersen.spring.entity;
 
-import com.andersen.spring.exceptions.InsufficientFunds;
-
 public class UserAccount {
 
     private int accountsNumber;
@@ -30,18 +28,6 @@ public class UserAccount {
 
     public void setId(long id) {
         this.id = id;
-    }
-
-    public void replenishTheAccount(Double amount) {
-        this.amount += amount;
-    }
-
-    public void reduceTheAccount(Double amount) throws InsufficientFunds {
-
-        if (this.amount == null || this.amount < amount)
-            throw new InsufficientFunds("На счету недостаточно денег.");
-        else
-            this.amount -= amount;
     }
 
     public int getAccountsNumber() {

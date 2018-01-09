@@ -1,4 +1,4 @@
-package com.andersen.spring.impl;
+package com.andersen.spring.impl.userAccount;
 
 import com.andersen.spring.controllers.UserService;
 import com.andersen.spring.dao.UserAccountDAO;
@@ -19,11 +19,12 @@ import java.util.*;
 public class UserAccountDAOImpl implements UserAccountDAO {
 
     private final String GET_BY_ACCOUNTID_QUERY = "SELECT * FROM ACCOUNTS WHERE id = ?";
-    private final String GET_BY_ID_QUERY = "SELECT * FROM ACCOUNTS WHERE id = ?";
+    private final String GET_BY_USER_ID_QUERY = "SELECT * FROM ACCOUNTS WHERE ownerId = ?";
     private final String GET_ALL = "SELECT * FROM ACCOUNTS WHERE ownerId = ?";
     private final String DELETE_BY_ID_QUERY = "DELETE FROM ACCOUNTS WHERE id = ?";
     private final String INSERT_INTO_QUERY = "INSERT INTO ACCOUNTS(accountsNumber, amount, ownerId) VALUES(?, ?, ?)";
     private final String UPDATE_ACCOUNT = "UPDATE ACCOUNTS SET accountsNumber = ?, amount = ?, ownerId = ? WHERE id = ?";
+    private final String UPDATE_BALANCE = "UPDATE ACCOUNTS SET  amount = amount + ? WHERE id = ?";
 
     private UserService userServiceImpl;
 
@@ -65,17 +66,11 @@ public class UserAccountDAOImpl implements UserAccountDAO {
     @Override
     public UserAccount getById(long id) {
 
-        UserAccount ua = null;
-
-        ua = jdbcTemplate.queryForObject(GET_BY_ACCOUNTID_QUERY, new Object[]{id}, userAccountRowMapper);
-
-        return ua;
+        return jdbcTemplate.queryForObject(GET_BY_ACCOUNTID_QUERY, new Object[]{id}, userAccountRowMapper);
     }
 
     @Override
     public UserAccount update(UserAccount item) {
-
-        UserAccount ua = null;
 
         int out = jdbcTemplate.update(UPDATE_ACCOUNT, new Object[]{item.getAccountsNumber(), item.getAmount(), item.getUser().getId(), item.getId()});
 
@@ -85,15 +80,14 @@ public class UserAccountDAOImpl implements UserAccountDAO {
             System.out.println(" Не удалось обновить аккаунт.");
         }
 
-        return getById(item.getId());
+        UserAccount acc = getById(item.getId());
+        return acc;
 
     }
 
     @Override
     public boolean delete(long id) {
-
         return jdbcTemplate.update(DELETE_BY_ID_QUERY, id) != 0;
-
     }
 
     @Override
@@ -104,9 +98,32 @@ public class UserAccountDAOImpl implements UserAccountDAO {
     @Override
     public List<UserAccount> getAccounts(long id) {
 
-        List<UserAccount> userAccounts = jdbcTemplate.query(GET_ALL, userAccountRowMapper);
+        List<UserAccount> userAccounts = jdbcTemplate.query(GET_ALL, new Object[]{id},  userAccountRowMapper);
 
         return userAccounts;
+    }
+
+    @Override
+    public List<UserAccount> getAccountsByUserId(long userId) {
+
+        List<UserAccount> userAccounts = jdbcTemplate.query(GET_BY_USER_ID_QUERY, new Object[]{userId},  userAccountRowMapper);
+
+        return userAccounts;
+    }
+
+    @Override
+    public UserAccount updateBalance(UserAccount userAccount, Double amount) {
+
+        int out = jdbcTemplate.update(UPDATE_BALANCE, new Object[]{amount, userAccount.getId()});
+
+        if (out != 0) {
+            System.out.println(" Аккаунт обновлен.");
+        } else {
+            System.out.println(" Не удалось обновить аккаунт.");
+        }
+
+        return getById(userAccount.getId());
+
     }
 
     public UserService getUserServiceImpl() {

@@ -1,8 +1,9 @@
-package com.andersen.spring.impl;
+package com.andersen.spring.impl.userAccount;
 
 import com.andersen.spring.controllers.AccountService;
 import com.andersen.spring.dao.UserAccountDAO;
 import com.andersen.spring.entity.Product;
+import com.andersen.spring.entity.User;
 import com.andersen.spring.entity.UserAccount;
 import com.andersen.spring.exceptions.InsufficientFunds;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,22 +16,24 @@ public class UserAccountServiceImpl implements AccountService {
     private UserAccountDAO userAccountDAO;
 
     @Override
-    public void replenishTheAccount(UserAccount account, Double amount) {
-        UserAccount updAccount = userAccountDAO.getById(account.getId());
-        updAccount.replenishTheAccount(amount);
-    }
-
-    @Override
-    public void reduceTheAccount(UserAccount account, Double amount) {
+    public void updateBalance(UserAccount account, Double amount) {
 
         UserAccount updAccount = userAccountDAO.getById(account.getId());
 
         try {
-            updAccount.reduceTheAccount(amount);
-            userAccountDAO.update(updAccount);
+            checkMoney(account, amount);
+            userAccountDAO.updateBalance(updAccount, amount);
         } catch (InsufficientFunds insufficientFunds) {
             insufficientFunds.printStackTrace();
         }
+    }
+
+    public boolean checkMoney(UserAccount userAccount, Double amount) throws InsufficientFunds {
+
+        if (userAccount.getAmount() == null || userAccount.getAmount() < amount)
+            throw new InsufficientFunds("На счету недостаточно денег.");
+
+        return true;
     }
 
     @Override
@@ -57,4 +60,17 @@ public class UserAccountServiceImpl implements AccountService {
         this.userAccountDAO = userAccountDAO;
     }
 
+    @Override
+    public void buyProduct(User user, Product product, UserAccount buyerAccount, UserAccount sellerAccount) throws InsufficientFunds {
+
+        User seller = product.getUser();
+
+        if (checkMoney(buyerAccount, product.getPrice())) {
+            buyerAccount = userAccountDAO.updateBalance(buyerAccount, -product.getPrice());
+        }
+
+        //2. increase to seller
+        throw new InsufficientFunds();
+       // sellerAccount = userAccountDAO.updateBalance(sellerAccount, product.getPrice());
+    }
 }

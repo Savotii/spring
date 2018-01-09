@@ -1,4 +1,4 @@
-package com.andersen.spring.impl;
+package com.andersen.spring.impl.product;
 
 import com.andersen.spring.controllers.ProductService;
 import com.andersen.spring.dao.ProductDAO;

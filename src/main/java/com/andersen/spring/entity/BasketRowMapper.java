@@ -1,13 +1,10 @@
 package com.andersen.spring.entity;
 
-import com.andersen.spring.impl.ProductServiceImpl;
-import com.andersen.spring.impl.UserServiceImpl;
+import com.andersen.spring.impl.product.ProductServiceImpl;
+import com.andersen.spring.impl.user.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.Scope;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Component;
-import org.springframework.stereotype.Service;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;

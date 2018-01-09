@@ -1,7 +1,8 @@
 
 import com.andersen.spring.entity.Product;
-import com.andersen.spring.impl.ProductDAOImpl;
-import com.andersen.spring.impl.ProductServiceImpl;
+import com.andersen.spring.entity.User;
+import com.andersen.spring.impl.product.ProductDAOImpl;
+import com.andersen.spring.impl.product.ProductServiceImpl;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -30,19 +31,20 @@ public class ProductServiceTest {
     public void testServiceCreate()
     {
 
-        when(productDAO.create(product)).thenReturn(new Product("title", "description", 10, 1));
+        User  user = new User("Test", "kkk@mail.ru", "0009393");
+        when(productDAO.create(product)).thenReturn(new Product("title", "description", 10, user));
         Product result = productService.create(product);
 
         when(product.getTitle()).thenReturn("title");
         when(product.getDescription()).thenReturn("description");
         when(product.getPrice()).thenReturn(10d);
-        when(product.getUserId()).thenReturn(1l);
+        when(product.getUser()).thenReturn(user);
         when(product.getId()).thenReturn(1l);
 
         assertEquals(result.getTitle(), product.getTitle());
         assertEquals(result.getDescription(), product.getDescription());
         assertEquals(result.getPrice(), product.getPrice() , 0);
-        assertEquals(result.getUserId() , product.getUserId());
+        assertEquals(result.getUser().getId() , product.getUser().getId());
 
     }
 
@@ -50,12 +52,13 @@ public class ProductServiceTest {
     public void testServiceGetAll()
     {
 
+        User  user = new User("Test", "kkk@mail.ru", "0009393");
         List<Product> productList = new LinkedList<>();
-        productList.add(new Product("titl","desription1", 10, 1));
-        productList.add(new Product("title","desription2", 10, 1));
-        productList.add(new Product("titles","desription3", 10, 1));
-        productList.add(new Product("titles1","desription3", 10, 1));
-        productList.add(new Product("ti","desription4", 10, 1));
+        productList.add(new Product("titl","desription1", 10, user));
+        productList.add(new Product("title","desription2", 10, user));
+        productList.add(new Product("titles","desription3", 10, user));
+        productList.add(new Product("titles1","desription3", 10, user));
+        productList.add(new Product("ti","desription4", 10, user));
 
         when(productDAO.getAll()).thenReturn(productList);
 

@@ -5,9 +5,10 @@ import com.andersen.spring.controllers.BasketService;
 import com.andersen.spring.controllers.ProductService;
 import com.andersen.spring.controllers.UserService;
 import com.andersen.spring.entity.UserAccount;
-import com.andersen.spring.impl.ProductServiceImpl;
-import com.andersen.spring.impl.UserAccountServiceImpl;
-import com.andersen.spring.impl.UserServiceImpl;
+import com.andersen.spring.exceptions.InsufficientFunds;
+import com.andersen.spring.impl.product.ProductServiceImpl;
+import com.andersen.spring.impl.userAccount.UserAccountServiceImpl;
+import com.andersen.spring.impl.user.UserServiceImpl;
 import com.andersen.spring.entity.Product;
 import com.andersen.spring.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -85,16 +86,6 @@ public class MarketFacadeImpl implements MarketFacade {
     }
 
     @Override
-    public void replenishTheAccount(UserAccount account, Double amount) {
-        userAccountImpl.replenishTheAccount(account, amount);
-    }
-
-    @Override
-    public void reduceTheAccount(UserAccount account, Double amount) {
-        userAccountImpl.reduceTheAccount(account, amount);
-    }
-
-    @Override
     public UserAccount create(UserAccount account) {
         return userAccountImpl.create(account);
     }
@@ -115,8 +106,20 @@ public class MarketFacadeImpl implements MarketFacade {
     }
 
     @Transactional
-    public void buyProduct(User user, Product product, int count) {
-        basketServiceImpl.buyProduct(user, product, count);
+    public void buyProduct(User user, Product product, UserAccount buyerAccount, UserAccount sellerAccount) {
+        //basketServiceImpl.buyProduct(user, product, count);
+        try {
+            userAccountImpl.buyProduct(user, product, buyerAccount, sellerAccount);
+        }
+        catch (InsufficientFunds e)
+        {
+            e.printStackTrace();
+        }
+    }
+
+    public void updateBalance(UserAccount userAccount, Double amount)
+    {
+        userAccountImpl.updateBalance(userAccount, amount);
     }
 
 }

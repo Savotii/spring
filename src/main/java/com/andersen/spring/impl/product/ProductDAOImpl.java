@@ -1,4 +1,4 @@
-package com.andersen.spring.impl;
+package com.andersen.spring.impl.product;
 
 import com.andersen.spring.dao.ProductDAO;
 import com.andersen.spring.entity.Product;
@@ -69,7 +69,7 @@ public class ProductDAOImpl implements ProductDAO {
                                                  statement.setString(1, item.getTitle());
                                                  statement.setString(2, item.getDescription());
                                                  statement.setDouble(3, item.getPrice());
-                                                 statement.setLong(4, item.getUserId());
+                                                 statement.setLong(4, item.getUser().getId());
                                                  return statement;
                                              }
                                          },
@@ -95,7 +95,7 @@ public class ProductDAOImpl implements ProductDAO {
 
         Product product = item;
 
-        int result = jdbcTemplate.update(UPDATE_PRODUCT, new Object[]{item.getTitle(), item.getDescription(), item.getPrice(), item.getUserId(), item.getId()});
+        int result = jdbcTemplate.update(UPDATE_PRODUCT, new Object[]{item.getTitle(), item.getDescription(), item.getPrice(), item.getUser().getId(), item.getId()});
         if (result != 0) {
             product = getById(item.getId());
         }

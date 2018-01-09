@@ -1,6 +1,3 @@
-import com.andersen.spring.controllers.AccountService;
-import com.andersen.spring.controllers.ProductService;
-import com.andersen.spring.controllers.UserService;
 import com.andersen.spring.dao.BasketDAO;
 import com.andersen.spring.dao.ProductDAO;
 import com.andersen.spring.dao.UserAccountDAO;
@@ -9,10 +6,8 @@ import com.andersen.spring.entity.Basket;
 import com.andersen.spring.entity.Product;
 import com.andersen.spring.entity.User;
 import com.andersen.spring.entity.UserAccount;
-import com.andersen.spring.impl.ProductDAOImpl;
-import com.andersen.spring.impl.ProductServiceImpl;
-import com.andersen.spring.impl.UserDAOImpl;
-import com.andersen.spring.impl.UserServiceImpl;
+import com.andersen.spring.exceptions.InsufficientFunds;
+import com.andersen.spring.facade.MarketFacade;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -26,8 +21,6 @@ public class App {
         ProductDAO pdi = (ProductDAO)ctx.getBean("productDAOImpl");
 
         UserDAO us = (UserDAO) ctx.getBean("userDAOImpl");
-
-        BasketDAO basketDAO = (BasketDAO) ctx.getBean("basketDAOImpl");
 
         User user = new User();
         user.setId(1);
@@ -52,7 +45,7 @@ public class App {
             System.out.println(product);
         }
 
-        Product product = pdi.create(new Product("Котлетка", "Полуфабрикат оч вкусной котлетки. затащит полюбому.", 10d, 1));
+        Product product = pdi.create(new Product("Котлетка", "Полуфабрикат оч вкусной котлетки. затащит полюбому.", 10d, user));
         System.out.println("create: " + product);
 
         product = pdi.getById(product.getId());
@@ -83,7 +76,7 @@ public class App {
         user2.setEmail("eeee@yandex.ru");
         user2 = us.update(user2);
         System.out.println("update: " + user2);
-
+/*
         Basket basket = new Basket();
         basket.setCount(10);
         basket.setProduct(product);
@@ -105,6 +98,23 @@ public class App {
         }
 
         basketDAO.delete(1);
-        System.out.println(" Удалили объект базы. ");
+        System.out.println(" Удалили объект базы. ");*/
+
+
+        MarketFacade marketFacade = (MarketFacade)ctx.getBean("marketFacadeImpl");
+
+        User seller = product.getUser();
+
+        List<UserAccount> buyerAccountList = uad.getAccountsByUserId(3);
+        List<UserAccount> sellerAccountList = uad.getAccountsByUserId(seller.getId());
+
+        UserAccount buyerAccount = buyerAccountList.get(0);
+        UserAccount sellerAccount = sellerAccountList.get(0);
+
+        System.out.println("Количество денег у покупателя: " + buyerAccount.getAmount());
+        System.out.println("Количество денег у продавца: " + sellerAccount.getAmount());
+        marketFacade.buyProduct(user, product, buyerAccount, sellerAccount);
+        System.out.println("Количество денег у покупателя после транзации: " + uad.getById(buyerAccount.getId()).getAmount());
+        System.out.println("Количество денег у продавца после транзации: " + uad.getById(sellerAccount.getId()).getAmount());
     }
 }
