@@ -30,8 +30,6 @@ public class BasketDAOImpl implements BasketDAO {
     private final String INSERT_INTO_QUERY = "INSERT INTO basket(userId, productId, count) VALUES(?, ?, ? )";
     private final String UPDATE_PRODUCT = "UPDATE basket SET userId = ?, productId = ?, count = ? WHERE id = ?";
 
-    private DataSource dataSource;
-
     @Autowired
     JdbcTemplate jdbcTemplate;
 
@@ -112,7 +110,4 @@ public class BasketDAOImpl implements BasketDAO {
 
     }
 
-    public void setDataSource(DataSource dataSource) {
-        this.dataSource = dataSource;
-    }
 }

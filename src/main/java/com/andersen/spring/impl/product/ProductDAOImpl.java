@@ -30,8 +30,6 @@ public class ProductDAOImpl implements ProductDAO {
     private final String INSERT_INTO_QUERY = "INSERT INTO products(title, description, price, userId) VALUES(?, ?, ?, ?)";
     private final String UPDATE_PRODUCT = "UPDATE products SET title = ?, description = ?, price = ?, userId =? WHERE id = ?";
 
-    private DataSource dataSource;
-
     @Autowired
     ProductRowMapper productRowMapper;
 
@@ -118,8 +116,5 @@ public class ProductDAOImpl implements ProductDAO {
 
     }
 
-    public void setDataSource(DataSource dataSource) {
-        this.dataSource = dataSource;
-    }
 }
 

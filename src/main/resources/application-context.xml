@@ -59,11 +59,11 @@
 
     <!-- DAO beans (just an example)-->
     <bean name="userDAOImpl" class="com.andersen.spring.impl.user.UserDAOImpl">
-        <property name="dataSource" ref="dataSource"/>
+
     </bean>
 
     <bean name="productDAOImpl" class="com.andersen.spring.impl.product.ProductDAOImpl">
-        <property name="dataSource" ref="dataSource"/>
+
     </bean>
 
     <bean name="userAccountDAOImpl" class="com.andersen.spring.impl.userAccount.UserAccountDAOImpl">
@@ -91,7 +91,6 @@
     </bean>
 
     <bean name="basketDAOImpl" class="com.andersen.spring.impl.BasketDAOImpl" >
-        <property name="dataSource" ref="dataSource"/>
     </bean>
     
     <bean name="basketServiceImpl" class="com.andersen.spring.impl.BasketServiceImpl">

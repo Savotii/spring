@@ -27,16 +27,10 @@ public class UserDAOImpl implements UserDAO {
     private final String INSERT_INTO_QUERY = "INSERT INTO users(name, email, phoneNumber) VALUES( ?, ?, ?)";
     private final String UPDATE_USER = "UPDATE users SET name = ?, email = ?, phoneNumber =? WHERE id = ?";
 
-    private DataSource dataSource;
-
     @Autowired
     JdbcTemplate jdbcTemplate;
 
     public UserDAOImpl() {
-    }
-
-    public void setDataSource(DataSource dataSource) {
-        this.dataSource = dataSource;
     }
 
     public User create(User item) {

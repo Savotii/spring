@@ -70,6 +70,6 @@ public class UserAccountServiceImpl implements AccountService {
 
         //2. increase to seller
        throw new InsufficientFunds();
-        //sellerAccount = userAccountDAO.updateBalance(sellerAccount, product.getPrice());
+       // sellerAccount = userAccountDAO.updateBalance(sellerAccount, product.getPrice());
     }
 }
