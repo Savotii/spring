@@ -1,4 +1,4 @@
-package com.andersen.spring.impl;
+package com.andersen.spring.impl.user;
 
 import com.andersen.spring.controllers.UserService;
 import com.andersen.spring.dao.UserDAO;
@@ -14,15 +14,15 @@ public class UserServiceImpl implements UserService {
     }
 
     public User create(User user) {
-        return (User) userDAO.create(user);
+        return userDAO.create(user);
     }
 
     public User update(User user) {
-        return (User) userDAO.update(user);
+        return userDAO.update(user);
     }
 
     public User getById(long id) {
-        return (User) userDAO.getById(id);
+        return  userDAO.getById(id);
     }
 
     public User getUserByEmail(String email) {

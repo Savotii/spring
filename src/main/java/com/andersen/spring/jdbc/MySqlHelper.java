@@ -11,7 +11,7 @@ public class MySqlHelper {
     private String login = "root";
     private String password = "1111";
 
-    private String driverClassName = "com.mysql.jdbc.Driver;";
+    private String driverClassName = "com.mysql.cj.jdbc.Driver";
 
     private Connection connection = null;
 
@@ -62,6 +62,11 @@ public class MySqlHelper {
             statement.addBatch("CREATE TABLE IF NOT EXISTS PRODUCTS (id INTEGER auto_increment PRIMARY KEY , title VARCHAR(50), description VARCHAR(200), price DOUBLE, userId INTEGER )");
             statement.addBatch("CREATE TABLE IF NOT EXISTS  USERS (id INTEGER auto_increment PRIMARY  KEY , name VARCHAR (50), email VARCHAR (50), phoneNumber VARCHAR(100))");
 
+            // Добавляем таблицу аккаунт
+            statement.addBatch("CREATE TABLE IF NOT EXISTS ACCOUNTS (id INTEGER  auto_increment PRIMARY  KEY, accountsNumber INTEGER NOT NULL, amount DOUBLE, ownerId INTEGER NOT NULL)");
+
+            //Добавляем корзину.
+            statement.addBatch("CREATE TABLE IF NOT EXISTS BASKET (id INTEGER auto_increment PRIMARY KEY, userId INTEGER NOT NULL, productId INTEGER NOT NULL, count INTEGER NOT NULL)");
             statement.executeBatch();
 
         } catch (SQLException e) {

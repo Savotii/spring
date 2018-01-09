@@ -1,27 +1,38 @@
 package com.andersen.spring.facade;
 
+import com.andersen.spring.controllers.AccountService;
 import com.andersen.spring.controllers.ProductService;
 import com.andersen.spring.controllers.UserService;
-import com.andersen.spring.impl.ProductServiceImpl;
-import com.andersen.spring.impl.UserServiceImpl;
+import com.andersen.spring.entity.UserAccount;
+import com.andersen.spring.impl.product.ProductServiceImpl;
+import com.andersen.spring.impl.userAccount.UserAccountServiceImpl;
+import com.andersen.spring.impl.user.UserServiceImpl;
 import com.andersen.spring.entity.Product;
 import com.andersen.spring.entity.User;
-import com.andersen.spring.jdbc.MySqlHelper;
+import org.springframework.transaction.PlatformTransactionManager;
+import org.springframework.transaction.TransactionStatus;
+import org.springframework.transaction.annotation.Transactional;
+import org.springframework.transaction.support.TransactionCallbackWithoutResult;
+import org.springframework.transaction.support.TransactionTemplate;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
 import java.util.List;
 
 public class MarketFacadeImpl implements MarketFacade {
 
     private ProductService productServiceImpl;
+
     private UserService userServiceImpl;
 
-    public MarketFacadeImpl(ProductServiceImpl productServiceImpl, UserServiceImpl userServiceImpl) {
+    private AccountService userAccountImpl;
+
+    private PlatformTransactionManager transactionManager;
+
+    private TransactionTemplate transactionTemplate;
+
+    public MarketFacadeImpl(ProductService productServiceImpl, UserService userServiceImpl, AccountService userAccountImpl) {
         this.productServiceImpl = productServiceImpl;
         this.userServiceImpl = userServiceImpl;
-
+        this.userAccountImpl = userAccountImpl;
     }
 
     public User createUser(User user) {
@@ -71,4 +82,67 @@ public class MarketFacadeImpl implements MarketFacade {
     public boolean deleteProductById(long id) {
         return productServiceImpl.delete(id);
     }
+
+    @Override
+    public UserAccount create(UserAccount account) {
+        return userAccountImpl.create(account);
+    }
+
+    @Override
+    public UserAccount getById(long id) {
+        return userAccountImpl.getById(id);
+    }
+
+    @Override
+    public boolean deleteUserAccount(long id) {
+        return userAccountImpl.delete(id);
+    }
+
+    @Override
+    public List<UserAccount> getAll() {
+        return userAccountImpl.getAll();
+    }
+
+    @Transactional
+    public void buyProduct(User user, Product product, UserAccount buyerAccount, UserAccount sellerAccount) {
+
+        try {
+            transactionTemplate.execute(new TransactionCallbackWithoutResult() {
+                @Override
+                protected void doInTransactionWithoutResult(TransactionStatus transactionStatus) {
+                    userAccountImpl.buyProduct(user, product, buyerAccount, sellerAccount);
+                }
+            });
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+     /*
+        TransactionDefinition txDef = new DefaultTransactionDefinition();
+        TransactionStatus txStatus = transactionManager.getTransaction(txDef);
+        try {
+            userAccountImpl.buyProduct(user, product, buyerAccount, sellerAccount);
+            transactionManager.commit(txStatus);
+        }
+        catch (InsufficientFunds e)
+        {
+            e.printStackTrace();
+            transactionManager.rollback(txStatus);
+        }*/
+    }
+
+    public void setTransactionManager(PlatformTransactionManager transactionManager) {
+        this.transactionManager = transactionManager;
+    }
+
+    public void updateBalance(UserAccount userAccount, Double amount)
+    {
+        userAccountImpl.updateBalance(userAccount, amount);
+    }
+
+    public void setTransactionTemplate(TransactionTemplate transactionTemplate) {
+        this.transactionTemplate = transactionTemplate;
+    }
+
 }
