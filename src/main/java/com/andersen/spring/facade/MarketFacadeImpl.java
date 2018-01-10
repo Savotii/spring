@@ -79,6 +79,11 @@ public class MarketFacadeImpl implements MarketFacade {
         return productServiceImpl.getProductsByUserId(id);
     }
 
+    public List<Product> getAllProducts()
+    {
+        return productServiceImpl.getAll();
+    }
+
     public boolean deleteProductById(long id) {
         return productServiceImpl.delete(id);
     }
@@ -102,6 +107,7 @@ public class MarketFacadeImpl implements MarketFacade {
     public List<UserAccount> getAll() {
         return userAccountImpl.getAll();
     }
+
 
     @Transactional
     public void buyProduct(User user, Product product, UserAccount buyerAccount, UserAccount sellerAccount) {

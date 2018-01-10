@@ -107,6 +107,7 @@ public interface MarketFacade {
 	 */
 	List<Product> getProductsByUserId(long id);
 
+	List<Product> getAllProducts();
 	/**
 	 * Deletes product by the given id.
 	 * 
