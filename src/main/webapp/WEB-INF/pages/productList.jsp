@@ -12,16 +12,18 @@
         <% for (Product product : productList) {
         %>
         <tr>
-            <td>id: <%product.getId();%></td>
-            <td>Title: <%product.getTitle();%></td>
-            <td>Description: <%product.getDescription();%></td>
-            <td>Owner: <%product.getUser();%></td>
-            <td>Price: <%product.getPrice();%></td>
+            <td>id: <%=product.getId()%></td>
+            <td>Title: <%=product.getTitle()%></td>
+            <td>Description: <%=product.getDescription()%></td>
+            <td>Owner: <%=product.getUser()%></td>
+            <td>Price: <%=product.getPrice()%></td>
         </tr>
         <%
             } %>
 
     </table>
+
+    <p><a href="/application/index">На главную</a> </p>
 </head>
 <body>
 

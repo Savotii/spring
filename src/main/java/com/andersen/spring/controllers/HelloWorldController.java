@@ -15,7 +15,7 @@ public class HelloWorldController {
     @RequestMapping(value = "/")
     protected ModelAndView main(){
 
-        ModelAndView model = new ModelAndView("HelloWorldPage");
+        ModelAndView model = new ModelAndView("index");
         model.addObject("msg", "hello world");
 
         return model;
@@ -38,5 +38,15 @@ public class HelloWorldController {
         modelAndView.addObject("msg", "It's viewing");
         modelAndView.setViewName("HelloWorldPage");
         return modelAndView;
+    }
+
+    @RequestMapping(value = "/index")
+    protected ModelAndView index(){
+
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.addObject("msg", "going to index.jsp");
+        modelAndView.setViewName("index");
+        return modelAndView;
+
     }
 }
