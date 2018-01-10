@@ -4,12 +4,11 @@
 		 http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
          version="3.1">
 
-
     <!--Spring Context-->
     <context-param>
         <param-name>contextConfigLocation</param-name>
         <param-value>
-            classpath:application-context.xml
+           classpath:application-context.xml
         </param-value>
     </context-param>
 
@@ -17,21 +16,17 @@
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
 
-    <servlet>
-        <servlet-name>dispatcherServlet</servlet-name>
-        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+       <servlet>
+        <servlet-name>mvc-dispatcher</servlet-name>
+        <servlet-class>
+            org.springframework.web.servlet.DispatcherServlet
+        </servlet-class>
         <load-on-startup>1</load-on-startup>
     </servlet>
 
     <servlet-mapping>
-        <servlet-name>dispatcherServlet</servlet-name>
-        <url-pattern>/</url-pattern>
+        <servlet-name>mvc-dispatcher</servlet-name>
+        <url-pattern>/*</url-pattern>
     </servlet-mapping>
-
-    <servlet-mapping>
-        <servlet-name>dispatcherServlet</servlet-name>
-        <url-pattern>*.form</url-pattern>
-    </servlet-mapping>
-
 
 </web-app>
