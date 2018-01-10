@@ -1,21 +1,15 @@
 package com.andersen.spring.controllers;
 
-
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.mvc.AbstractController;
 
 @Controller
-public class HelloWorldController extends AbstractController {
+public class HelloWorldController {
 
 
     @RequestMapping(value = "/")
-    protected ModelAndView handleRequestInternal(HttpServletRequest request,
-                                                 HttpServletResponse response) throws Exception {
+    protected ModelAndView main(){
 
         ModelAndView model = new ModelAndView("HelloWorldPage");
         model.addObject("msg", "hello world");
