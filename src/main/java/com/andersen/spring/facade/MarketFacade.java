@@ -123,7 +123,7 @@ public interface MarketFacade {
 
 	boolean deleteUserAccount(long id);
 
-	List<UserAccount> getAll();
+	List<UserAccount> getAll(long idOwner);
 
 	void buyProduct(User user, Product product, UserAccount buyerAccount, UserAccount sellerAccount);
 

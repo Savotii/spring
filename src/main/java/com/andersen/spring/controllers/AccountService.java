@@ -17,7 +17,7 @@ public interface AccountService {
 
     boolean delete(long id);
 
-    List<UserAccount> getAll();
+    List<UserAccount> getAll(long id);
 
     void buyProduct(User user, Product product, UserAccount buyerAccount, UserAccount sellerAccount);
 }

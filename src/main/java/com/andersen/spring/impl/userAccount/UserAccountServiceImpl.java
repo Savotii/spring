@@ -53,8 +53,8 @@ public class UserAccountServiceImpl implements AccountService {
     }
 
     @Override
-    public List<UserAccount> getAll() {
-        return userAccountDAO.getAll();
+    public List<UserAccount> getAll(long idOwner) {
+        return userAccountDAO.getAccountsByUserId(idOwner);
     }
 
     public void setUserAccountDAO(UserAccountDAO userAccountDAO) {

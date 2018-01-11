@@ -104,8 +104,8 @@ public class MarketFacadeImpl implements MarketFacade {
     }
 
     @Override
-    public List<UserAccount> getAll() {
-        return userAccountImpl.getAll();
+    public List<UserAccount> getAll(long idOwner) {
+        return userAccountImpl.getAll(idOwner);
     }
 
 
