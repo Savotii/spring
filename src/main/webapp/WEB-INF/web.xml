@@ -9,6 +9,8 @@
         <param-name>contextConfigLocation</param-name>
         <param-value>
            classpath:application-context.xml
+            <!-- ДОБАВЛЯЕМ КОНФИГУРАЦИЮ БЕЗОПАСНОСТИ.-->
+            /WEB-INF/application-security.xml
         </param-value>
     </context-param>
 
@@ -30,5 +32,15 @@
     </servlet-mapping>
     
 
+    <!-- Filters by Spring Security-->
+    <filter>
+        <filter-name>springSecurityFilterChain</filter-name>
+        <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>springSecurityFilterChain</filter-name>
+        <url-pattern>/application/*</url-pattern>
+    </filter-mapping>
 
 </web-app>

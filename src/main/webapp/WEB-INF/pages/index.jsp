@@ -22,13 +22,16 @@
     Object user = session.getAttribute("user");
     if (user == null) {
 %>
-
+<%--
+<!-- My var.
 <form action="/application/login" method="post">
     <input type="text" placeholder="Введите логин" name="login">
     <input type="text" placeholder="Введите email" name="email">
     <input type="submit" name="submit" value="Выполнить авторизацию">
 </form>
+--%>
 
+<a href="/application/login">Войти в систему</a><br />
 <% if (autorizationFiled != null) {%><%=autorizationFiled%> <br/><%}%>
 
 <%
