@@ -8,9 +8,10 @@
     <context-param>
         <param-name>contextConfigLocation</param-name>
         <param-value>
-           classpath:application-context.xml
+           classpath:application-context.xml,
             <!-- ДОБАВЛЯЕМ КОНФИГУРАЦИЮ БЕЗОПАСНОСТИ.-->
-            /WEB-INF/application-security.xml
+            /WEB-INF/application-security.xml,
+            /WEB-INF/mvc-dispatcher-servlet.xml
         </param-value>
     </context-param>
 

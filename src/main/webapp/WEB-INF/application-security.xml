@@ -13,8 +13,8 @@
         <intercept-url pattern="/secure/**" access="ROLE_USER" />
         <intercept-url pattern="/admin/**" access="ROLE_ADMIN" />
         <intercept-url pattern="/login/**" access="ROLE_USER, ROLE_ADMIN" />
-        <intercept-url pattern="/accountList**" access="ROLE_ADMIN, ROLE_USER"/>
-        <intercept-url pattern="/productList**" access="ROLE_ADMIN, ROLE_USER" />
+        <intercept-url pattern="/accountList**" access="ROLE_ADMIN, ROLE_USER" />
+        <intercept-url pattern="/productList**" access="ROLE_ADMIN" />
     </http>
 
 
@@ -22,7 +22,7 @@
         <authentication-provider>
             <user-service>
                 <user name="admin" password="1111" authorities="ROLE_USER, ROLE_ADMIN" />
-                <user name="user" password="1111" authorities="ROLE_USER" />
+                <user name="sdfsf@mail.ru" password="1111" authorities="ROLE_USER" />
                 <user name="savin@andersen.com" password="1111"  authorities="ROLE_USER" />
             </user-service>
         </authentication-provider>
