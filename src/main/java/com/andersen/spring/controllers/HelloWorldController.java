@@ -1,9 +1,11 @@
 package com.andersen.spring.controllers;
 
+import com.andersen.spring.controllers.exceptions.NotFoundException;
 import com.andersen.spring.entity.User;
 import com.andersen.spring.facade.MarketFacade;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -24,6 +26,11 @@ public class HelloWorldController {
         model.addObject("msg", "hello world");
 
         return model;
+    }
+
+    @RequestMapping(value = "/GetExceptionHandler")
+    protected ModelAndView getExceptionHandler(HttpServletRequest request, HttpServletResponse response) throws Exception {
+       throw new NotFoundException("Собственный обработчик ошибки.");
     }
 
     @RequestMapping(value = "/ProductList")
@@ -87,4 +94,16 @@ public class HelloWorldController {
 
         return modelAndView;
     }
+
+    @ExceptionHandler(NotFoundException.class)
+    public ModelAndView handlerNoFoundException(HttpServletRequest request, Exception ex) {
+
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.addObject("exception", ex);
+        modelAndView.addObject("url", request.getRequestURL());
+        modelAndView.setViewName("errorPage");
+        return modelAndView;
+
+    }
+
 }
