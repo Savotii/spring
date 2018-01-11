@@ -8,7 +8,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8b49d906-7abe-4086-b0a9-9c14ca716a8b" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/andersen/spring/controllers/HelloWorldController.java" afterPath="$PROJECT_DIR$/src/main/java/com/andersen/spring/controllers/HelloWorldController.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/application-security.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/application-security.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -37,11 +37,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="HelloWorldController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="HelloWorldController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/controllers/HelloWorldController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="76" column="10" lean-forward="false" selection-start-line="76" selection-start-column="10" selection-end-line="76" selection-end-column="10" />
+            <state relative-caret-position="323">
+              <caret line="77" column="23" lean-forward="true" selection-start-line="77" selection-start-column="23" selection-end-line="77" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -88,11 +88,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application-security.xml" pinned="false" current-in-tab="false">
+      <file leaf-file-name="application-security.xml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/application-security.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="22" column="46" lean-forward="false" selection-start-line="22" selection-start-column="46" selection-end-line="22" selection-end-column="46" />
+            <state relative-caret-position="312">
+              <caret line="22" column="16" lean-forward="false" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -217,8 +217,8 @@
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/accountList.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/index.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/application-security.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/andersen/spring/controllers/HelloWorldController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/application-security.xml" />
       </list>
     </option>
   </component>
@@ -628,7 +628,7 @@
       <updated>1515596548985</updated>
       <workItem from="1515596560701" duration="3199000" />
       <workItem from="1515616270843" duration="1773000" />
-      <workItem from="1515651021417" duration="15610000" />
+      <workItem from="1515651021417" duration="16689000" />
     </task>
     <task id="LOCAL-00003" summary="Рабочий код по страницам.">
       <created>1515597047086</created>
@@ -693,11 +693,18 @@
       <option name="project" value="LOCAL" />
       <updated>1515675078941</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Добавил разлогинивание, прописал в контроллер">
+      <created>1515675588696</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1515675588696</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33990000" />
+    <option name="totallyTimeSpent" value="35069000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -786,7 +793,8 @@
     <MESSAGE value="Переделка jsp под jstl , отладка комметариев" />
     <MESSAGE value="ДОработка комментариев" />
     <MESSAGE value="Авторизация через Spring Security" />
-    <option name="LAST_COMMIT_MESSAGE" value="Авторизация через Spring Security" />
+    <MESSAGE value="Добавил разлогинивание, прописал в контроллер" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавил разлогинивание, прописал в контроллер" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1255,14 +1263,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/application-security.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="22" column="46" lean-forward="false" selection-start-line="22" selection-start-column="46" selection-end-line="22" selection-end-column="46" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/userAccount/UserAccountDAOImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="329">
@@ -1312,11 +1312,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/controllers/HelloWorldController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="76" column="10" lean-forward="false" selection-start-line="76" selection-start-column="10" selection-end-line="76" selection-end-column="10" />
+        <state relative-caret-position="323">
+          <caret line="77" column="23" lean-forward="true" selection-start-line="77" selection-start-column="23" selection-end-line="77" selection-end-column="23" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/application-security.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="22" column="16" lean-forward="false" selection-start-line="22" selection-start-column="16" selection-end-line="22" selection-end-column="16" />
+          <folding />
         </state>
       </provider>
     </entry>
