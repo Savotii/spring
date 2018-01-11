@@ -4,6 +4,10 @@ import com.andersen.spring.controllers.exceptions.NotFoundException;
 import com.andersen.spring.entity.User;
 import com.andersen.spring.facade.MarketFacade;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AnonymousAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContext;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -22,7 +26,7 @@ public class HelloWorldController {
     private MarketFacade marketFacade;
 
     @RequestMapping(value = "/")
-    protected String main(Model model) {
+    protected String main(Model model, HttpSession session) {
         model.addAttribute("msg", "hello world");
 
         return "index";
@@ -66,6 +70,15 @@ public class HelloWorldController {
     protected String login(Model model, HttpServletRequest request, HttpSession session) {
         String login = (String) request.getParameter("login");
         String email = (String) request.getParameter("email");
+       SecurityContext securityContext = (SecurityContext)session.getAttribute("SPRING_SECURITY_CONTEXT");
+        Authentication authentication = securityContext.getAuthentication();
+        UserDetails principal = null;
+        if(!(authentication instanceof AnonymousAuthenticationToken))
+        {
+            principal = (UserDetails)authentication.getPrincipal();
+            email = principal.getUsername();
+        }
+
         User user = marketFacade.getUserByEmail(email);
         model.addAttribute("user", user);
         if (user == null) {

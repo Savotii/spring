@@ -31,7 +31,7 @@
 </form>
 --%>
 
-<a href="/application/login">Войти в систему</a><br />
+<a href="/login">Войти в систему</a><br />
 <% if (autorizationFiled != null) {%><%=autorizationFiled%> <br/><%}%>
 
 <%
@@ -40,13 +40,13 @@
 %>
 <p> Добро пожаловать в систему: <%= us.getName() %>
 </p>
-<a href="/application/logout">Выйти из системы.<br/></a>
+<a href="/logout">Выйти из системы.<br/></a>
 
 <%
     }
 %>
-<a href="/application/ProductList"> Просмотреть список продуктов </a> <br/>
-<a href="/application/AccountList"> Просмотреть список счетов пользователей(в целях тестов, с точки зрения безопасности
+<a href="/ProductList"> Просмотреть список продуктов </a> <br/>
+<a href="/AccountList"> Просмотреть список счетов пользователей(в целях тестов, с точки зрения безопасности
     не смотрел)</a>
 
 

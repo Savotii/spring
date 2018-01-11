@@ -9,10 +9,9 @@
     <http pattern="/css/**" security="none" />
 
     <http auto-config="true">
-        <intercept-url pattern="/application/secure/**" access="ROLE_USER" />
-        <intercept-url pattern="/application/admin/**" access="ROLE_ADMIN" />
-        <intercept-url pattern="/application/login/**" access="ROLE_USER, ROLE_ADMIN" />
-
+        <intercept-url pattern="/secure/**" access="ROLE_USER" />
+        <intercept-url pattern="/admin/**" access="ROLE_ADMIN" />
+        <intercept-url pattern="/login/**" access="ROLE_USER, ROLE_ADMIN" />
 
     </http>
 
@@ -21,6 +20,7 @@
             <user-service>
                 <user name="admin" password="1111" authorities="ROLE_USER, ROLE_ADMIN" />
                <user name="user" password="1111" authorities="ROLE_USER" />
+                <user name="savin@andersen.com" password="1111"  authorities="ROLE_USER" />
             </user-service>
         </authentication-provider>
     </authentication-manager>

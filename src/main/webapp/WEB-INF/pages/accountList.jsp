@@ -24,7 +24,7 @@
         </c:forEach>
     </table>
 
-    <p><a href="/application/index">На главную</a></p>
+    <p><a href="/index">На главную</a></p>
 </head>
 <body>
 
