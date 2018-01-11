@@ -9,12 +9,14 @@
     <http pattern="/css/**" security="none" />
 
     <http auto-config="true">
+        <access-denied-handler error-page="/403"/>
         <intercept-url pattern="/secure/**" access="ROLE_USER" />
         <intercept-url pattern="/admin/**" access="ROLE_ADMIN" />
         <intercept-url pattern="/login/**" access="ROLE_USER, ROLE_ADMIN" />
-        <intercept-url pattern="/accountList/**" access="ROLE_ADMIN, ROLE_USER"/>
-        <intercept-url pattern="/productList/**" access="ROLE_USER, ROLE_ADMIN" />
+        <intercept-url pattern="/accountList**" access="ROLE_ADMIN, ROLE_USER"/>
+        <intercept-url pattern="/productList**" access="ROLE_ADMIN, ROLE_USER" />
     </http>
+
 
     <authentication-manager>
         <authentication-provider>
