@@ -1,33 +1,27 @@
-<%@ page import="com.andersen.spring.entity.Product" %>
-<%@ page import="java.util.List" %>
-<%@ page import="com.andersen.spring.entity.UserAccount" %>
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
 
-    <% List<UserAccount> accountList = (List<UserAccount>) request.getAttribute("accountList"); %>
-
     <table>
-        <% if (accountList != null) {
-            for (UserAccount account : accountList) {
-        %>
+        <thead>
         <tr>
-            <td>id: <%=account.getId()%>
-            </td>
-            <td>User: <%=account.getUser()%>
-            </td>
-            <td>Account number: <%=account.getAccountsNumber()%>
-            </td>
-            <td>Amount: <%=account.getAmount()%>
-            </td>
+            <th>Account id</th>
+            <th>User</th>
+            <th>Account number</th>
+            <th>Amount</th>
         </tr>
-        <%
-                }
-            }
-        %>
-
+        </thead>
+        <%--accountList приходит из контроллера--%>
+        <c:forEach var="account" items="${accountList}">
+            <tr>
+                <td>${account.id}</td>
+                <td>${account.user}</td>
+                <td>${account.accountsNumber}</td>
+                <td>${account.amount}</td>
+            </tr>
+        </c:forEach>
     </table>
 
     <p><a href="/application/index">На главную</a></p>

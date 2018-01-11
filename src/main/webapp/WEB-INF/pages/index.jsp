@@ -1,10 +1,4 @@
-<%@ page import="com.andersen.spring.entity.User" %><%--
-  Created by IntelliJ IDEA.
-  User: savotii
-  Date: 10.01.2018
-  Time: 22:56
-  To change this template use File | Settings | File Templates.
---%>
+<%@ page import="com.andersen.spring.entity.User" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"
 %>
@@ -21,7 +15,6 @@
     if (logout != null)
         try {
             session.removeAttribute("user");
-            request.removeAttribute("user");
         } catch (Exception e) {
             e.printStackTrace();
         }

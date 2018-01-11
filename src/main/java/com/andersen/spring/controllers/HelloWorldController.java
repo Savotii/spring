@@ -5,13 +5,14 @@ import com.andersen.spring.entity.User;
 import com.andersen.spring.facade.MarketFacade;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
-
-import javax.jws.WebParam;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import java.util.Locale;
 
 @Controller
 public class HelloWorldController {
@@ -20,63 +21,48 @@ public class HelloWorldController {
     private MarketFacade marketFacade;
 
     @RequestMapping(value = "/")
-    protected ModelAndView main(HttpServletRequest request, HttpServletResponse response) {
+    protected String main(Model model)
+    {
+        model.addAttribute("msg", "hello world");
 
-        ModelAndView model = new ModelAndView("index");
-        model.addObject("msg", "hello world");
-
-        return model;
+        return "index";
     }
 
     @RequestMapping(value = "/GetExceptionHandler")
-    protected ModelAndView getExceptionHandler(HttpServletRequest request, HttpServletResponse response) throws Exception {
-       throw new NotFoundException("Собственный обработчик ошибки.");
+    protected String getExceptionHandler(Model model) throws Exception
+    {
+        throw new NotFoundException("Собственный обработчик ошибки.");
     }
 
     @RequestMapping(value = "/ProductList")
-    protected ModelAndView productList(HttpServletRequest request, HttpServletResponse response) {
-
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.addObject("productList", marketFacade.getAllProducts());
-        modelAndView.setViewName("productList");
-        return modelAndView;
+    protected String productList(Model model)
+    {
+        model.addAttribute("productList", marketFacade.getAllProducts());
+        return "productList";
     }
 
     @RequestMapping(value = "/AccountList")
-    protected ModelAndView accountList(HttpServletRequest request, HttpServletResponse response) {
+    protected String accountList(Model model, HttpSession httpSession){
 
-        ModelAndView modelAndView = new ModelAndView();
-        User user = (User) request.getSession().getAttribute("user");
+        User user = (User) httpSession.getAttribute("user");
         if (user != null)
-            modelAndView.addObject("accountList", marketFacade.getAll(user.getId()));
-        modelAndView.setViewName("accountList");
-        return modelAndView;
-    }
+            model.addAttribute("accountList", marketFacade.getAll(user.getId()));
 
-    @RequestMapping(value = "/view")
-    protected ModelAndView view(HttpServletRequest request, HttpServletResponse response) {
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.addObject("msg", "It's viewing");
-        modelAndView.setViewName("HelloWorldPage");
-        return modelAndView;
+        return "accountList";
     }
 
     @RequestMapping(value = "/index")
-    protected ModelAndView index(HttpServletRequest request, HttpServletResponse response) {
-
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.addObject("msg", "going to index.jsp");
-        modelAndView.setViewName("index");
-        return modelAndView;
-
+    protected String index(Model model)
+    {
+        model.addAttribute("msg", "going to index");
+        return "index";
     }
 
-
     @RequestMapping(value = "/logout")
-    protected ModelAndView logout(HttpServletRequest request, HttpServletResponse response) {
-        ModelAndView modelAndView = new ModelAndView("index");
-        modelAndView.addObject("logout", true);
-        return modelAndView;
+    protected String logout(Model model)
+    {
+        model.addAttribute("logout", true);
+        return "index";
     }
 
     @RequestMapping(value = "/login")
@@ -96,13 +82,13 @@ public class HelloWorldController {
     }
 
     @ExceptionHandler(NotFoundException.class)
-    public ModelAndView handlerNoFoundException(HttpServletRequest request, Exception ex) {
+    public String handlerNoFoundException(HttpServletRequest request, Exception ex) {
 
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.addObject("exception", ex);
         modelAndView.addObject("url", request.getRequestURL());
         modelAndView.setViewName("errorPage");
-        return modelAndView;
+        return "errorPage";
 
     }
 

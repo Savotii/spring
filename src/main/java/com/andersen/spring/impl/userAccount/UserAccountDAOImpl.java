@@ -112,7 +112,6 @@ public class UserAccountDAOImpl implements UserAccountDAO {
         } catch (DataAccessException d) {
             d.printStackTrace();
         }
-
         return userAccounts;
     }
 
