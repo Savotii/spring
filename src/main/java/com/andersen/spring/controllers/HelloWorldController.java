@@ -3,11 +3,15 @@ package com.andersen.spring.controllers;
 import com.andersen.spring.controllers.exceptions.NotFoundException;
 import com.andersen.spring.entity.User;
 import com.andersen.spring.facade.MarketFacade;
+import com.sun.deploy.net.HttpResponse;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpRequest;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContext;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -60,9 +64,17 @@ public class HelloWorldController {
     }
 
     @RequestMapping(value = "/logout")
-    protected String logout(Model model, HttpSession session) {
+    protected String logout(Model model, HttpServletRequest request, HttpServletResponse response, HttpSession session) {
+
+        Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
+
+        if(authentication != null)
+        {
+            new SecurityContextLogoutHandler().logout(request, response, authentication);
+        }
+
         model.addAttribute("logout", true);
-        session.removeAttribute("user");
+        //session.removeAttribute("user");
         return "index";
     }
 
