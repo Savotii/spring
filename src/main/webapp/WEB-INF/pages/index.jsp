@@ -11,15 +11,15 @@
 
     String autorizationFiled = (String) request.getAttribute("userNotFound");
 
-    Object logout = request.getAttribute("logout");
+/*    Object logout = request.getAttribute("logout");
     if (logout != null)
         try {
             session.removeAttribute("user");
         } catch (Exception e) {
             e.printStackTrace();
-        }
+        }*/
 
-    Object user = request.getAttribute("user");
+    Object user = session.getAttribute("user");
     if (user == null) {
 %>
 
