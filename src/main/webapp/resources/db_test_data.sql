@@ -1,0 +1,6 @@
+INSERT INTO products(title, description, price, userId) VALUES("Товар 1", "Описание 1", "15", "1")
+INSERT INTO products(title, description, price, userId) VALUES("Товар 2", "Описание 2", "12", "1")
+INSERT INTO products(title, description, price, userId) VALUES("Товар 3", "Описание 3", "11", "4")
+INSERT INTO products(title, description, price, userId) VALUES("Товар 4", "Описание 4", "13", "1")
+INSERT INTO products(title, description, price, userId) VALUES("Товар 5", "Описание 5", "55", "1")
+INSERT INTO products(title, description, price, userId) VALUES("Товар 6", "Описание 6", "66", "1")

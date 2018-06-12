@@ -1,27 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="andersen-spring:war" />
+    </artifacts-to-build>
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="6ef6becb-44c8-4ff6-8943-191810be9e73" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/andersen/spring/controllers/BasketService.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/andersen/spring/dao/BasketDAO.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/andersen/spring/entity/Basket.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/andersen/spring/entity/BasketRowMapper.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/BasketDAOImpl.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/BasketServiceImpl.java" afterPath="" />
+    <list default="true" id="8b49d906-7abe-4086-b0a9-9c14ca716a8b" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/App.java" afterPath="$PROJECT_DIR$/src/main/java/App.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/andersen/spring/facade/MarketFacadeImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/andersen/spring/facade/MarketFacadeImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/userAccount/UserAccountServiceImpl.java" afterPath="$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/userAccount/UserAccountServiceImpl.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/resources/application-context.xml" afterPath="$PROJECT_DIR$/src/main/resources/application-context.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/application-security.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/application-security.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
-    <ignored path=".idea/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CoverageDataManager">
+    <SUITE FILE_PATH="coverage/andersen_spring$Unnamed.coverage" NAME="Unnamed Coverage Results" MODIFIED="1515653769871" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
   <component name="DatabaseView">
     <option name="SHOW_INTERMEDIATE" value="true" />
@@ -39,129 +38,126 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="HelloWorldController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/controllers/HelloWorldController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="176">
+              <caret line="120" column="0" lean-forward="false" selection-start-line="120" selection-start-column="0" selection-end-line="120" selection-end-column="0" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserAccountDAOImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/userAccount/UserAccountDAOImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="329">
+              <caret line="110" column="0" lean-forward="false" selection-start-line="110" selection-start-column="0" selection-end-line="110" selection-end-column="0" />
+              <folding>
+                <element signature="e#4070#4083#0" expanded="true" />
+                <marker date="1515670262943" expanded="true" signature="876:911" ph="SELECT * FRO... ACCOUNTS" />
+                <marker date="1515670262943" expanded="true" signature="963:1003" ph="SELECT * FRO... ACCOUNTS" />
+                <marker date="1515670262943" expanded="true" signature="1042:1082" ph="SELECT * FRO... ACCOUNTS" />
+                <marker date="1515670262943" expanded="true" signature="1132:1165" ph="DELETE FROM " />
+                <marker date="1515670262943" expanded="true" signature="1214:1283" ph="INSERT INTO ACCOUNTS... " />
+                <marker date="1515670262943" expanded="true" signature="1329:1405" ph="UPDATE ACCOU... " />
+                <marker date="1515670262943" expanded="true" signature="1451:1504" ph="UPDATE ACCOU... " />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="web.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="199">
+              <caret line="12" column="46" lean-forward="false" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="mvc-dispatcher-servlet.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/mvc-dispatcher-servlet.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="14" column="19" lean-forward="false" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="application-context.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/resources/application-context.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-365">
-              <caret line="59" column="78" lean-forward="false" selection-start-line="59" selection-start-column="78" selection-end-line="59" selection-end-column="78" />
+            <state relative-caret-position="-794">
+              <caret line="33" column="11" lean-forward="false" selection-start-line="33" selection-start-column="11" selection-end-line="33" selection-end-column="11" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ProductServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/product/ProductServiceImpl.java">
+      <file leaf-file-name="application-security.xml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/application-security.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="101">
-              <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ProductDAOImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/product/ProductDAOImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="117" column="0" lean-forward="false" selection-start-line="117" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
-              <folding>
-                <element signature="method#ProductDAOImpl#0;class#ProductDAOImpl#0" expanded="false" />
-                <element signature="method#getProductsByTitle#0;class#ProductDAOImpl#0" expanded="false" />
-                <element signature="method#getProductsByUserId#0;class#ProductDAOImpl#0" expanded="false" />
-                <element signature="method#create#0;class#ProductDAOImpl#0" expanded="false" />
-                <element signature="class#2284:3195" expanded="false" />
-                <element signature="method#createPreparedStatement#0;class#2284:3195" expanded="false" />
-                <element signature="method#getById#0;class#ProductDAOImpl#0" expanded="false" />
-                <element signature="method#update#0;class#ProductDAOImpl#0" expanded="false" />
-                <element signature="method#delete#0;class#ProductDAOImpl#0" expanded="false" />
-                <element signature="method#getAll#0;class#ProductDAOImpl#0" expanded="false" />
-                <marker date="1515497404021" expanded="false" signature="865:904" ph="SELECT * FRO... products" />
-                <marker date="1515497404021" expanded="false" signature="954:995" ph="SELECT * FRO... products" />
-                <marker date="1515497404021" expanded="false" signature="1042:1077" ph="SELECT * FRO... products" />
-                <marker date="1515497404021" expanded="false" signature="1116:1138" ph="SELECT * FRO... products" />
-                <marker date="1515497404021" expanded="false" signature="1250:1283" ph="DELETE FROM " />
-                <marker date="1515497404021" expanded="false" signature="1332:1406" ph="INSERT INTO products... " />
-                <marker date="1515497404021" expanded="false" signature="1452:1533" ph="UPDATE produ... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserAccount.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/entity/UserAccount.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-              <folding>
-                <element signature="method#UserAccount#0;class#UserAccount#0" expanded="false" />
-                <element signature="e#346#347#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserAccountServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/userAccount/UserAccountServiceImpl.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="379">
-              <caret line="69" column="69" lean-forward="false" selection-start-line="69" selection-start-column="69" selection-end-line="69" selection-end-column="69" />
+            <state relative-caret-position="374">
+              <caret line="28" column="29" lean-forward="true" selection-start-line="28" selection-start-column="29" selection-end-line="28" selection-end-column="29" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MarketFacade.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/facade/MarketFacade.java">
+      <file leaf-file-name="403.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/403.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="379">
-              <caret line="126" column="9" lean-forward="false" selection-start-line="126" selection-start-column="9" selection-end-line="126" selection-end-column="9" />
+            <state relative-caret-position="68">
+              <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MarketFacadeImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/facade/MarketFacadeImpl.java">
+      <file leaf-file-name="index.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/index.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-663">
-              <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+            <state relative-caret-position="-137">
+              <caret line="21" column="30" lean-forward="false" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="accountList.jsp" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/accountList.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="322">
+              <caret line="26" column="4" lean-forward="false" selection-start-line="26" selection-start-column="4" selection-end-line="26" selection-end-column="42" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="UserDAOImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/user/UserDAOImpl.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="311">
+              <caret line="103" column="20" lean-forward="false" selection-start-line="103" selection-start-column="20" selection-end-line="103" selection-end-column="20" />
               <folding>
-                <element signature="e#3346#3635#0" expanded="true" />
-                <element signature="e#3634#3635#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ProductRowMapper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/entity/ProductRowMapper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="App.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/App.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="203">
-              <caret line="81" column="70" lean-forward="false" selection-start-line="81" selection-start-column="69" selection-end-line="81" selection-end-column="70" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserAccountRowMapper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/entity/UserAccountRowMapper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="53" />
-              <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="method#UserDAOImpl#0;class#UserDAOImpl#0" expanded="false" />
+                <element signature="method#create#0;class#UserDAOImpl#0" expanded="false" />
+                <element signature="method#update#0;class#UserDAOImpl#0" expanded="false" />
+                <element signature="method#getAll#0;class#UserDAOImpl#0" expanded="false" />
+                <element signature="method#getById#0;class#UserDAOImpl#0" expanded="false" />
+                <element signature="method#getUsersByName#0;class#UserDAOImpl#0" expanded="false" />
+                <marker date="1515653050874" expanded="false" signature="735:772" ph="SELECT * FRO... users" />
+                <marker date="1515653050874" expanded="false" signature="822:857" ph="SELECT * FRO... users" />
+                <marker date="1515653050874" expanded="false" signature="904:936" ph="SELECT * FRO... users" />
+                <marker date="1515653050874" expanded="false" signature="976:995" ph="SELECT * FRO... users" />
+                <marker date="1515653050874" expanded="false" signature="1104:1134" ph="DELETE FROM " />
+                <marker date="1515653050874" expanded="false" signature="1183:1243" ph="INSERT INTO users... " />
+                <marker date="1515653050874" expanded="false" signature="1286:1351" ph="UPDATE users... " />
               </folding>
             </state>
           </provider>
@@ -172,35 +168,21 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JUnit4 Test Class" />
-        <option value="Interface" />
+        <option value="spring-beans.schema" />
+        <option value="Jsp File" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>String lin</find>
-      <find>connection</find>
-      <find>helper</find>
-      <find>getGeneratedKeys</find>
-      <find>getProductsByTitle</find>
-      <find>public List&lt;Product&gt; getProductsByTitle(String title)getProductsByUserId</find>
-      <find>getUserByEmail</find>
-      <find>getUsersByName</find>
-      <find>productServiceImpl</find>
-      <find>GET_BY_ACCOUNTID_QUERY</find>
-      <find>UserServiceImpl</find>
-      <find>MySqlConnection</find>
-      <find>UserAccountRowMapper</find>
-      <find>redu</find>
-      <find>userId</find>
-      <find>user</find>
-      <find>file</find>
-      <find>products</find>
-      <find>path</find>
-      <find>init</find>
+      <find>welcome</find>
+      <find>getAll</find>
+      <find>getAccountsByUserId</find>
     </findStrings>
+    <dirStrings>
+      <dir>E:\workspacejava\andersen-spring</dir>
+    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -213,57 +195,34 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/andersen/spring/test/Test.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/andersen/spring/test/MyTest.java" />
-        <option value="$PROJECT_DIR$/src/test/java/com/andersen/spring/impl/ProductServiceImplTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/andersen/spring/storage/MarketStorage.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/andersen/spring/dao/AbstractDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/andersen/spring/dao/UserDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/andersen/spring/dao/ProductDAO.java" />
-        <option value="$PROJECT_DIR$/src/test/java/MyTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/andersen/spring/dao/DAO.java" />
-        <option value="$PROJECT_DIR$/src/test/java/UserServiceTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/andersen/spring/controllers/UserService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/UserAccountService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/andersen/spring/controllers/Accounts.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/andersen/spring/entity/Accounts.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/andersen/spring/entity/UserRowMapper.java" />
         <option value="$PROJECT_DIR$/.idea/workspace.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/UserServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/ProductServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/andersen/spring/dao/BasketDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/andersen/spring/controllers/ProductService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/andersen/spring/controllers/BasketService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/andersen/spring/entity/Basket.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/andersen/spring/exceptions/InsufficientFunds.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/UserDAOImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/andersen/spring/entity/BasketRowMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/andersen/spring/entity/Product.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/andersen/spring/entity/ProductRowMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/ProductDAOImpl.java" />
-        <option value="$PROJECT_DIR$/src/test/java/ProductServiceTest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/UserAccountDAOImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/andersen/spring/entity/UserAccount.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/UserAccountServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/andersen/spring/entity/User.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/andersen/spring/dao/UserAccountDAO.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/userAccount/UserAccountDAOImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/andersen/spring/entity/UserAccountRowMapper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/andersen/spring/controllers/AccountService.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/andersen/spring/facade/MarketFacade.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/andersen/spring/jdbc/MySqlHelper.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/db_schema.sql" />
-        <option value="$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/user/UserServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/product/ProductServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/BasketServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/user/UserDAOImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/product/ProductDAOImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/BasketDAOImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/HelloWorld.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/views/index.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/andersen/spring/controllers/MainController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/dispatcherServlet-servlet.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/mvc-dispatcher-servlet.xml" />
+        <option value="$PROJECT_DIR$/src/main/resources/db_test_data.sql" />
         <option value="$PROJECT_DIR$/src/main/resources/application-context.xml" />
-        <option value="$PROJECT_DIR$/src/main/java/com/andersen/spring/facade/MarketFacadeImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/user/UserDAOImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/accountsList.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/andersen/spring/facade/MarketFacade.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/andersen/spring/controllers/AccountService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/userAccount/UserAccountServiceImpl.java" />
-        <option value="$PROJECT_DIR$/src/main/java/App.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/andersen/spring/facade/MarketFacadeImpl.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/HelloWorldPage.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/errorPage.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/andersen/spring/controllers/exceptions/NotFoundException.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/userAccount/UserAccountDAOImpl.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/productList.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/accountList.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/index.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/403.jsp" />
+        <option value="$PROJECT_DIR$/src/main/java/com/andersen/spring/controllers/exceptions/AccessDeniedHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/andersen/spring/controllers/exceptions/MyAccessDeniedHandler.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/andersen/spring/controllers/HelloWorldController.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/application-security.xml" />
       </list>
     </option>
   </component>
@@ -272,6 +231,13 @@
   <component name="JsGulpfileManager">
     <detection-done>true</detection-done>
     <sorting>DEFINITION_ORDER</sorting>
+  </component>
+  <component name="LogFilters">
+    <option name="FILTER_ERRORS" value="false" />
+    <option name="FILTER_WARNINGS" value="false" />
+    <option name="FILTER_INFO" value="true" />
+    <option name="FILTER_DEBUG" value="true" />
+    <option name="CUSTOM_FILTER" />
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
@@ -288,7 +254,7 @@
       <showMembers />
       <showModules />
       <showLibraryContents />
-      <hideEmptyPackages />
+      <hideEmptyPackages ProjectPane="true" />
       <abbreviatePackageNames />
       <autoscrollToSource />
       <autoscrollFromSource />
@@ -297,8 +263,10 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="AndroidView" />
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -343,22 +311,6 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="andersen-spring" type="b2602c69:ProjectViewProjectNode" />
-              <item name="andersen-spring" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="entity" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="andersen-spring" type="b2602c69:ProjectViewProjectNode" />
-              <item name="andersen-spring" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="exceptions" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -376,6 +328,14 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="product" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="andersen-spring" type="b2602c69:ProjectViewProjectNode" />
+              <item name="andersen-spring" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="user" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="andersen-spring" type="b2602c69:ProjectViewProjectNode" />
@@ -413,7 +373,24 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="andersen-spring" type="b2602c69:ProjectViewProjectNode" />
+              <item name="andersen-spring" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
               <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="andersen-spring" type="b2602c69:ProjectViewProjectNode" />
+              <item name="andersen-spring" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="webapp" type="462c0819:PsiDirectoryNode" />
+              <item name="WEB-INF" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="andersen-spring" type="b2602c69:ProjectViewProjectNode" />
@@ -437,32 +414,24 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/SpringSecurityDatabaseAuthenticationExample-master" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="F:/Изучение Java/idea-gitignore-2.3.2/idea-gitignore/lib/idea-gitignore-2.3.2.jar!/" />
-    <property name="project.structure.last.edited" value="Libraries" />
-    <property name="project.structure.proportion" value="0.16796875" />
-    <property name="project.structure.side.proportion" value="0.33901346" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Ignored.Files" />
-    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
-    <property name="Downloaded.Files.Path.Enabled" value="false" />
-    <property name="Repository.Attach.JavaDocs" value="false" />
-    <property name="Repository.Attach.Sources" value="false" />
+    <property name="project.structure.last.edited" value="Problems" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="File.Encoding" />
   </component>
   <component name="RecentsManager">
-    <key name="CreateTestDialog.RecentsKey">
-      <recent name="com.andersen.spring.impl" />
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\workspacejava\andersen-spring\src\main\webapp\WEB-INF\pages" />
     </key>
-    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
-      <recent name="" />
-    </key>
-    <key name="CreateTestDialog.Recents.Supers">
-      <recent name="" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\workspacejava\andersen-spring\src\main\webapp\resources" />
+      <recent name="E:\workspacejava\andersen-spring\src\main\webapp\WEB-INF\pages" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -477,120 +446,79 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.App">
-    <configuration name="App" type="Application" factoryName="Application">
+  <component name="RunManager" selected="Tomcat Server.Unnamed">
+    <configuration name="Unnamed" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Local" APPLICATION_SERVER_NAME="Tomcat 9.0.2" ALTERNATIVE_JRE_ENABLED="false">
+      <option name="UPDATING_POLICY" value="restart-server" />
+      <deployment>
+        <artifact name="andersen-spring:war">
+          <settings>
+            <option name="CONTEXT_PATH" value="/" />
+          </settings>
+        </artifact>
+      </deployment>
+      <server-settings>
+        <option name="BASE_DIRECTORY_NAME" value="Unnamed_andersen-spring_3" />
+        <option name="HTTP_PORT" value="8081" />
+      </server-settings>
+      <predefined_log_file id="Tomcat" enabled="true" />
+      <predefined_log_file id="Tomcat Catalina" enabled="true" />
+      <predefined_log_file id="Tomcat Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Host Manager" enabled="false" />
+      <predefined_log_file id="Tomcat Localhost Access" enabled="false" />
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="MAIN_CLASS_NAME" value="App" />
-      <option name="VM_PARAMETERS" value="" />
-      <option name="PROGRAM_PARAMETERS" value="" />
-      <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="ENABLE_SWING_INSPECTOR" value="false" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <module name="andersen-spring" />
-      <envs />
-    </configuration>
-    <configuration name="ProductServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="andersen-spring" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ProductServiceTest" />
-      <option name="METHOD_NAME" />
-      <option name="TEST_OBJECT" value="class" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-    </configuration>
-    <configuration name="ProductServiceTest.testService" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="andersen-spring" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ProductServiceTest" />
-      <option name="METHOD_NAME" value="testService" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-    </configuration>
-    <configuration name="ProductServiceTest.testServiceCreate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="andersen-spring" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ProductServiceTest" />
-      <option name="METHOD_NAME" value="testServiceCreate" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-    </configuration>
-    <configuration name="ProductServiceTest.testServiceGetAll" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="andersen-spring" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="ProductServiceTest" />
-      <option name="METHOD_NAME" value="testServiceGetAll" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
-    </configuration>
-    <configuration name="UserServiceTest.testService" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <module name="andersen-spring" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="UserServiceTest" />
-      <option name="METHOD_NAME" value="testService" />
-      <option name="TEST_OBJECT" value="method" />
-      <option name="VM_PARAMETERS" value="-ea" />
-      <option name="PARAMETERS" />
-      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
-      <option name="ENV_VARIABLES" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="TEST_SEARCH_SCOPE">
-        <value defaultName="singleModule" />
-      </option>
-      <envs />
-      <patterns />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="14776" />
+      </RunnerSettings>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Cover">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Debug">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <ConfigurationWrapper VM_VAR="JAVA_OPTS" RunnerId="Run">
+        <option name="USE_ENV_VARIABLES" value="true" />
+        <STARTUP>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </STARTUP>
+        <SHUTDOWN>
+          <option name="USE_DEFAULT" value="true" />
+          <option name="SCRIPT" value="" />
+          <option name="VM_PARAMETERS" value="" />
+          <option name="PROGRAM_PARAMETERS" value="" />
+        </SHUTDOWN>
+      </ConfigurationWrapper>
+      <method>
+        <option name="BuildArtifacts" enabled="true">
+          <artifact name="andersen-spring:war" />
+        </option>
+      </method>
     </configuration>
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
@@ -673,411 +601,128 @@
       <properties />
       <listeners />
     </configuration>
-    <list size="6">
-      <item index="0" class="java.lang.String" itemvalue="Application.App" />
-      <item index="1" class="java.lang.String" itemvalue="JUnit.ProductServiceTest" />
-      <item index="2" class="java.lang.String" itemvalue="JUnit.UserServiceTest.testService" />
-      <item index="3" class="java.lang.String" itemvalue="JUnit.ProductServiceTest.testService" />
-      <item index="4" class="java.lang.String" itemvalue="JUnit.ProductServiceTest.testServiceGetAll" />
-      <item index="5" class="java.lang.String" itemvalue="JUnit.ProductServiceTest.testServiceCreate" />
+    <list size="2">
+      <item index="0" class="java.lang.String" itemvalue="Application.Unnamed" />
+      <item index="1" class="java.lang.String" itemvalue="Tomcat Server.Unnamed" />
     </list>
-    <recent_temporary>
-      <list size="5">
-        <item index="0" class="java.lang.String" itemvalue="JUnit.ProductServiceTest.testServiceCreate" />
-        <item index="1" class="java.lang.String" itemvalue="JUnit.ProductServiceTest.testServiceGetAll" />
-        <item index="2" class="java.lang.String" itemvalue="JUnit.ProductServiceTest" />
-        <item index="3" class="java.lang.String" itemvalue="JUnit.ProductServiceTest.testService" />
-        <item index="4" class="java.lang.String" itemvalue="JUnit.UserServiceTest.testService" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="ShelveChangesManager" show_recycled="false">
     <option name="remove_strategy" value="false" />
   </component>
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="6ef6becb-44c8-4ff6-8943-191810be9e73" name="Default" comment="" />
-      <created>1513944297135</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1513944297135</updated>
-      <workItem from="1513944298431" duration="11157000" />
-      <workItem from="1514111149046" duration="1014000" />
-      <workItem from="1514188073473" duration="20826000" />
-      <workItem from="1514272561294" duration="18157000" />
-      <workItem from="1514313993712" duration="1066000" />
-      <workItem from="1514318766373" duration="1096000" />
-      <workItem from="1514360269320" duration="3904000" />
-      <workItem from="1514364719305" duration="15020000" />
-      <workItem from="1514447696826" duration="19385000" />
-      <workItem from="1514533704701" duration="16409000" />
-      <workItem from="1514967665117" duration="3000" />
-      <workItem from="1514967702396" duration="9301000" />
-      <workItem from="1515053182830" duration="16468000" />
-      <workItem from="1515394309736" duration="3092000" />
-      <workItem from="1515478987913" duration="14324000" />
-    </task>
-    <task id="LOCAL-00001" summary="1">
-      <created>1513944425461</created>
+    <task id="LOCAL-00001" summary="Попытка реализации диспетчера">
+      <created>1515592876882</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1513944425461</updated>
+      <updated>1515592876882</updated>
     </task>
-    <task id="LOCAL-00002" summary="Реализация ProductsDao">
-      <created>1513948987272</created>
+    <task id="LOCAL-00002" summary="Попытка реализации диспетчера">
+      <created>1515593106477</created>
       <option name="number" value="00002" />
       <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1513948987272</updated>
+      <updated>1515593106477</updated>
     </task>
-    <task id="LOCAL-00003" summary="Реализация UserDAOImpl">
-      <created>1513951032845</created>
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8b49d906-7abe-4086-b0a9-9c14ca716a8b" name="Default" comment="" />
+      <created>1515596548985</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1515596548985</updated>
+      <workItem from="1515596560701" duration="3199000" />
+      <workItem from="1515616270843" duration="1773000" />
+      <workItem from="1515651021417" duration="21520000" />
+    </task>
+    <task id="LOCAL-00003" summary="Рабочий код по страницам.">
+      <created>1515597047086</created>
       <option name="number" value="00003" />
       <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
-      <updated>1513951032845</updated>
+      <updated>1515597047086</updated>
     </task>
-    <task id="LOCAL-00004" summary="Реализация UserDAOImpl">
-      <created>1514111186365</created>
+    <task id="LOCAL-00004" summary="Тестовый вывод продуктов на страницу.">
+      <created>1515599758912</created>
       <option name="number" value="00004" />
       <option name="presentableId" value="LOCAL-00004" />
       <option name="project" value="LOCAL" />
-      <updated>1514111186365</updated>
+      <updated>1515599758912</updated>
     </task>
-    <task id="LOCAL-00005" summary="Реализация UserDAOImpl">
-      <created>1514111313995</created>
+    <task id="LOCAL-00005" summary="Добавление главной страницы и отображение списка продуктов.">
+      <created>1515618010764</created>
       <option name="number" value="00005" />
       <option name="presentableId" value="LOCAL-00005" />
       <option name="project" value="LOCAL" />
-      <updated>1514111313995</updated>
+      <updated>1515618010764</updated>
     </task>
-    <task id="LOCAL-00006" summary="Реализация UserDAOImpl">
-      <created>1514112128630</created>
+    <task id="LOCAL-00006" summary="Реализация блока авторизации(по минималке, авторизация по имейлу, без пароля)&#10;Вывод списка счетов по айди пользователя.&#10;Вывод списка продуктов">
+      <created>1515654797622</created>
       <option name="number" value="00006" />
       <option name="presentableId" value="LOCAL-00006" />
       <option name="project" value="LOCAL" />
-      <updated>1514112128630</updated>
+      <updated>1515654797622</updated>
     </task>
-    <task id="LOCAL-00007" summary="Добавление класса помощника и получение коннекта к mysql">
-      <created>1514194009274</created>
+    <task id="LOCAL-00007" summary="Реализация собственного обработчика ошибок, через контроллер.">
+      <created>1515656463189</created>
       <option name="number" value="00007" />
       <option name="presentableId" value="LOCAL-00007" />
       <option name="project" value="LOCAL" />
-      <updated>1514194009274</updated>
+      <updated>1515656463189</updated>
     </task>
-    <task id="LOCAL-00008" summary="Некоторые настройки бинов">
-      <created>1514201542248</created>
+    <task id="LOCAL-00008" summary="Переделка jsp под jstl , отладка комметариев">
+      <created>1515670696799</created>
       <option name="number" value="00008" />
       <option name="presentableId" value="LOCAL-00008" />
       <option name="project" value="LOCAL" />
-      <updated>1514201542248</updated>
+      <updated>1515670696799</updated>
     </task>
-    <task id="LOCAL-00009" summary="Некоторые настройки бинов">
-      <created>1514218661502</created>
+    <task id="LOCAL-00009" summary="ДОработка комментариев">
+      <created>1515671010379</created>
       <option name="number" value="00009" />
       <option name="presentableId" value="LOCAL-00009" />
       <option name="project" value="LOCAL" />
-      <updated>1514218661502</updated>
+      <updated>1515671010379</updated>
     </task>
-    <task id="LOCAL-00010" summary="Донастройка файла бинов.&#10;Попытка написания теста.">
-      <created>1514277933689</created>
+    <task id="LOCAL-00010" summary="ДОработка комментариев">
+      <created>1515673365497</created>
       <option name="number" value="00010" />
       <option name="presentableId" value="LOCAL-00010" />
       <option name="project" value="LOCAL" />
-      <updated>1514277933689</updated>
+      <updated>1515673365497</updated>
     </task>
-    <task id="LOCAL-00011" summary="&#10;Попытка написания теста.">
-      <created>1514292101984</created>
+    <task id="LOCAL-00011" summary="Авторизация через Spring Security">
+      <created>1515675078940</created>
       <option name="number" value="00011" />
       <option name="presentableId" value="LOCAL-00011" />
       <option name="project" value="LOCAL" />
-      <updated>1514292101984</updated>
+      <updated>1515675078941</updated>
     </task>
-    <task id="LOCAL-00012" summary="&#10;Попытка написания теста.">
-      <created>1514293437770</created>
+    <task id="LOCAL-00012" summary="Добавил разлогинивание, прописал в контроллер">
+      <created>1515675588696</created>
       <option name="number" value="00012" />
       <option name="presentableId" value="LOCAL-00012" />
       <option name="project" value="LOCAL" />
-      <updated>1514293437770</updated>
+      <updated>1515675588696</updated>
     </task>
-    <task id="LOCAL-00013" summary="&#10;Попытка написания теста.">
-      <created>1514293762219</created>
+    <task id="LOCAL-00013" summary="Добавил разлогинивание, прописал в контроллер">
+      <created>1515676674975</created>
       <option name="number" value="00013" />
       <option name="presentableId" value="LOCAL-00013" />
       <option name="project" value="LOCAL" />
-      <updated>1514293762219</updated>
+      <updated>1515676674975</updated>
     </task>
-    <task id="LOCAL-00014" summary="почистил от лишнего">
-      <created>1514295191766</created>
+    <task id="LOCAL-00014" summary="Попытка сделать свою 403">
+      <created>1515679815687</created>
       <option name="number" value="00014" />
       <option name="presentableId" value="LOCAL-00014" />
       <option name="project" value="LOCAL" />
-      <updated>1514295191766</updated>
+      <updated>1515679815687</updated>
     </task>
-    <task id="LOCAL-00015" summary="почистил от лишнего">
-      <created>1514295437418</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1514295437418</updated>
-    </task>
-    <task id="LOCAL-00016" summary="Поправил комменты, дописал хелпер к mysql протестировал создание и удаление записей.">
-      <created>1514300530061</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1514300530061</updated>
-    </task>
-    <task id="LOCAL-00017" summary="Откорректировал тест">
-      <created>1514301325072</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1514301325072</updated>
-    </task>
-    <task id="LOCAL-00018" summary="Отработка некоторой части комментариев.">
-      <created>1514314992422</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1514314992422</updated>
-    </task>
-    <task id="LOCAL-00019" summary="Убрал AbstractDAO,  в ProductDAOImp и user... имплементил соответствующие дао. чтобы спринг съел их правильно.&#10;Тест пока не пересматривал">
-      <created>1514319810739</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1514319810739</updated>
-    </task>
-    <task id="LOCAL-00020" summary="Переопределение equals, написание теста по новой.&#10;За изучение брал http://qaru.site/questions/35009/difference-between-mock-and-injectmocks">
-      <created>1514364215118</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1514364215118</updated>
-    </task>
-    <task id="LOCAL-00021" summary="UserService test">
-      <created>1514365964159</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1514365964159</updated>
-    </task>
-    <task id="LOCAL-00022" summary="UserService test">
-      <created>1514380069717</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1514380069717</updated>
-    </task>
-    <task id="LOCAL-00023" summary="Попытка выродить lookup-method , как я понял.">
-      <created>1514388851920</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1514388851920</updated>
-    </task>
-    <task id="LOCAL-00024" summary="Попытка выродить lookup-method , как я понял.">
-      <created>1514403768580</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1514403768580</updated>
-    </task>
-    <task id="LOCAL-00025" summary="Обработка комментариев">
-      <created>1514450952006</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1514450952006</updated>
-    </task>
-    <task id="LOCAL-00026" summary="Реализация списочного теста">
-      <created>1514458369779</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1514458369779</updated>
-    </task>
-    <task id="LOCAL-00027" summary="Реализация списочного теста">
-      <created>1514458476853</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1514458476853</updated>
-    </task>
-    <task id="LOCAL-00028" summary="Реализация списочного теста">
-      <created>1514458511576</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1514458511576</updated>
-    </task>
-    <task id="LOCAL-00029" summary="Merge branch 'master' into task_0&#10;&#10;# Conflicts:&#10;#&#9;src/main/java/App.java">
-      <created>1514460889871</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1514460889871</updated>
-    </task>
-    <task id="LOCAL-00030" summary="Реализация таска 2">
-      <created>1514465138318</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1514465138319</updated>
-    </task>
-    <task id="LOCAL-00031" summary="Реализация слоя сервиса и дао для UserAccount">
-      <created>1514471956346</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1514471956346</updated>
-    </task>
-    <task id="LOCAL-00032" summary="Реализация слоя сервиса и дао для UserAccount">
-      <created>1514472057701</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1514472057701</updated>
-    </task>
-    <task id="LOCAL-00033" summary="Реализация слоя сервиса и дао для UserAccount">
-      <created>1514472610492</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1514472610492</updated>
-    </task>
-    <task id="LOCAL-00034" summary="Реализация общения с базой через JdbcTemplate">
-      <created>1514476868554</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1514476868554</updated>
-    </task>
-    <task id="LOCAL-00035" summary="Реализация UserAccountDao и ProductDao используя jdbcTemplate">
-      <created>1514547097434</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1514547097435</updated>
-    </task>
-    <task id="LOCAL-00036" summary="Реализация UsersDAO используя jdbcTemplate">
-      <created>1514555399154</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1514555399154</updated>
-    </task>
-    <task id="LOCAL-00037" summary="Добавление сущности корзина, слоя сервиса и дао">
-      <created>1514970887683</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1514970887683</updated>
-    </task>
-    <task id="LOCAL-00038" summary="Проблема в getById, сервисы не инжектятся.">
-      <created>1514983559945</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1514983559945</updated>
-    </task>
-    <task id="LOCAL-00039" summary="Получение контекста в маппере">
-      <created>1515061073278</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1515061073278</updated>
-    </task>
-    <task id="LOCAL-00040" summary="Переделал мапперы под бины.&#10;рефактор кода">
-      <created>1515083712186</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1515083712186</updated>
-    </task>
-    <task id="LOCAL-00041" summary="Обработка части комментариев.">
-      <created>1515395703280</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1515395703280</updated>
-    </task>
-    <task id="LOCAL-00042" summary="Обработка части комментариев.">
-      <created>1515422770920</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1515422770920</updated>
-    </task>
-    <task id="LOCAL-00043" summary="Обработка части комментариев.">
-      <created>1515491147024</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1515491147024</updated>
-    </task>
-    <task id="LOCAL-00044" summary="Обработка части комментариев.">
-      <created>1515491419896</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1515491419896</updated>
-    </task>
-    <task id="LOCAL-00045" summary="Рефакторинг кода, реализация транзакционного метода для обработки купли продажи.">
-      <created>1515497081041</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1515497081041</updated>
-    </task>
-    <option name="localTasksCounter" value="46" />
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
-  <component name="TestHistory">
-    <history-entry file="ProductServiceTest - 2017.12.28 at 12h 49m 39s.xml">
-      <configuration name="ProductServiceTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ProductServiceTest - 2017.12.28 at 12h 52m 00s.xml">
-      <configuration name="ProductServiceTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ProductServiceTest - 2017.12.28 at 12h 52m 27s.xml">
-      <configuration name="ProductServiceTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ProductServiceTest_testServiceCreate - 2018.01.09 at 08h 32m 57s.xml">
-      <configuration name="ProductServiceTest.testServiceCreate" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ProductServiceTest_testServiceCreate - 2018.01.09 at 08h 37m 49s.xml">
-      <configuration name="ProductServiceTest.testServiceCreate" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ProductServiceTest_testServiceCreate - 2018.01.09 at 08h 37m 56s.xml">
-      <configuration name="ProductServiceTest.testServiceCreate" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ProductServiceTest_testServiceGetAll - 2017.12.28 at 12h 54m 56s.xml">
-      <configuration name="ProductServiceTest.testServiceGetAll" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ProductServiceTest_testServiceGetAll - 2017.12.28 at 12h 55m 07s.xml">
-      <configuration name="ProductServiceTest.testServiceGetAll" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ProductServiceTest_testServiceGetAll - 2017.12.28 at 13h 02m 26s.xml">
-      <configuration name="ProductServiceTest.testServiceGetAll" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="ProductServiceTest_testServiceGetAll - 2017.12.28 at 15h 30m 09s.xml">
-      <configuration name="ProductServiceTest.testServiceGetAll" configurationId="JUnit" />
-    </history-entry>
-  </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="153478000" />
-  </component>
-  <component name="TodoView">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
+    <option name="totallyTimeSpent" value="39900000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -1093,7 +738,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40979955" sideWeight="0.7638593" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.40979955" sideWeight="0.7638593" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962137" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962137" sideWeight="0.46375266" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1101,40 +746,20 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850778" sideWeight="0.4936034" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3608018" sideWeight="0.71321964" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3608018" sideWeight="0.71321964" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850778" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32739422" sideWeight="0.61353946" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25746268" sideWeight="0.83774835" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26545843" sideWeight="0.83774835" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962137" sideWeight="0.49573562" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1684435" sideWeight="0.16225165" order="6" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27616927" sideWeight="0.23614073" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.40979955" sideWeight="0.7638593" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962137" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850778" sideWeight="0.4936034" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28285077" sideWeight="0.71321964" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850778" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32739422" sideWeight="0.61353946" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17004265" sideWeight="0.83774835" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1684435" sideWeight="0.16225165" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962137" sideWeight="0.49573562" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1142,6 +767,7 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27616927" sideWeight="0.23614073" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962137" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1150,18 +776,20 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27616927" sideWeight="0.7638593" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.40979955" sideWeight="0.7638593" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962137" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962137" sideWeight="0.46375266" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962137" sideWeight="0.46375266" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850778" sideWeight="0.4936034" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.52895325" sideWeight="0.71321964" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3608018" sideWeight="0.71321964" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32850778" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32739422" sideWeight="0.61353946" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17004265" sideWeight="0.83774835" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32739422" sideWeight="0.61353946" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.26545843" sideWeight="0.83774835" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962137" sideWeight="0.49573562" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.1684435" sideWeight="0.16225165" order="6" side_tool="true" content_ui="tabs" />
@@ -1174,32 +802,18 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Донастройка файла бинов.&#10;Попытка написания теста." />
-    <MESSAGE value="&#10;Попытка написания теста." />
-    <MESSAGE value="почистил от лишнего" />
-    <MESSAGE value="Поправил комменты, дописал хелпер к mysql протестировал создание и удаление записей." />
-    <MESSAGE value="Откорректировал тест" />
-    <MESSAGE value="Отработка некоторой части комментариев." />
-    <MESSAGE value="Убрал AbstractDAO,  в ProductDAOImp и user... имплементил соответствующие дао. чтобы спринг съел их правильно." />
-    <MESSAGE value="Убрал AbstractDAO,  в ProductDAOImp и user... имплементил соответствующие дао. чтобы спринг съел их правильно.&#10;Тест пока не пересматривал" />
-    <MESSAGE value="Переопределение equals, написание теста по новой.&#10;За изучение брал http://qaru.site/questions/35009/difference-between-mock-and-injectmocks" />
-    <MESSAGE value="UserService test" />
-    <MESSAGE value="Попытка выродить lookup-method , как я понял." />
-    <MESSAGE value="Обработка комментариев" />
-    <MESSAGE value="Реализация списочного теста" />
-    <MESSAGE value="Merge branch 'master' into task_0&#10;&#10;# Conflicts:&#10;#&#9;src/main/java/App.java" />
-    <MESSAGE value="Реализация таска 2" />
-    <MESSAGE value="Реализация слоя сервиса и дао для UserAccount" />
-    <MESSAGE value="Реализация общения с базой через JdbcTemplate" />
-    <MESSAGE value="Реализация UserAccountDao и ProductDao используя jdbcTemplate" />
-    <MESSAGE value="Реализация UsersDAO используя jdbcTemplate" />
-    <MESSAGE value="Добавление сущности корзина, слоя сервиса и дао" />
-    <MESSAGE value="Проблема в getById, сервисы не инжектятся." />
-    <MESSAGE value="Получение контекста в маппере" />
-    <MESSAGE value="Переделал мапперы под бины.&#10;рефактор кода" />
-    <MESSAGE value="Обработка части комментариев." />
-    <MESSAGE value="Рефакторинг кода, реализация транзакционного метода для обработки купли продажи." />
-    <option name="LAST_COMMIT_MESSAGE" value="Рефакторинг кода, реализация транзакционного метода для обработки купли продажи." />
+    <MESSAGE value="Попытка реализации диспетчера" />
+    <MESSAGE value="Рабочий код по страницам." />
+    <MESSAGE value="Тестовый вывод продуктов на страницу." />
+    <MESSAGE value="Добавление главной страницы и отображение списка продуктов." />
+    <MESSAGE value="Реализация блока авторизации(по минималке, авторизация по имейлу, без пароля)&#10;Вывод списка счетов по айди пользователя.&#10;Вывод списка продуктов" />
+    <MESSAGE value="Реализация собственного обработчика ошибок, через контроллер." />
+    <MESSAGE value="Переделка jsp под jstl , отладка комметариев" />
+    <MESSAGE value="ДОработка комментариев" />
+    <MESSAGE value="Авторизация через Spring Security" />
+    <MESSAGE value="Добавил разлогинивание, прописал в контроллер" />
+    <MESSAGE value="Попытка сделать свою 403" />
+    <option name="LAST_COMMIT_MESSAGE" value="Попытка сделать свою 403" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1217,22 +831,46 @@
           <option name="timeStamp" value="149" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/userAccount/UserAccountServiceImpl.java</url>
+          <line>66</line>
+          <properties />
+          <option name="timeStamp" value="157" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/App.java</url>
+          <line>81</line>
+          <properties />
+          <option name="timeStamp" value="158" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/main/java/com/andersen/spring/jdbc/MySqlHelper.java</url>
           <line>38</line>
           <properties />
           <option name="timeStamp" value="159" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/App.java</url>
-          <line>87</line>
+          <url>file://$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/userAccount/UserAccountDAOImpl.java</url>
+          <line>110</line>
           <properties />
-          <option name="timeStamp" value="163" />
+          <option name="timeStamp" value="201" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/com/andersen/spring/facade/MarketFacadeImpl.java</url>
-          <line>118</line>
+          <url>file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/accountList.jsp</url>
+          <line>16</line>
           <properties />
-          <option name="timeStamp" value="165" />
+          <option name="timeStamp" value="202" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/andersen/spring/controllers/HelloWorldController.java</url>
+          <line>85</line>
+          <properties />
+          <option name="timeStamp" value="206" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/com/andersen/spring/controllers/HelloWorldController.java</url>
+          <line>120</line>
+          <properties />
+          <option name="timeStamp" value="214" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/ProductServiceTest.java</url>
@@ -1243,9 +881,22 @@
           <option name="timeStamp" value="57" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="166" />
+      <option name="time" value="215" />
     </breakpoint-manager>
     <watches-manager>
+      <configuration name="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory">
+        <watch expression="request.getAttributeNames()" language="JSP" />
+        <watch expression="request.getAttribute(&quot;msg&quot;)" language="JSP" />
+        <watch expression="${productList}" language="JSP" />
+        <watch expression="product.id" language="JSP" />
+        <watch expression="marketFacade.getAll(user.getId())" language="JAVA" />
+        <watch expression="value" language="JAVA" />
+        <watch expression="model" language="JAVA" />
+        <watch expression="session.getAttribute(&quot;SPRING_SECURITY_CONTEXT&quot;)" language="JAVA" />
+        <watch expression="authentication.getPrincipal()" language="JAVA" />
+        <watch expression="authentication.getPrincipal().getClass()" language="JAVA" />
+        <watch expression="principal" language="JAVA" />
+      </configuration>
       <configuration name="JUnit">
         <watch expression="product.getTitle()" language="JAVA" />
         <watch expression="product.getTitle().matches(&quot;title.&quot;)" language="JAVA" />
@@ -1267,242 +918,19 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/dao/BasketDAO.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/configuration/WebMvcConfig.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/configuration/WebAppConfig.java" />
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/4.3.13.RELEASE/spring-webmvc-4.3.13.RELEASE.jar!/org/springframework/web/servlet/mvc/method/AbstractHandlerMethodAdapter.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="41" lean-forward="true" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="41" />
-          <folding />
+        <state relative-caret-position="374">
+          <caret line="37" column="0" lean-forward="false" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/controllers/ProductService.java">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/4.3.13.RELEASE/spring-webmvc-4.3.13.RELEASE.jar!/org/springframework/web/servlet/mvc/method/annotation/RequestMappingHandlerAdapter.class">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="25" lean-forward="false" selection-start-line="16" selection-start-column="25" selection-end-line="16" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/entity/UserRowMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-jdbc/4.3.13.RELEASE/spring-jdbc-4.3.13.RELEASE.jar!/org/springframework/jdbc/core/BeanPropertyRowMapper.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="132">
-          <caret line="46" column="0" lean-forward="false" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/4.3.13.RELEASE/spring-beans-4.3.13.RELEASE.jar!/org/springframework/beans/BeanUtils.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="75" column="0" lean-forward="false" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/4.3.13.RELEASE/spring-beans-4.3.13.RELEASE.jar!/org/springframework/beans/BeanWrapperImpl.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="213" column="0" lean-forward="false" selection-start-line="213" selection-start-column="0" selection-end-line="213" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-core/4.3.13.RELEASE/spring-core-4.3.13.RELEASE.jar!/org/springframework/util/Assert.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.3.13.RELEASE/spring-web-4.3.13.RELEASE.jar!/org/springframework/web/context/support/SpringBeanAutowiringSupport.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.3.13.RELEASE/spring-web-4.3.13.RELEASE.jar!/org/springframework/web/context/ContextLoader.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="183">
-          <caret line="314" column="0" lean-forward="false" selection-start-line="314" selection-start-column="0" selection-end-line="314" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-beans/4.3.13.RELEASE/spring-beans-4.3.13.RELEASE.jar!/org/springframework/beans/factory/annotation/AutowiredAnnotationBeanPostProcessor.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="149">
-          <caret line="482" column="0" lean-forward="false" selection-start-line="482" selection-start-column="0" selection-end-line="482" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="27" lean-forward="false" selection-start-line="23" selection-start-column="21" selection-end-line="23" selection-end-column="27" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/mysql/mysql-connector-java/6.0.5/mysql-connector-java-6.0.5.jar!/com/mysql/cj/jdbc/result/ResultSetImpl.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="843" column="0" lean-forward="false" selection-start-line="843" selection-start-column="0" selection-end-line="843" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-jdbc/4.3.13.RELEASE/spring-jdbc-4.3.13.RELEASE.jar!/org/springframework/jdbc/core/JdbcTemplate.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="191">
-          <caret line="428" column="0" lean-forward="false" selection-start-line="428" selection-start-column="0" selection-end-line="428" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-jdbc/4.3.13.RELEASE/spring-jdbc-4.3.13.RELEASE.jar!/org/springframework/jdbc/core/RowMapperResultSetExtractor.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="32" column="0" lean-forward="false" selection-start-line="32" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/exceptions/InsufficientFunds.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="55" lean-forward="false" selection-start-line="2" selection-start-column="55" selection-end-line="2" selection-end-column="55" />
-          <folding>
-            <element signature="e#182#183#0" expanded="false" />
-            <element signature="e#250#251#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/ProductServiceTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="30" column="35" lean-forward="true" selection-start-line="30" selection-start-column="35" selection-end-line="30" selection-end-column="35" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/dao/DAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="6" lean-forward="false" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/controllers/AccountService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="21" column="9" lean-forward="false" selection-start-line="21" selection-start-column="9" selection-end-line="21" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/dao/UserAccountDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="10" column="16" lean-forward="false" selection-start-line="10" selection-start-column="16" selection-end-line="10" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/entity/Product.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="25" column="0" lean-forward="false" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/userAccount/UserAccountDAOImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="126" column="5" lean-forward="false" selection-start-line="126" selection-start-column="5" selection-end-line="126" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-aop/4.3.13.RELEASE/spring-aop-4.3.13.RELEASE.jar!/org/springframework/aop/support/AopUtils.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="178" column="0" lean-forward="false" selection-start-line="178" selection-start-column="0" selection-end-line="178" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-tx/4.3.13.RELEASE/spring-tx-4.3.13.RELEASE.jar!/org/springframework/transaction/interceptor/TransactionAspectSupport.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="165" column="0" lean-forward="false" selection-start-line="165" selection-start-column="0" selection-end-line="165" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-tx/4.3.13.RELEASE/spring-tx-4.3.13.RELEASE.jar!/org/springframework/transaction/interceptor/TransactionInterceptor.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="35" column="0" lean-forward="false" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-aop/4.3.13.RELEASE/spring-aop-4.3.13.RELEASE.jar!/org/springframework/aop/framework/ReflectiveMethodInvocation.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="70" column="0" lean-forward="false" selection-start-line="70" selection-start-column="0" selection-end-line="70" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-aop/4.3.13.RELEASE/spring-aop-4.3.13.RELEASE.jar!/org/springframework/aop/framework/JdkDynamicAopProxy.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="127" column="0" lean-forward="false" selection-start-line="127" selection-start-column="0" selection-end-line="127" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/db_test_data.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/products.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/entity/Basket.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="18" column="5" lean-forward="true" selection-start-line="18" selection-start-column="5" selection-end-line="18" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/db_schema.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/entity/BasketRowMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="28" column="73" lean-forward="false" selection-start-line="28" selection-start-column="73" selection-end-line="28" selection-end-column="73" />
-          <folding />
+        <state relative-caret-position="151">
+          <caret line="454" column="0" lean-forward="false" selection-start-line="454" selection-start-column="0" selection-end-line="454" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1510,120 +938,156 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.idea/workspace.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="473">
+          <caret line="1779" column="21" lean-forward="true" selection-start-line="1779" selection-start-column="21" selection-end-line="1779" selection-end-column="21" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.3.13.RELEASE/spring-web-4.3.13.RELEASE.jar!/org/springframework/web/method/support/InvocableHandlerMethod.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="54" column="0" lean-forward="false" selection-start-line="54" selection-start-column="0" selection-end-line="54" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/4.3.13.RELEASE/spring-webmvc-4.3.13.RELEASE.jar!/org/springframework/web/servlet/mvc/method/annotation/ServletInvocableHandlerMethod.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="43" column="0" lean-forward="false" selection-start-line="43" selection-start-column="0" selection-end-line="43" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/dispatcherServlet-servlet.xml" />
+    <entry file="file://$PROJECT_DIR$/src/test/java/ProductServiceTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="38" column="26" lean-forward="false" selection-start-line="38" selection-start-column="26" selection-end-line="38" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/controllers/MainController.java" />
+    <entry file="file://$PROJECT_DIR$/.idea/sqldialects.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/App.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="56" column="9" lean-forward="true" selection-start-line="56" selection-start-column="9" selection-end-line="56" selection-end-column="9" />
+          <folding>
+            <marker date="1515580485389" expanded="true" signature="2757:3485" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/db_schema.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/jdbc/MySqlHelper.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="43" column="5" lean-forward="true" selection-start-line="43" selection-start-column="5" selection-end-line="43" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/entity/User.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="52" column="37" lean-forward="false" selection-start-line="52" selection-start-column="37" selection-end-line="52" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/user/UserServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="20" column="9" lean-forward="false" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/BasketServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="39" lean-forward="false" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/user/UserDAOImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="205">
-          <caret line="33" column="5" lean-forward="false" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/BasketDAOImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="111" column="0" lean-forward="false" selection-start-line="111" selection-start-column="0" selection-end-line="111" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-tx/4.3.13.RELEASE/spring-tx-4.3.13.RELEASE.jar!/org/springframework/transaction/support/TransactionTemplate.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="47" column="17" lean-forward="false" selection-start-line="47" selection-start-column="17" selection-end-line="47" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/entity/UserAccountRowMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="53" />
+        <state relative-caret-position="425">
+          <caret line="28" column="13" lean-forward="false" selection-start-line="28" selection-start-column="13" selection-end-line="28" selection-end-column="13" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="e#1279#1280#0" expanded="false" />
+            <element signature="e#1313#1314#0" expanded="false" />
+            <marker date="1514970014606" expanded="true" signature="1720:1872" ph="CREATE TABLE... IF" />
+            <marker date="1514970014606" expanded="true" signature="1908:2048" ph="CREATE TABLE... IF" />
+            <marker date="1514970014606" expanded="true" signature="2126:2277" ph="CREATE TABLE... IF" />
+            <marker date="1514970014606" expanded="true" signature="2347:2497" ph="CREATE TABLE... IF" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/controllers/BasketService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="11" column="17" lean-forward="false" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/entity/ProductRowMapper.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="23" column="0" lean-forward="false" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/application-context.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-365">
-          <caret line="59" column="78" lean-forward="false" selection-start-line="59" selection-start-column="78" selection-end-line="59" selection-end-column="78" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/product/ProductServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="101">
-          <caret line="9" column="13" lean-forward="false" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        <state relative-caret-position="391">
+          <caret line="57" column="29" lean-forward="false" selection-start-line="57" selection-start-column="29" selection-end-line="57" selection-end-column="29" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="method#ProductServiceImpl#0;class#ProductServiceImpl#0" expanded="false" />
+            <element signature="method#create#0;class#ProductServiceImpl#0" expanded="false" />
+            <element signature="method#getProductsByTitle#0;class#ProductServiceImpl#0" expanded="false" />
+            <element signature="e#1455#1456#0" expanded="false" />
+            <element signature="e#1497#1498#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/resources/db_test_data.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="15" lean-forward="false" selection-start-line="5" selection-start-column="15" selection-end-line="5" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/user/UserServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="8" column="46" lean-forward="true" selection-start-line="8" selection-start-column="46" selection-end-line="8" selection-end-column="46" />
+          <folding>
+            <element signature="e#433#434#0" expanded="false" />
+            <element signature="e#476#477#0" expanded="false" />
+            <element signature="e#603#604#0" expanded="false" />
+            <element signature="e#655#656#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/dao/DAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="17" lean-forward="false" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/controllers/ProductService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/controllers/AccountService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="19" column="36" lean-forward="false" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/product/ProductDAOImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="117" column="0" lean-forward="false" selection-start-line="117" selection-start-column="0" selection-end-line="117" selection-end-column="0" />
+        <state relative-caret-position="204">
+          <caret line="29" column="120" lean-forward="false" selection-start-line="29" selection-start-column="46" selection-end-line="29" selection-end-column="120" />
           <folding>
             <element signature="method#ProductDAOImpl#0;class#ProductDAOImpl#0" expanded="false" />
             <element signature="method#getProductsByTitle#0;class#ProductDAOImpl#0" expanded="false" />
             <element signature="method#getProductsByUserId#0;class#ProductDAOImpl#0" expanded="false" />
             <element signature="method#create#0;class#ProductDAOImpl#0" expanded="false" />
-            <element signature="class#2284:3195" expanded="false" />
-            <element signature="method#createPreparedStatement#0;class#2284:3195" expanded="false" />
             <element signature="method#getById#0;class#ProductDAOImpl#0" expanded="false" />
             <element signature="method#update#0;class#ProductDAOImpl#0" expanded="false" />
             <element signature="method#delete#0;class#ProductDAOImpl#0" expanded="false" />
@@ -1633,55 +1097,273 @@
             <marker date="1515497404021" expanded="false" signature="1042:1077" ph="SELECT * FRO... products" />
             <marker date="1515497404021" expanded="false" signature="1116:1138" ph="SELECT * FRO... products" />
             <marker date="1515497404021" expanded="false" signature="1250:1283" ph="DELETE FROM " />
-            <marker date="1515497404021" expanded="false" signature="1332:1406" ph="INSERT INTO products... " />
+            <marker date="1515497404021" expanded="true" signature="1332:1406" ph="INSERT INTO products... " />
             <marker date="1515497404021" expanded="false" signature="1452:1533" ph="UPDATE produ... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/entity/UserAccount.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding>
-            <element signature="method#UserAccount#0;class#UserAccount#0" expanded="false" />
-            <element signature="e#346#347#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/facade/MarketFacade.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="126" column="9" lean-forward="false" selection-start-line="126" selection-start-column="9" selection-end-line="126" selection-end-column="9" />
+        <state relative-caret-position="301">
+          <caret line="125" column="41" lean-forward="false" selection-start-line="125" selection-start-column="41" selection-end-line="125" selection-end-column="41" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/facade/MarketFacadeImpl.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/dao/UserAccountDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-663">
-          <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+        <state relative-caret-position="170">
+          <caret line="12" column="41" lean-forward="false" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-jdbc/4.3.13.RELEASE/spring-jdbc-4.3.13.RELEASE.jar!/org/springframework/jdbc/core/JdbcTemplate.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="528" column="106" lean-forward="false" selection-start-line="528" selection-start-column="87" selection-end-line="528" selection-end-column="106" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/4.3.13.RELEASE/spring-webmvc-4.3.13.RELEASE.jar!/org/springframework/web/servlet/FrameworkServlet.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="475" column="0" lean-forward="false" selection-start-line="475" selection-start-column="0" selection-end-line="475" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/controllers/annotations/annotations.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="24" lean-forward="false" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/controllers/exceptions/NotFoundException.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="17" lean-forward="false" selection-start-line="11" selection-start-column="17" selection-end-line="11" selection-end-column="17" />
           <folding>
-            <element signature="e#3346#3635#0" expanded="true" />
-            <element signature="e#3634#3635#0" expanded="true" />
+            <element signature="imports" expanded="true" />
+            <element signature="e#406#407#0" expanded="true" />
+            <element signature="e#432#433#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/userAccount/UserAccountServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="69" column="69" lean-forward="false" selection-start-line="69" selection-start-column="69" selection-end-line="69" selection-end-column="69" />
+        <state relative-caret-position="306">
+          <caret line="56" column="0" lean-forward="false" selection-start-line="56" selection-start-column="0" selection-end-line="56" selection-end-column="0" />
+          <folding>
+            <element signature="e#1704#1705#0" expanded="true" />
+            <element signature="method#buyProduct#0;class#UserAccountServiceImpl#0" expanded="false" />
+            <marker date="1515654383627" expanded="true" signature="2338:2425" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/facade/MarketFacadeImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="363">
+          <caret line="107" column="0" lean-forward="false" selection-start-line="107" selection-start-column="0" selection-end-line="107" selection-end-column="0" />
+          <folding>
+            <element signature="method#MarketFacadeImpl#0;class#MarketFacadeImpl#0" expanded="false" />
+            <element signature="e#3277#3278#0" expanded="true" />
+            <element signature="method#buyProduct#0;class#MarketFacadeImpl#0" expanded="false" />
+            <element signature="method#setTransactionManager#0;class#MarketFacadeImpl#0" expanded="false" />
+            <element signature="method#updateBalance#0;class#MarketFacadeImpl#0" expanded="false" />
+            <element signature="method#setTransactionTemplate#0;class#MarketFacadeImpl#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/javax/servlet/servlet-api/2.5/servlet-api-2.5.jar!/javax/servlet/http/HttpSession.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="618">
+          <caret line="41" column="9" lean-forward="false" selection-start-line="41" selection-start-column="9" selection-end-line="41" selection-end-column="9" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/App.java">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="203">
-          <caret line="81" column="70" lean-forward="false" selection-start-line="81" selection-start-column="69" selection-end-line="81" selection-end-column="70" />
+        <state relative-caret-position="403">
+          <caret line="135" column="36" lean-forward="false" selection-start-line="135" selection-start-column="36" selection-end-line="135" selection-end-column="36" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/4.3.13.RELEASE/spring-web-4.3.13.RELEASE.jar!/org/springframework/web/bind/annotation/support/HandlerMethodInvoker.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="132" column="0" lean-forward="false" selection-start-line="132" selection-start-column="0" selection-end-line="132" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/4.3.13.RELEASE/spring-webmvc-4.3.13.RELEASE.jar!/org/springframework/web/servlet/mvc/annotation/AnnotationMethodHandlerAdapter.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="246" column="0" lean-forward="false" selection-start-line="246" selection-start-column="0" selection-end-line="246" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-webmvc/4.3.13.RELEASE/spring-webmvc-4.3.13.RELEASE.jar!/org/springframework/web/servlet/DispatcherServlet.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="405" column="0" lean-forward="false" selection-start-line="405" selection-start-column="0" selection-end-line="405" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/productList.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="329">
+          <caret line="32" column="13" lean-forward="false" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/HelloWorldPage.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="7" lean-forward="false" selection-start-line="9" selection-start-column="7" selection-end-line="9" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/errorPage.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="7" lean-forward="false" selection-start-line="25" selection-start-column="7" selection-end-line="25" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/security/spring-security-core/3.1.0.RELEASE/spring-security-core-3.1.0.RELEASE.jar!/org/springframework/security/core/Authentication.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="14" column="11" lean-forward="false" selection-start-line="14" selection-start-column="11" selection-end-line="14" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/userAccount/UserAccountDAOImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="329">
+          <caret line="110" column="0" lean-forward="false" selection-start-line="110" selection-start-column="0" selection-end-line="110" selection-end-column="0" />
+          <folding>
+            <element signature="e#4070#4083#0" expanded="true" />
+            <marker date="1515670262943" expanded="true" signature="876:911" ph="SELECT * FRO... ACCOUNTS" />
+            <marker date="1515670262943" expanded="true" signature="963:1003" ph="SELECT * FRO... ACCOUNTS" />
+            <marker date="1515670262943" expanded="true" signature="1042:1082" ph="SELECT * FRO... ACCOUNTS" />
+            <marker date="1515670262943" expanded="true" signature="1132:1165" ph="DELETE FROM " />
+            <marker date="1515670262943" expanded="true" signature="1214:1283" ph="INSERT INTO ACCOUNTS... " />
+            <marker date="1515670262943" expanded="true" signature="1329:1405" ph="UPDATE ACCOU... " />
+            <marker date="1515670262943" expanded="true" signature="1451:1504" ph="UPDATE ACCOU... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/impl/user/UserDAOImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="311">
+          <caret line="103" column="20" lean-forward="false" selection-start-line="103" selection-start-column="20" selection-end-line="103" selection-end-column="20" />
+          <folding>
+            <element signature="method#UserDAOImpl#0;class#UserDAOImpl#0" expanded="false" />
+            <element signature="method#create#0;class#UserDAOImpl#0" expanded="false" />
+            <element signature="method#update#0;class#UserDAOImpl#0" expanded="false" />
+            <element signature="method#getAll#0;class#UserDAOImpl#0" expanded="false" />
+            <element signature="method#getById#0;class#UserDAOImpl#0" expanded="false" />
+            <element signature="method#getUsersByName#0;class#UserDAOImpl#0" expanded="false" />
+            <marker date="1515653050874" expanded="false" signature="735:772" ph="SELECT * FRO... users" />
+            <marker date="1515653050874" expanded="false" signature="822:857" ph="SELECT * FRO... users" />
+            <marker date="1515653050874" expanded="false" signature="904:936" ph="SELECT * FRO... users" />
+            <marker date="1515653050874" expanded="false" signature="976:995" ph="SELECT * FRO... users" />
+            <marker date="1515653050874" expanded="false" signature="1104:1134" ph="DELETE FROM " />
+            <marker date="1515653050874" expanded="false" signature="1183:1243" ph="INSERT INTO users... " />
+            <marker date="1515653050874" expanded="false" signature="1286:1351" ph="UPDATE users... " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-137">
+          <caret line="21" column="30" lean-forward="false" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/accountList.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="26" column="4" lean-forward="false" selection-start-line="26" selection-start-column="4" selection-end-line="26" selection-end-column="42" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/pages/403.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/controllers/exceptions/MyAccessDeniedHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="227">
+          <caret line="25" column="5" lean-forward="true" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="199">
+          <caret line="12" column="46" lean-forward="false" selection-start-line="12" selection-start-column="46" selection-end-line="12" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/application-context.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-794">
+          <caret line="33" column="11" lean-forward="false" selection-start-line="33" selection-start-column="11" selection-end-line="33" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/mvc-dispatcher-servlet.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="19" lean-forward="false" selection-start-line="14" selection-start-column="19" selection-end-line="14" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/application-security.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="28" column="29" lean-forward="true" selection-start-line="28" selection-start-column="29" selection-end-line="28" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/andersen/spring/controllers/HelloWorldController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="120" column="0" lean-forward="false" selection-start-line="120" selection-start-column="0" selection-end-line="120" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1691,10 +1373,12 @@
       <state key="ArtifactsStructureConfigurable.UI">
         <settings>
           <artifact-editor />
+          <last-edited>andersen-spring:war</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.33901346" />
+                <option value="0.2" />
+                <option value="0.5" />
               </list>
             </option>
           </splitter-proportions>
@@ -1706,7 +1390,7 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.33901346" />
+                <option value="0.2" />
               </list>
             </option>
           </splitter-proportions>
@@ -1717,7 +1401,7 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.33901346" />
+                <option value="0.2" />
               </list>
             </option>
           </splitter-proportions>
@@ -1729,7 +1413,7 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.33901346" />
+                <option value="0.2" />
               </list>
             </option>
           </splitter-proportions>
@@ -1741,20 +1425,8 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.33901346" />
-                <option value="0.6" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectJDKs.UI">
-        <settings>
-          <last-edited>1.8</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
                 <option value="0.2" />
+                <option value="0.6" />
               </list>
             </option>
           </splitter-proportions>
@@ -1766,7 +1438,7 @@
           <splitter-proportions>
             <option name="proportions">
               <list>
-                <option value="0.33901346" />
+                <option value="0.2" />
               </list>
             </option>
           </splitter-proportions>

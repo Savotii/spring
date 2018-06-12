@@ -6,6 +6,7 @@ import com.andersen.spring.entity.UserAccount;
 import com.andersen.spring.entity.UserAccountRowMapper;
 import com.andersen.spring.jdbc.MySqlHelper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.PreparedStatementCreator;
@@ -42,26 +43,26 @@ public class UserAccountDAOImpl implements UserAccountDAO {
         KeyHolder keyHolder = new GeneratedKeyHolder();
 
         int result = jdbcTemplate.update(new PreparedStatementCreator() {
-                                @Override
-                                public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
+                                             @Override
+                                             public PreparedStatement createPreparedStatement(Connection connection) throws SQLException {
 
-                                    PreparedStatement statement = connection.prepareStatement(INSERT_INTO_QUERY, Statement.RETURN_GENERATED_KEYS);
-                                    statement.setInt(1, item.getAccountsNumber());
-                                    statement.setDouble(2, item.getAmount());
-                                    statement.setLong(3, item.getUser().getId());
-                                    return statement;
-                                }
-                            },
+                                                 PreparedStatement statement = connection.prepareStatement(INSERT_INTO_QUERY, Statement.RETURN_GENERATED_KEYS);
+                                                 statement.setInt(1, item.getAccountsNumber());
+                                                 statement.setDouble(2, item.getAmount());
+                                                 statement.setLong(3, item.getUser().getId());
+                                                 return statement;
+                                             }
+                                         },
                 keyHolder
         );
 
-        if(result != 0) {
+        if (result != 0) {
             item.setId(keyHolder.getKey().longValue());
         }
 
         return item;
 
-}
+    }
 
     @Override
     public UserAccount getById(long id) {
@@ -98,16 +99,19 @@ public class UserAccountDAOImpl implements UserAccountDAO {
     @Override
     public List<UserAccount> getAccounts(long id) {
 
-        List<UserAccount> userAccounts = jdbcTemplate.query(GET_ALL, new Object[]{id},  userAccountRowMapper);
+        List<UserAccount> userAccounts = jdbcTemplate.query(GET_ALL, new Object[]{id}, userAccountRowMapper);
 
         return userAccounts;
     }
 
     @Override
     public List<UserAccount> getAccountsByUserId(long userId) {
-
-        List<UserAccount> userAccounts = jdbcTemplate.query(GET_BY_USER_ID_QUERY, new Object[]{userId},  userAccountRowMapper);
-
+        List<UserAccount> userAccounts = new LinkedList<UserAccount>();
+        try {
+            userAccounts = jdbcTemplate.query(GET_BY_USER_ID_QUERY, new Object[]{userId}, userAccountRowMapper);
+        } catch (DataAccessException d) {
+            d.printStackTrace();
+        }
         return userAccounts;
     }
 

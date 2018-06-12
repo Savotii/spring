@@ -92,8 +92,14 @@ public class UserDAOImpl implements UserDAO {
     }
 
     public User getUserByEmail(String email) {
-
-        User user = jdbcTemplate.queryForObject(GET_BY_Email_QUERY, new BeanPropertyRowMapper<User>(User.class), email);
+        User user = null;
+        try {
+            user = jdbcTemplate.queryForObject(GET_BY_Email_QUERY, new BeanPropertyRowMapper<User>(User.class), email);
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
 
         return user;
 
